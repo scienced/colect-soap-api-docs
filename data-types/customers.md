@@ -1,0 +1,334 @@
+# Customer Types
+
+Complete reference for all customer-related data types.
+
+{% hint style="info" %}
+**Field Length Limits:** All string fields have maximum length limits. Key limits: `customerNo` (32), `name` (128), `email` (128), `postalCode` (32), `userDefinedField` (2048). See [Field Length Limits](overview.md#field-length-limits) for the complete reference.
+{% endhint %}
+
+---
+
+## XCustomer
+
+The main customer entity representing a B2B account.
+
+### Mandatory Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `customerNo` | String | Unique customer identifier (from ERP) |
+| `name` | String | Company/customer name |
+| `email` | String | Primary email address |
+| `currencyCode` | String | Default currency (EUR, USD, GBP) |
+
+### Address Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `address` | String | Full address (use when structured fields unavailable) |
+| `street` | String | Street name |
+| `houseNumber` | String | House/building number |
+| `houseNumberSuffix` | String | Apartment, suite, etc. |
+| `postalCode` | String | Postal/ZIP code |
+| `city` | String | City |
+| `country` | String | Country |
+| `phone` | String | Phone number |
+
+### Pricing Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `activePriceGroup` | String | Current price group |
+| `nextPriceGroup` | String | Upcoming price group |
+| `nextPriceGroupDate` | DateTime | Date next group activates |
+| `retailCurrencyCode` | String | Currency for retail prices |
+
+### Display Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `searchName` | String | Searchable text |
+| `language` | String | Language code (en, nl, de, fr, da, no) |
+| `channel` | String | Sales channel |
+| `userDefinedField` | String | Custom field |
+| `orderFooter` | String | Text on order confirmations |
+
+### Status Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `status` | XCustomerStatus | Customer status |
+| `statusMessage` | String | Message shown for WARNING status |
+| `paymentStatus` | XPaymentStatus | Payment requirement |
+| `taxPercentage` | Float | Tax rate for prepayment |
+
+### Order Settings
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `minOrderValue` | Float | Minimum order value |
+| `maxOrderValue` | Float | Maximum order value |
+| `shippingTime` | Integer | Days to add to delivery date |
+| `minimumQuantitiesKey` | String | Key for product minimum quantities |
+| `sizeNamingCode` | String | Code for customer-specific size naming. See [XCustomerSizeNaming](products.md#xcustomersizeNaming). |
+| `externalReference` | String | External system reference |
+
+### Nested Collections
+
+| Field | Type | XML Element | Description |
+|-------|------|-------------|-------------|
+| `shippingLocations` | List | `<shippingLocation>` | Shipping addresses |
+| `contacts` | List | `<contact>` | Customer contacts |
+| `agreements` | List | `<agreement>` | Customer agreements |
+| `discountGroups` | List | `<discountGroup>` | Discount configurations |
+| `marginGroups` | List | `<marginGroup>` | Margin configurations |
+| `approvalGroups` | List | `<approvalGroup>` | Approval workflows |
+| `budgetComponents` | List | `<budgetComponent>` | Budget tracking |
+| `extraFields` | List | `<extraField>` | Custom display fields |
+| `tags` | List | `<tag>` | Customer tags |
+| `customChoices` | List | `<customChoice>` | Custom options |
+| `sizeAccessCodes` | List | `<sizeAccessCode>` | Size visibility codes |
+| `accessibleDeliveryWindowCodes` | List | `<accessibleDeliveryWindowCode>` | Delivery window access |
+| `primaryUserEmailAddresses` | List | `<primaryUserEmailAddress>` | Primary user emails |
+| `orderDiscountRules` | List | `<orderDiscountRule>` | Order-level discounts |
+| `orderDeliveryCostRules` | List | `<orderDeliveryCostRule>` | Shipping charges |
+
+---
+
+## XLocation
+
+Shipping location/address for a customer.
+
+### Mandatory Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `code` | String | Unique location identifier |
+| `name` | String | Location name |
+
+### Address Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `address` | String | Full address |
+| `street` | String | Street |
+| `houseNumber` | String | Number |
+| `houseNumberSuffix` | String | Suffix |
+| `postalCode` | String | Postal code |
+| `city` | String | City |
+| `country` | String | Country |
+
+### Contact Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `email` | String | Email |
+| `telephone` | String | Phone |
+| `contactFirstName` | String | Contact first name |
+| `contactLastName` | String | Contact last name |
+| `contactTelephone` | String | Contact phone |
+
+### Other Fields
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `defaultLocation` | Boolean | Is default shipping location |
+| `externalReference` | String | External system reference |
+
+---
+
+## XContact
+
+Contact person for a customer.
+
+### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `code` | String | **Yes** | Unique contact identifier |
+| `firstName` | String | No | First name |
+| `lastName` | String | No | Last name |
+| `role` | String | No | Role/title |
+| `phone` | String | No | Phone number |
+| `email` | String | No | Email address |
+| `accessType` | XAccessType | No | B2B webshop access (FULL/NONE) |
+
+---
+
+## XAgreement
+
+Customer-specific agreement with terms and pricing.
+
+### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `code` | String | **Yes** | Agreement identifier (returned on orders) |
+| `description` | String | **Yes** | Display description |
+| `channel` | String | No | Sales channel |
+| `activePriceGroup` | String | No | Price group for agreement |
+| `nextPriceGroup` | String | No | Upcoming price group |
+| `nextPriceGroupDate` | DateTime | No | Activation date |
+| `currencyCode` | String | No | Agreement currency |
+| `orderFooter` | String | No | Text for confirmations |
+| `marginGroups` | List | No | Margin configurations |
+| `discountGroups` | List | No | Discount configurations |
+
+---
+
+## XDiscountGroup
+
+Automatic discount configuration.
+
+### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `code` | String | No | Matches product's discountGroupCode (default: '*') |
+| `percentage` | Float | **Yes** | Discount percentage |
+| `minimumQuantity` | Integer | No | Minimum qty for discount |
+| `startDate` | DateTime | No | Discount start date |
+| `endDate` | DateTime | No | Discount end date |
+| `description` | String | No | Display description |
+| `identifier` | String | No | Identifier returned on orders |
+
+---
+
+## XMarginGroup
+
+Margin-based pricing (calculate wholesale from retail).
+
+### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `code` | String | No | Matches product's marginGroupCode (default: '*') |
+| `amount` | Float | **Yes** | Margin multiplier (e.g., 2.3 = retail/2.3) |
+
+---
+
+## XOrderAmountModificationRule
+
+Rules for order-level discounts or shipping charges.
+
+### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `identification` | String | **Yes** | Rule identifier |
+| `description` | String | **Yes** | Display description |
+| `warning` | String | No | Warning message |
+| `group` | String | No | Rule group |
+| `exclusive` | Boolean | **Yes** | Only one rule in group applies |
+| `minimumQuantity` | Integer | No | Minimum order quantity |
+| `minimumOrderAmount` | Float | No | Minimum order value |
+| `startDate` | DateTime | No | Rule start date |
+| `endDate` | DateTime | No | Rule end date |
+| `evaluationMethod` | XRuleEvaluationMethod | **Yes** | When to evaluate |
+| `amount` | Float | No | Fixed amount |
+| `discountPercentage` | Float | No | Percentage discount |
+
+---
+
+## XCustomerApprovalGroup
+
+Links customer to approval workflows.
+
+### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `approvalGroupCode` | String | **Yes** | Matches product's approval group |
+| `approverTeamCode` | String | **Yes** | Team responsible for approval |
+
+---
+
+## XBudgetComponent
+
+Budget tracking for customer.
+
+### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `key` | String | **Yes** | Unique component identifier |
+| `amount` | Float | **Yes** | Budget amount |
+| `actual` | Float | **Yes** | Actual spent |
+| `canceled` | Float | **Yes** | Canceled amount |
+| `season` | String | No | Season |
+| `seasonSortCode` | Integer | No | Season sort order |
+| `productGroup` | String | No | Product group |
+| `category` | String | No | Category |
+| `salesPerson` | String | No | Salesperson |
+| `editable` | Boolean | **Yes** | User can edit budget |
+
+---
+
+## XCustomChoice
+
+Custom option/dropdown for customer.
+
+### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `code` | String | **Yes** | Choice identifier |
+| `value` | String | **Yes** | Display value |
+| `group` | String | **Yes** | Choice group |
+| `sortCode` | Integer | No | Display order |
+| `defaultChoice` | Boolean | **Yes** | Is default selection |
+| `userTypes` | List | No | Applicable user types |
+
+---
+
+## XTag
+
+Simple tag for categorization.
+
+### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `name` | String | **Yes** | Tag name |
+
+---
+
+## Access Rule Types
+
+### XProductAccessRule
+
+Controls which products a customer can see.
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `customerNo` | String | **Yes** | Customer identifier |
+| `type` | XProductAccessRuleType | No | ADD or REMOVE (default: ADD) |
+| `operation` | XProductAccessRuleMatchOperation | No | EQUALS or CONTAINS |
+| `environment` | XEnvironment | No | APP, B2B, or both |
+| `uniqueId` | String | No | Product filter |
+| `colorCode` | String | No | Color filter |
+| `categoryCode` | String | No | Category filter |
+| `productGroupCode` | String | No | Product group filter |
+| `brandId` | String | No | Brand filter |
+| `seasonCode` | String | No | Season filter |
+| `sortCode` | Integer | No | Rule evaluation order |
+
+### XCustomerAccessRecord
+
+Agent's access to a customer.
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `customerNo` | String | **Yes** | Customer identifier |
+| `shippingLocationCode` | String | No | Restrict to specific location |
+
+### XAgentCustomerAccess
+
+Agent's complete customer access configuration.
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `agentEmail` | String | **Yes** | Agent email address |
+| `agentDefaultCurrency` | String | No | Default browsing currency |
+| `agentDefaultPriceGroup` | String | No | Default browsing price group |
+| `customerAccessRecords` | List | No | Accessible customers |
