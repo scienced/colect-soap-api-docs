@@ -79,7 +79,7 @@ xmlns:ws="http://ws.cc.salesapp.apptitude.nl/"
 XML namespace prefixes (like `api:`, `ns2:`, `soap:`) are **arbitrary labels** - only the namespace URI matters. The prefix is just a shorthand that maps to the actual namespace URI defined in the `xmlns` attribute.
 
 {% tabs %}
-{% tab title="Using 'api' prefix" %}
+{% tab title="Using api prefix" %}
 ```xml
 <soapenv:Envelope
     xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -93,7 +93,7 @@ XML namespace prefixes (like `api:`, `ns2:`, `soap:`) are **arbitrary labels** -
 ```
 {% endtab %}
 
-{% tab title="Using 'ns2' prefix" %}
+{% tab title="Using ns2 prefix" %}
 ```xml
 <soapenv:Envelope
     xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -107,7 +107,7 @@ XML namespace prefixes (like `api:`, `ns2:`, `soap:`) are **arbitrary labels** -
 ```
 {% endtab %}
 
-{% tab title="Using 'col' prefix" %}
+{% tab title="Using col prefix" %}
 ```xml
 <soapenv:Envelope
     xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
