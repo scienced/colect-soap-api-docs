@@ -2,6 +2,10 @@
 
 Push invoice data to Colect so your customers can view their outstanding invoices and payment status in the app and B2B webstore.
 
+{% hint style="success" %}
+**Full Example:** [Download complete storeFullInvoiceSetForCustomer.xml](https://assets.apptitude.nl/KnowledgeBase/Webservice_3_0/External/storeFullInvoiceSetForCustomer.xml) - A comprehensive example showing all available invoice fields.
+{% endhint %}
+
 ---
 
 ## Operations Overview

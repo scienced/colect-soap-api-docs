@@ -2,6 +2,10 @@
 
 Push historical order data to Colect so your customers and sales reps can view past orders, track shipments, and reorder from order history.
 
+{% hint style="success" %}
+**Full Example:** [Download complete storeFullHistoricalOrderSetForCustomer.xml](https://assets.apptitude.nl/KnowledgeBase/Webservice_3_0/External/storeFullHistoricalOrderSetForCustomer.xml) - A comprehensive example showing all available historical order fields.
+{% endhint %}
+
 ---
 
 ## Operations Overview

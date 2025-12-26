@@ -2,6 +2,10 @@
 
 Retrieve orders placed by customers through the Colect app or B2B webstore. Orders flow from Colect to your ERP system for fulfillment.
 
+{% hint style="success" %}
+**Full Example:** [Download complete order output example](https://assets.apptitude.nl/KnowledgeBase/Webservice_3_0/External/OrderOutput_WS.xml) - Shows the complete order structure returned by getUnprocessedOrders.
+{% endhint %}
+
 ---
 
 ## Operations Overview

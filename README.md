@@ -4,6 +4,8 @@
 
 Welcome to the Colect SOAP API documentation. This API enables fashion brands to synchronize their ERP systems with the Colect platform for seamless B2B e-commerce operations.
 
+Source: https://assets.apptitude.nl/Documentation/api/3.0/nl/apptitude/salesapp/cc/api/v_3_0/ColectApiService_3_0.html
+
 ---
 
 ## Overview

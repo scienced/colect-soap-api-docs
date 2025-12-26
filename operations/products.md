@@ -2,6 +2,10 @@
 
 Manage your product catalog in Colect. Products are the core of your B2B e-commerce platform, containing all information your customers need to place orders.
 
+{% hint style="success" %}
+**Full Example:** [Download complete storeProduct.xml](https://assets.apptitude.nl/KnowledgeBase/Webservice_3_0/External/storeProduct.xml) - A comprehensive example showing all available product fields.
+{% endhint %}
+
 ---
 
 ## Operations Overview

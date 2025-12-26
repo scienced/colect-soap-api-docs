@@ -2,6 +2,12 @@
 
 Control which products are visible to which customers, and which customers are accessible to which sales agents. Access rules enable personalized catalogs and territory management.
 
+{% hint style="success" %}
+**Full Examples:**
+- [Download storeProductAccessRules.xml](https://assets.apptitude.nl/KnowledgeBase/Webservice_3_0/External/storeProductAccessRules.xml) - Product access rules example
+- [Download storeFullCustomerAccessSetForAgent.xml](https://assets.apptitude.nl/KnowledgeBase/Webservice_3_0/External/storeFullCustomerAccessSetForAgent.xml) - Agent customer access example
+{% endhint %}
+
 ---
 
 ## Operations Overview

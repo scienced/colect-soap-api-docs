@@ -2,6 +2,10 @@
 
 Manage your B2B customer accounts in Colect. Customers represent the retail stores, boutiques, and distributors who can place orders through your Colect app or B2B webstore.
 
+{% hint style="success" %}
+**Full Example:** [Download complete storeCustomer.xml](https://assets.apptitude.nl/KnowledgeBase/Webservice_3_0/External/storeCustomer.xml) - A comprehensive example showing all available customer fields.
+{% endhint %}
+
 ---
 
 ## Operations Overview
