@@ -20,7 +20,7 @@ Colect Data Forge is an AI-powered tool for generating and validating SOAP XML r
 | **XML Validator** | Validate your XML against the official XSD schema |
 | **AI Error Fixing** | Automatically fix validation errors with AI assistance |
 | **AI Error Summaries** | Get human-readable explanations of cryptic XSD errors |
-| **History** | View your previous generations and validations |
+| **History** | View your previous generations and validations (IP-based) |
 
 ---
 
@@ -171,3 +171,28 @@ Click the **Fix All with AI** button to automatically correct validation errors.
 3. **Validate often** - Check your XML before each API call during development
 4. **Read AI summaries** - Learn from error explanations to improve your code
 5. **Check the History** - Revisit previous generations without re-prompting
+
+---
+
+## Coming Soon
+
+The following features are planned for future releases:
+
+### XML Generator Enhancements
+
+| Feature | Description |
+|---------|-------------|
+| **URL Support in Prompts** | Include product page URLs in your prompt, and the AI will fetch product names, details, and image URLs automatically |
+| **Feature Selection Modal** | Interactive overview of all available XML features to select before generating, creating richer and more complete output |
+
+### Direct API Integration
+
+| Feature | Description |
+|---------|-------------|
+| **Send to API** | Send validated SOAP messages directly to the Colect API endpoint from within the tool - skip the SOAP client (SoapUI/Postman) step entirely |
+
+### Validation Enhancements
+
+| Feature | Description |
+|---------|-------------|
+| **XML Richness Analysis** | After validation, get an analysis of all features present in your XML and how "rich" or complete your data is compared to the full schema |
