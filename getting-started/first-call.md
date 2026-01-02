@@ -40,6 +40,8 @@ The simplest operation to verify your setup:
     </soapenv:Body>
 </soapenv:Envelope>
 ```
+
+[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#xml=PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHNvYXBlbnY6RW52ZWxvcGUKICAgIHhtbG5zOnNvYXBlbnY9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIgogICAgeG1sbnM6YXBpPSJodHRwOi8vYXBpLmNjLnNhbGVzYXBwLmFwcHRpdHVkZS5ubC8iPgogICAgPHNvYXBlbnY6SGVhZGVyLz4KICAgIDxzb2FwZW52OkJvZHk+CiAgICAgICAgPGFwaTpnZXRJbmZvPgogICAgICAgICAgICA8YXBpOmFwaUtleT55b3VyLWFwaS1rZXk8L2FwaTphcGlLZXk+CiAgICAgICAgPC9hcGk6Z2V0SW5mbz4KICAgIDwvc29hcGVudjpCb2R5Pgo8L3NvYXBlbnY6RW52ZWxvcGU+)
 {% endtab %}
 
 {% tab title="cURL" %}
@@ -80,15 +82,15 @@ curl -X POST \
             <api:apiKey>your-api-key</api:apiKey>
             <api:product>
                 <api:uniqueId>STYLE-001</api:uniqueId>
-                <api:colorCode>BLK</api:colorCode>
                 <api:name>Classic T-Shirt</api:name>
                 <api:description>Premium cotton t-shirt</api:description>
-                <api:colorDesc>Black</api:colorDesc>
                 <api:brandName>Your Brand</api:brandName>
+                <api:colorCode>BLK</api:colorCode>
+                <api:colorDesc>Black</api:colorDesc>
                 <api:price>
                     <api:currencyCode>EUR</api:currencyCode>
-                    <api:wholesalePrice>25.00</api:wholesalePrice>
                     <api:retailPrice>49.95</api:retailPrice>
+                    <api:wholesalePrice>25.00</api:wholesalePrice>
                     <api:net>false</api:net>
                 </api:price>
                 <api:size>
@@ -121,6 +123,8 @@ curl -X POST \
     </soapenv:Body>
 </soapenv:Envelope>
 ```
+
+[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#xml=PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHNvYXBlbnY6RW52ZWxvcGUKICAgIHhtbG5zOnNvYXBlbnY9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIgogICAgeG1sbnM6YXBpPSJodHRwOi8vYXBpLmNjLnNhbGVzYXBwLmFwcHRpdHVkZS5ubC8iPgogICAgPHNvYXBlbnY6SGVhZGVyLz4KICAgIDxzb2FwZW52OkJvZHk+CiAgICAgICAgPGFwaTpzdG9yZVByb2R1Y3RzPgogICAgICAgICAgICA8YXBpOmFwaUtleT55b3VyLWFwaS1rZXk8L2FwaTphcGlLZXk+CiAgICAgICAgICAgIDxhcGk6cHJvZHVjdD4KICAgICAgICAgICAgICAgIDxhcGk6dW5pcXVlSWQ+U1RZTEUtMDAxPC9hcGk6dW5pcXVlSWQ+CiAgICAgICAgICAgICAgICA8YXBpOm5hbWU+Q2xhc3NpYyBULVNoaXJ0PC9hcGk6bmFtZT4KICAgICAgICAgICAgICAgIDxhcGk6ZGVzY3JpcHRpb24+UHJlbWl1bSBjb3R0b24gdC1zaGlydDwvYXBpOmRlc2NyaXB0aW9uPgogICAgICAgICAgICAgICAgPGFwaTpicmFuZE5hbWU+WW91ciBCcmFuZDwvYXBpOmJyYW5kTmFtZT4KICAgICAgICAgICAgICAgIDxhcGk6Y29sb3JDb2RlPkJMSzwvYXBpOmNvbG9yQ29kZT4KICAgICAgICAgICAgICAgIDxhcGk6Y29sb3JEZXNjPkJsYWNrPC9hcGk6Y29sb3JEZXNjPgogICAgICAgICAgICAgICAgPGFwaTpwcmljZT4KICAgICAgICAgICAgICAgICAgICA8YXBpOmN1cnJlbmN5Q29kZT5FVVI8L2FwaTpjdXJyZW5jeUNvZGU+CiAgICAgICAgICAgICAgICAgICAgPGFwaTpyZXRhaWxQcmljZT40OS45NTwvYXBpOnJldGFpbFByaWNlPgogICAgICAgICAgICAgICAgICAgIDxhcGk6d2hvbGVzYWxlUHJpY2U+MjUuMDA8L2FwaTp3aG9sZXNhbGVQcmljZT4KICAgICAgICAgICAgICAgICAgICA8YXBpOm5ldD5mYWxzZTwvYXBpOm5ldD4KICAgICAgICAgICAgICAgIDwvYXBpOnByaWNlPgogICAgICAgICAgICAgICAgPGFwaTpzaXplPgogICAgICAgICAgICAgICAgICAgIDxhcGk6bmFtZT5TPC9hcGk6bmFtZT4KICAgICAgICAgICAgICAgICAgICA8YXBpOnNvcnRDb2RlPjE8L2FwaTpzb3J0Q29kZT4KICAgICAgICAgICAgICAgICAgICA8YXBpOnN0b2NrTGV2ZWw+CiAgICAgICAgICAgICAgICAgICAgICAgIDxhcGk6cXVhbnRpdHk+MTAwPC9hcGk6cXVhbnRpdHk+CiAgICAgICAgICAgICAgICAgICAgPC9hcGk6c3RvY2tMZXZlbD4KICAgICAgICAgICAgICAgIDwvYXBpOnNpemU+CiAgICAgICAgICAgICAgICA8YXBpOnNpemU+CiAgICAgICAgICAgICAgICAgICAgPGFwaTpuYW1lPk08L2FwaTpuYW1lPgogICAgICAgICAgICAgICAgICAgIDxhcGk6c29ydENvZGU+MjwvYXBpOnNvcnRDb2RlPgogICAgICAgICAgICAgICAgICAgIDxhcGk6c3RvY2tMZXZlbD4KICAgICAgICAgICAgICAgICAgICAgICAgPGFwaTpxdWFudGl0eT4xNTA8L2FwaTpxdWFudGl0eT4KICAgICAgICAgICAgICAgICAgICA8L2FwaTpzdG9ja0xldmVsPgogICAgICAgICAgICAgICAgPC9hcGk6c2l6ZT4KICAgICAgICAgICAgICAgIDxhcGk6c2l6ZT4KICAgICAgICAgICAgICAgICAgICA8YXBpOm5hbWU+TDwvYXBpOm5hbWU+CiAgICAgICAgICAgICAgICAgICAgPGFwaTpzb3J0Q29kZT4zPC9hcGk6c29ydENvZGU+CiAgICAgICAgICAgICAgICAgICAgPGFwaTpzdG9ja0xldmVsPgogICAgICAgICAgICAgICAgICAgICAgICA8YXBpOnF1YW50aXR5PjEyMDwvYXBpOnF1YW50aXR5PgogICAgICAgICAgICAgICAgICAgIDwvYXBpOnN0b2NrTGV2ZWw+CiAgICAgICAgICAgICAgICA8L2FwaTpzaXplPgogICAgICAgICAgICAgICAgPGFwaTptZWRpdW0+CiAgICAgICAgICAgICAgICAgICAgPGFwaTp0eXBlPklNQUdFX1BSSU1BUlk8L2FwaTp0eXBlPgogICAgICAgICAgICAgICAgICAgIDxhcGk6dXJsPmh0dHBzOi8vY2RuLmV4YW1wbGUuY29tL3Byb2R1Y3RzL3N0eWxlLTAwMS1ibGsuanBnPC9hcGk6dXJsPgogICAgICAgICAgICAgICAgPC9hcGk6bWVkaXVtPgogICAgICAgICAgICA8L2FwaTpwcm9kdWN0PgogICAgICAgIDwvYXBpOnN0b3JlUHJvZHVjdHM+CiAgICA8L3NvYXBlbnY6Qm9keT4KPC9zb2FwZW52OkVudmVsb3BlPg==)
 {% endtab %}
 
 {% tab title="Response" %}
@@ -157,17 +161,14 @@ An empty response body indicates success.
                 <api:name>Fashion Boutique Amsterdam</api:name>
                 <api:email>orders@fashionboutique.nl</api:email>
                 <api:currencyCode>EUR</api:currencyCode>
-                <api:street>Kalverstraat</api:street>
-                <api:houseNumber>123</api:houseNumber>
-                <api:postalCode>1012 PA</api:postalCode>
-                <api:city>Amsterdam</api:city>
-                <api:country>NL</api:country>
-                <api:activePriceGroup>RETAIL</api:activePriceGroup>
+                <api:retailCurrencyCode>EUR</api:retailCurrencyCode>
             </api:customer>
         </api:storeCustomers>
     </soapenv:Body>
 </soapenv:Envelope>
 ```
+
+[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#xml=PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHNvYXBlbnY6RW52ZWxvcGUKICAgIHhtbG5zOnNvYXBlbnY9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIgogICAgeG1sbnM6YXBpPSJodHRwOi8vYXBpLmNjLnNhbGVzYXBwLmFwcHRpdHVkZS5ubC8iPgogICAgPHNvYXBlbnY6SGVhZGVyLz4KICAgIDxzb2FwZW52OkJvZHk+CiAgICAgICAgPGFwaTpzdG9yZUN1c3RvbWVycz4KICAgICAgICAgICAgPGFwaTphcGlLZXk+eW91ci1hcGkta2V5PC9hcGk6YXBpS2V5PgogICAgICAgICAgICA8YXBpOmN1c3RvbWVyPgogICAgICAgICAgICAgICAgPGFwaTpjdXN0b21lck5vPkNVU1QtMDAxPC9hcGk6Y3VzdG9tZXJObz4KICAgICAgICAgICAgICAgIDxhcGk6bmFtZT5GYXNoaW9uIEJvdXRpcXVlIEFtc3RlcmRhbTwvYXBpOm5hbWU+CiAgICAgICAgICAgICAgICA8YXBpOmVtYWlsPm9yZGVyc0BmYXNoaW9uYm91dGlxdWUubmw8L2FwaTplbWFpbD4KICAgICAgICAgICAgICAgIDxhcGk6Y3VycmVuY3lDb2RlPkVVUjwvYXBpOmN1cnJlbmN5Q29kZT4KICAgICAgICAgICAgICAgIDxhcGk6cmV0YWlsQ3VycmVuY3lDb2RlPkVVUjwvYXBpOnJldGFpbEN1cnJlbmN5Q29kZT4KICAgICAgICAgICAgPC9hcGk6Y3VzdG9tZXI+CiAgICAgICAgPC9hcGk6c3RvcmVDdXN0b21lcnM+CiAgICA8L3NvYXBlbnY6Qm9keT4KPC9zb2FwZW52OkVudmVsb3BlPg==)
 {% endtab %}
 
 {% tab title="Response" %}
@@ -205,6 +206,8 @@ After your customers place orders in the Colect app or B2B webstore:
     </soapenv:Body>
 </soapenv:Envelope>
 ```
+
+[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#xml=PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHNvYXBlbnY6RW52ZWxvcGUKICAgIHhtbG5zOnNvYXBlbnY9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIgogICAgeG1sbnM6YXBpPSJodHRwOi8vYXBpLmNjLnNhbGVzYXBwLmFwcHRpdHVkZS5ubC8iPgogICAgPHNvYXBlbnY6SGVhZGVyLz4KICAgIDxzb2FwZW52OkJvZHk+CiAgICAgICAgPGFwaTpnZXRVbnByb2Nlc3NlZE9yZGVycz4KICAgICAgICAgICAgPGFwaTphcGlLZXk+eW91ci1hcGkta2V5PC9hcGk6YXBpS2V5PgogICAgICAgIDwvYXBpOmdldFVucHJvY2Vzc2VkT3JkZXJzPgogICAgPC9zb2FwZW52OkJvZHk+Cjwvc29hcGVudjpFbnZlbG9wZT4=)
 {% endtab %}
 
 {% tab title="Response" %}

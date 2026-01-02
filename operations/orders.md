@@ -57,6 +57,8 @@ Retrieve all orders that haven't been marked as processed yet. This is your prim
 </soapenv:Envelope>
 ```
 
+[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#xml=PHNvYXBlbnY6RW52ZWxvcGUgeG1sbnM6c29hcGVudj0iaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvc29hcC9lbnZlbG9wZS8iIHhtbG5zOmFwaT0iaHR0cDovL2FwaS5jYy5zYWxlc2FwcC5hcHB0aXR1ZGUubmwvIj4KICAgIDxzb2FwZW52OkhlYWRlci8+CiAgICA8c29hcGVudjpCb2R5PgogICAgICAgIDxhcGk6Z2V0VW5wcm9jZXNzZWRPcmRlcnM+CiAgICAgICAgICAgIDxhcGk6YXBpS2V5PnlvdXItYXBpLWtleTwvYXBpOmFwaUtleT4KICAgICAgICA8L2FwaTpnZXRVbnByb2Nlc3NlZE9yZGVycz4KICAgIDwvc29hcGVudjpCb2R5Pgo8L3NvYXBlbnY6RW52ZWxvcGU+)
+
 ### Response
 
 ```xml
@@ -149,6 +151,8 @@ Retrieve specific orders by their order number. Useful for re-fetching orders or
 </soapenv:Envelope>
 ```
 
+[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#xml=PHNvYXBlbnY6RW52ZWxvcGUgeG1sbnM6c29hcGVudj0iaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvc29hcC9lbnZlbG9wZS8iIHhtbG5zOmFwaT0iaHR0cDovL2FwaS5jYy5zYWxlc2FwcC5hcHB0aXR1ZGUubmwvIj4KICAgIDxzb2FwZW52OkhlYWRlci8+CiAgICA8c29hcGVudjpCb2R5PgogICAgICAgIDxhcGk6Z2V0T3JkZXJzPgogICAgICAgICAgICA8YXBpOmFwaUtleT55b3VyLWFwaS1rZXk8L2FwaTphcGlLZXk+CiAgICAgICAgICAgIDxhcGk6b3JkZXJOdW1iZXI+QUJDMTIzREVGNDU2PC9hcGk6b3JkZXJOdW1iZXI+CiAgICAgICAgICAgIDxhcGk6b3JkZXJOdW1iZXI+WFlaNzg5R0hJMDEyPC9hcGk6b3JkZXJOdW1iZXI+CiAgICAgICAgPC9hcGk6Z2V0T3JkZXJzPgogICAgPC9zb2FwZW52OkJvZHk+Cjwvc29hcGVudjpFbnZlbG9wZT4=)
+
 ### Response
 
 ```xml
@@ -192,6 +196,8 @@ Only mark orders as processed **after** they have been successfully imported int
     </soapenv:Body>
 </soapenv:Envelope>
 ```
+
+[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#xml=PHNvYXBlbnY6RW52ZWxvcGUgeG1sbnM6c29hcGVudj0iaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvc29hcC9lbnZlbG9wZS8iIHhtbG5zOmFwaT0iaHR0cDovL2FwaS5jYy5zYWxlc2FwcC5hcHB0aXR1ZGUubmwvIj4KICAgIDxzb2FwZW52OkhlYWRlci8+CiAgICA8c29hcGVudjpCb2R5PgogICAgICAgIDxhcGk6bWFya09yZGVyc0FzUHJvY2Vzc2VkPgogICAgICAgICAgICA8YXBpOmFwaUtleT55b3VyLWFwaS1rZXk8L2FwaTphcGlLZXk+CiAgICAgICAgICAgIDxhcGk6b3JkZXJOdW1iZXI+QUJDMTIzREVGNDU2PC9hcGk6b3JkZXJOdW1iZXI+CiAgICAgICAgICAgIDxhcGk6b3JkZXJOdW1iZXI+WFlaNzg5R0hJMDEyPC9hcGk6b3JkZXJOdW1iZXI+CiAgICAgICAgPC9hcGk6bWFya09yZGVyc0FzUHJvY2Vzc2VkPgogICAgPC9zb2FwZW52OkJvZHk+Cjwvc29hcGVudjpFbnZlbG9wZT4=)
 
 ### Response
 

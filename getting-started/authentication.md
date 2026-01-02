@@ -35,6 +35,8 @@ The `apiKey` parameter is the first parameter in every API operation:
     </soapenv:Body>
 </soapenv:Envelope>
 ```
+
+[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#xml=PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHNvYXBlbnY6RW52ZWxvcGUKICAgIHhtbG5zOnNvYXBlbnY9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIgogICAgeG1sbnM6YXBpPSJodHRwOi8vYXBpLmNjLnNhbGVzYXBwLmFwcHRpdHVkZS5ubC8iPgogICAgPHNvYXBlbnY6SGVhZGVyLz4KICAgIDxzb2FwZW52OkJvZHk+CiAgICAgICAgPGFwaTpnZXRJbmZvPgogICAgICAgICAgICA8YXBpOmFwaUtleT55b3VyLWFwaS1rZXktaGVyZTwvYXBpOmFwaUtleT4KICAgICAgICA8L2FwaTpnZXRJbmZvPgogICAgPC9zb2FwZW52OkJvZHk+Cjwvc29hcGVudjpFbnZlbG9wZT4=)
 {% endtab %}
 
 {% tab title="Response" %}
@@ -155,6 +157,8 @@ Use the `getInfo` operation to verify your API key and connection:
     </soapenv:Body>
 </soapenv:Envelope>
 ```
+
+[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#xml=PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHNvYXBlbnY6RW52ZWxvcGUKICAgIHhtbG5zOnNvYXBlbnY9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIgogICAgeG1sbnM6YXBpPSJodHRwOi8vYXBpLmNjLnNhbGVzYXBwLmFwcHRpdHVkZS5ubC8iPgogICAgPHNvYXBlbnY6SGVhZGVyLz4KICAgIDxzb2FwZW52OkJvZHk+CiAgICAgICAgPGFwaTpnZXRJbmZvPgogICAgICAgICAgICA8YXBpOmFwaUtleT55b3VyLWFwaS1rZXktaGVyZTwvYXBpOmFwaUtleT4KICAgICAgICA8L2FwaTpnZXRJbmZvPgogICAgPC9zb2FwZW52OkJvZHk+Cjwvc29hcGVudjpFbnZlbG9wZT4=)
 
 A successful response confirms your API key is valid and returns your collection name.
 
