@@ -103,7 +103,7 @@ Historical orders are primarily for display purposes - they show customers their
 </soapenv:Envelope>
 ```
 
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#url=https%3A%2F%2Fraw.githubusercontent.com%2Fmichieltol%2Fsoap-docs%2Fmain%2Fdocs%2Fexamples%2FstoreHistoricalOrders.xml)
+[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#url=https%3A%2F%2Fraw.githubusercontent.com%2Fscienced%2Fcolect-soap-api-docs%2Frefs%2Fheads%2Fmain%2Fexamples%2FstoreHistoricalOrders.xml)
 
 ### Response
 
