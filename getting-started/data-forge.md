@@ -17,9 +17,13 @@ Colect Data Forge is an AI-powered tool for generating and validating SOAP XML r
 | Feature | Description |
 |---------|-------------|
 | **XML Generator** | Generate valid SOAP XML examples using natural language prompts |
+| **URL Extraction** | Include product URLs in prompts to auto-fetch names, details, and images |
+| **Generation Settings** | Select specific features (sizes, pricing, media) before generating |
 | **XML Validator** | Validate your XML against the official XSD schema |
 | **AI Error Fixing** | Automatically fix validation errors with AI assistance |
 | **AI Error Summaries** | Get human-readable explanations of cryptic XSD errors |
+| **Analysis Panel** | See how complete your XML is compared to the full schema |
+| **Send to API** | Send validated requests directly to the Colect API endpoint |
 | **History** | View your previous generations and validations (IP-based) |
 
 ---
@@ -65,6 +69,31 @@ The tool provides quick example buttons for common scenarios:
 - Historical orders
 - Customers
 - Products with sizes S, M, L and color variations
+
+### URL Extraction
+
+Include product page URLs in your prompt, and the AI will automatically fetch and extract:
+- Product names and descriptions
+- Image URLs
+- Other product details from the page
+
+When a URL is detected, you'll see a notification: **"URL detected - will fetch and extract product data"**
+
+### Generation Settings
+
+Click the settings icon to open the Generation Settings modal, where you can select exactly which features to include in your generated XML.
+
+<figure><img src="../.gitbook/assets/colect-data-forge-generation-settings.jpg" alt="Generation Settings modal showing feature selection"><figcaption>Generation Settings modal with operation selector and feature checkboxes</figcaption></figure>
+
+**Available feature categories:**
+
+| Category | Options |
+|----------|---------|
+| **Sizes** | Size Names, Sub-sizes, EAN/Barcode Codes, Stock Levels, Replenishment Dates, Prepacks, Customer Size Naming |
+| **Pricing** | Retail Price, Wholesale Price, Original Prices, Purchase Price, Price Groups, Customer-specific Prices, Size-specific Prices, Price Validity Periods |
+| **Media** | Primary Image, Swatch Image, Back/Model Images, Additional Images |
+
+Use **All** or **None** buttons to quickly select or deselect all options in a category.
 
 ### Limitations
 
@@ -124,6 +153,54 @@ Click the **Fix All with AI** button to automatically correct validation errors.
 
 ---
 
+## Analysis Panel
+
+The Analysis panel provides a real-time overview of how complete your XML is compared to the full schema capabilities.
+
+<figure><img src="../.gitbook/assets/colect-data-forge-analysis.jpg" alt="Analysis panel showing XML completeness"><figcaption>Analysis panel showing which features are present in your XML</figcaption></figure>
+
+### What it Shows
+
+For each operation, the panel displays categories with checkmarks indicating which features are present:
+
+| Category | Tracked Features |
+|----------|-----------------|
+| **Sizes** | Size Names, Sub-sizes, EAN/Barcode Codes, Stock Levels, Replenishment Dates, Prepacks |
+| **Pricing** | Retail Price, Wholesale Price, Original Prices, Purchase Price, Price Groups, Customer-specific Prices |
+| **Media** | Primary Image, Swatch Image, Back/Model Images, Additional Images |
+
+- ✓ **Green checkmark** - Feature is present in your XML
+- ✗ **Red X** - Feature is not present
+
+The counters (e.g., "10/27", "3/7") show how many items include each feature category.
+
+---
+
+## Send to SOAP Endpoint
+
+Test your XML directly against the Colect API without needing a separate SOAP client like SoapUI or Postman.
+
+<figure><img src="../.gitbook/assets/colect-data-forge-send-to-api.jpg" alt="Send to SOAP Endpoint dialog"><figcaption>Send to SOAP Endpoint dialog with API key field and response preview</figcaption></figure>
+
+### How to Use
+
+1. Generate or validate your XML
+2. Click the **Send** button (paper airplane icon) in the toolbar
+3. Enter your **API Key** (saved automatically for future use)
+4. Click **Send Request**
+5. View the response in the dialog
+
+### Response Handling
+
+- **Success** - Empty response body indicates the operation completed successfully
+- **Error** - The response will show the SOAP fault with error details
+
+{% hint style="warning" %}
+**API Key Security:** Your API key is stored locally in your browser and sent directly to the Colect API. It is never stored on the Forge server.
+{% endhint %}
+
+---
+
 ## Common Validation Errors
 
 | Error | Cause | Solution |
@@ -172,27 +249,3 @@ Click the **Fix All with AI** button to automatically correct validation errors.
 4. **Read AI summaries** - Learn from error explanations to improve your code
 5. **Check the History** - Revisit previous generations without re-prompting
 
----
-
-## Coming Soon
-
-The following features are planned for future releases:
-
-### XML Generator Enhancements
-
-| Feature | Description |
-|---------|-------------|
-| **URL Support in Prompts** | Include product page URLs in your prompt, and the AI will fetch product names, details, and image URLs automatically |
-| **Feature Selection Modal** | Interactive overview of all available XML features to select before generating, creating richer and more complete output |
-
-### Direct API Integration
-
-| Feature | Description |
-|---------|-------------|
-| **Send to API** | Send validated SOAP messages directly to the Colect API endpoint from within the tool - skip the SOAP client (SoapUI/Postman) step entirely |
-
-### Validation Enhancements
-
-| Feature | Description |
-|---------|-------------|
-| **XML Richness Analysis** | After validation, get an analysis of all features present in your XML and how "rich" or complete your data is compared to the full schema |
