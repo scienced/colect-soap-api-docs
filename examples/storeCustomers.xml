@@ -1,0 +1,69 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:api="http://api.cc.salesapp.apptitude.nl/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <api:storeCustomers>
+            <api:apiKey>your-api-key</api:apiKey>
+            <api:customer>
+                <!-- Mandatory fields -->
+                <api:customerNo>CUST-001</api:customerNo>
+                <api:name>Fashion Boutique Amsterdam</api:name>
+                <api:email>orders@fashionboutique.nl</api:email>
+                <api:currencyCode>EUR</api:currencyCode>
+                <!-- Address -->
+                <api:street>Kalverstraat</api:street>
+                <api:houseNumber>123</api:houseNumber>
+                <api:postalCode>1012 PA</api:postalCode>
+                <api:city>Amsterdam</api:city>
+                <api:country>NL</api:country>
+                <api:phone>+31 20 123 4567</api:phone>
+                <!-- Pricing configuration -->
+                <api:activePriceGroup>RETAIL</api:activePriceGroup>
+                <api:status>ACTIVE</api:status>
+                <api:language>nl</api:language>
+                <api:channel>Boutique</api:channel>
+                <!-- Shipping locations -->
+                <api:shippingLocation>
+                    <api:code>MAIN</api:code>
+                    <api:name>Main Store</api:name>
+                    <api:defaultLocation>true</api:defaultLocation>
+                    <api:street>Kalverstraat</api:street>
+                    <api:houseNumber>123</api:houseNumber>
+                    <api:postalCode>1012 PA</api:postalCode>
+                    <api:city>Amsterdam</api:city>
+                    <api:country>NL</api:country>
+                </api:shippingLocation>
+                <api:shippingLocation>
+                    <api:code>WAREHOUSE</api:code>
+                    <api:name>Warehouse</api:name>
+                    <api:defaultLocation>false</api:defaultLocation>
+                    <api:street>Industrieweg</api:street>
+                    <api:houseNumber>45</api:houseNumber>
+                    <api:postalCode>1099 AB</api:postalCode>
+                    <api:city>Amsterdam</api:city>
+                    <api:country>NL</api:country>
+                </api:shippingLocation>
+                <!-- Contacts -->
+                <api:contact>
+                    <api:code>OWNER</api:code>
+                    <api:firstName>Jan</api:firstName>
+                    <api:lastName>de Vries</api:lastName>
+                    <api:email>jan@fashionboutique.nl</api:email>
+                    <api:phone>+31 6 12345678</api:phone>
+                    <api:role>Owner</api:role>
+                    <api:accessType>FULL</api:accessType>
+                </api:contact>
+                <!-- Discount configuration -->
+                <api:discountGroup>
+                    <api:code>SEASONAL</api:code>
+                    <api:percentage>10</api:percentage>
+                    <api:description>Seasonal Discount</api:description>
+                </api:discountGroup>
+                <!-- Order settings -->
+                <api:minOrderValue>250.00</api:minOrderValue>
+                <api:maxOrderValue>50000.00</api:maxOrderValue>
+                <api:orderFooter>Thank you for your order!</api:orderFooter>
+            </api:customer>
+        </api:storeCustomers>
+    </soapenv:Body>
+</soapenv:Envelope>

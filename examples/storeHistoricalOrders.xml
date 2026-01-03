@@ -1,0 +1,71 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:api="http://api.cc.salesapp.apptitude.nl/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <api:storeHistoricalOrders>
+            <api:apiKey>your-api-key</api:apiKey>
+            <api:historicalOrder>
+                <api:customerNo>CUST-001</api:customerNo>
+                <api:orderNumber>ERP-2024-00542</api:orderNumber>
+                <api:erpOrderReference>ERP-2024-00542</api:erpOrderReference>
+                <api:customerOrderReference>PO-2024-0089</api:customerOrderReference>
+                <api:timestamp>2024-11-15T10:30:00</api:timestamp>
+                <api:salesPerson>sales@yourcompany.com</api:salesPerson>
+                <api:customerPriceGroup>RETAIL</api:customerPriceGroup>
+                <api:collection>Fall/Winter 2024</api:collection>
+                <api:channel>B2B App</api:channel>
+                <api:comment>Rush order - priority shipping</api:comment>
+                <api:internalOrderType>ORDER</api:internalOrderType>
+
+                <api:shippingLocation>
+                    <api:code>MAIN</api:code>
+                    <api:name>Main Store</api:name>
+                    <api:street>Kalverstraat</api:street>
+                    <api:houseNumber>123</api:houseNumber>
+                    <api:postalCode>1012 PA</api:postalCode>
+                    <api:city>Amsterdam</api:city>
+                    <api:country>Netherlands</api:country>
+                </api:shippingLocation>
+
+                <api:orderLine>
+                    <api:status>DELIVERED</api:status>
+                    <api:type>ST</api:type>
+                    <api:productUniqueId>STYLE-001</api:productUniqueId>
+                    <api:productColorCode>BLK</api:productColorCode>
+                    <api:productDescription>Classic T-Shirt - Black</api:productDescription>
+                    <api:productCategory>T-Shirts</api:productCategory>
+                    <api:productSize>M</api:productSize>
+                    <api:productSizeSortCode>2</api:productSizeSortCode>
+                    <api:eanCode>8712345678902</api:eanCode>
+                    <api:quantity>10</api:quantity>
+                    <api:quantityDelivered>10</api:quantityDelivered>
+                    <api:currency>EUR</api:currency>
+                    <api:netWholesalePrice>25.00</api:netWholesalePrice>
+                    <api:grossWholesalePrice>25.00</api:grossWholesalePrice>
+                    <api:netLineAmount>250.00</api:netLineAmount>
+                    <api:grossLineAmount>250.00</api:grossLineAmount>
+                    <api:shipmentDate>2024-11-20T00:00:00</api:shipmentDate>
+                    <api:packingSlipNumber>PS-2024-01234</api:packingSlipNumber>
+                    <api:invoiceNumber>INV-2024-00678</api:invoiceNumber>
+                    <api:trackTraceUrl>https://tracking.carrier.com/ABC123</api:trackTraceUrl>
+                    <api:returnAllowed>true</api:returnAllowed>
+                    <api:productImageUrl>https://cdn.example.com/style-001-blk.jpg</api:productImageUrl>
+                </api:orderLine>
+                <api:orderLine>
+                    <api:status>ORDERED</api:status>
+                    <api:type>PS</api:type>
+                    <api:productUniqueId>STYLE-002</api:productUniqueId>
+                    <api:productColorCode>NVY</api:productColorCode>
+                    <api:productDescription>Premium Polo - Navy</api:productDescription>
+                    <api:productSize>L</api:productSize>
+                    <api:quantity>5</api:quantity>
+                    <api:quantityDelivered>0</api:quantityDelivered>
+                    <api:currency>EUR</api:currency>
+                    <api:netWholesalePrice>45.00</api:netWholesalePrice>
+                    <api:netLineAmount>225.00</api:netLineAmount>
+                    <api:returnAllowed>false</api:returnAllowed>
+                </api:orderLine>
+            </api:historicalOrder>
+        </api:storeHistoricalOrders>
+    </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,66 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:api="http://api.cc.salesapp.apptitude.nl/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <api:storeProducts>
+            <api:apiKey>your-api-key</api:apiKey>
+            <api:product>
+                <!-- Product 1 -->
+                <api:uniqueId>STYLE-001</api:uniqueId>
+                <api:colorCode>BLK</api:colorCode>
+                <api:name>Classic T-Shirt</api:name>
+                <api:description>Premium cotton t-shirt</api:description>
+                <api:colorDesc>Black</api:colorDesc>
+                <api:brandName>Your Brand</api:brandName>
+                <api:brandId>BRAND01</api:brandId>
+                <api:categoryCode>TSHIRTS</api:categoryCode>
+                <api:categoryDesc>T-Shirts</api:categoryDesc>
+                <api:seasonCode>SS25</api:seasonCode>
+                <api:seasonDesc>Spring/Summer 2025</api:seasonDesc>
+                <api:status>ACTIVE</api:status>
+                <!-- Pricing -->
+                <api:price>
+                    <api:currencyCode>EUR</api:currencyCode>
+                    <api:wholesalePrice>25.00</api:wholesalePrice>
+                    <api:retailPrice>49.95</api:retailPrice>
+                    <api:net>false</api:net>
+                </api:price>
+                <!-- Sizes with stock -->
+                <api:size>
+                    <api:name>S</api:name>
+                    <api:sortCode>1</api:sortCode>
+                    <api:eanCode>8712345678901</api:eanCode>
+                    <api:stockLevel>
+                        <api:quantity>100</api:quantity>
+                    </api:stockLevel>
+                </api:size>
+                <api:size>
+                    <api:name>M</api:name>
+                    <api:sortCode>2</api:sortCode>
+                    <api:eanCode>8712345678902</api:eanCode>
+                    <api:stockLevel>
+                        <api:quantity>150</api:quantity>
+                    </api:stockLevel>
+                </api:size>
+                <!-- Images -->
+                <api:medium>
+                    <api:type>IMAGE_PRIMARY</api:type>
+                    <api:url>https://cdn.example.com/style-001-blk-front.jpg</api:url>
+                </api:medium>
+                <api:medium>
+                    <api:type>IMAGE_BACK</api:type>
+                    <api:url>https://cdn.example.com/style-001-blk-back.jpg</api:url>
+                    <api:sortCode>1</api:sortCode>
+                </api:medium>
+            </api:product>
+            <api:product>
+                <!-- Product 2 -->
+                <api:uniqueId>STYLE-001</api:uniqueId>
+                <api:colorCode>WHT</api:colorCode>
+                <api:name>Classic T-Shirt</api:name>
+                <api:colorDesc>White</api:colorDesc>
+                <!-- ... additional fields ... -->
+            </api:product>
+        </api:storeProducts>
+    </soapenv:Body>
+</soapenv:Envelope>
