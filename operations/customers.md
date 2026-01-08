@@ -262,15 +262,40 @@ Remove all customers from your collection.
 
 ## Shipping Locations
 
-Customers can have multiple shipping addresses:
+Customers can have multiple shipping addresses.
+
+### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `code` | String | **Yes** | Unique location identifier |
+| `name` | String | **Yes** | Location name |
+| `defaultLocation` | Boolean | **Yes** | Is default shipping location |
+| `address` | String | No | Full address (use when structured fields unavailable) |
+| `street` | String | No | Street name |
+| `houseNumber` | String | No | House/building number |
+| `houseNumberSuffix` | String | No | Suffix (apartment, suite, etc.) |
+| `postalCode` | String | No | Postal/ZIP code |
+| `city` | String | No | City |
+| `country` | String | No | Country |
+| `email` | String | No | Location email |
+| `telephone` | String | No | Location phone |
+| `contactFirstName` | String | No | Contact first name |
+| `contactLastName` | String | No | Contact last name |
+| `contactTelephone` | String | No | Contact direct phone |
+| `externalReference` | String | No | External system reference |
+
+### Example
 
 ```xml
 <api:shippingLocation>
     <api:code>STORE-001</api:code>
     <api:name>Downtown Store</api:name>
     <api:defaultLocation>true</api:defaultLocation>
+    <api:address>100 Main Street, Suite 5A</api:address>
     <api:street>Main Street</api:street>
     <api:houseNumber>100</api:houseNumber>
+    <api:houseNumberSuffix>Suite 5A</api:houseNumberSuffix>
     <api:postalCode>10001</api:postalCode>
     <api:city>New York</api:city>
     <api:country>US</api:country>
@@ -278,6 +303,7 @@ Customers can have multiple shipping addresses:
     <api:telephone>+1 212 555 0100</api:telephone>
     <api:contactFirstName>John</api:contactFirstName>
     <api:contactLastName>Smith</api:contactLastName>
+    <api:contactTelephone>+1 212 555 0101</api:contactTelephone>
     <api:externalReference>ERP-LOC-001</api:externalReference>
 </api:shippingLocation>
 ```
@@ -286,7 +312,28 @@ Customers can have multiple shipping addresses:
 
 ## Contacts
 
-Add multiple contacts per customer for order notifications:
+Add multiple contacts per customer for order notifications and B2B webshop access.
+
+### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `code` | String | **Yes** | Unique contact identifier |
+| `firstName` | String | No | First name |
+| `lastName` | String | No | Last name |
+| `email` | String | No | Email address |
+| `phone` | String | No | Phone number |
+| `role` | String | No | Role/title |
+| `accessType` | XAccessType | No | B2B webshop access level |
+
+### Access Types
+
+| Value | Description |
+|-------|-------------|
+| `FULL` | Full access to B2B webshop |
+| `NONE` | No access to B2B webshop |
+
+### Example
 
 ```xml
 <api:contact>
@@ -299,11 +346,6 @@ Add multiple contacts per customer for order notifications:
     <api:accessType>FULL</api:accessType>
 </api:contact>
 ```
-
-| Access Type | Description |
-|-------------|-------------|
-| `FULL` | Full access to B2B webshop |
-| `NONE` | No access to B2B webshop |
 
 ---
 

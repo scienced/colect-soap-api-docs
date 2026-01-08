@@ -33,8 +33,6 @@ Products are uniquely identified by the combination of `uniqueId` + `colorCode`.
 
 ### Request
 
-againa a test
-
 ```xml
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
     xmlns:api="http://api.cc.salesapp.apptitude.nl/">
