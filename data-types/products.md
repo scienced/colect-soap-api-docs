@@ -71,8 +71,31 @@ Products are uniquely identified by `uniqueId` + `colorCode`. Each color variant
 | `minimalOrderQuantity` | Integer | Default minimum quantity required for this product (default: 0) |
 | `marginGroupCode` | String | Margin group identifier. Margin groups are defined on customer level. |
 
+### Discount Groups
+
+Products can be assigned to one or more discount groups using the `<discountGroupCode>` element. These codes link products to customer-level discount configurations.
+
+```xml
+<api:product>
+    <api:uniqueId>STYLE-001</api:uniqueId>
+    <api:colorCode>BLK</api:colorCode>
+    <!-- ... other fields ... -->
+    <api:discountGroupCode>BASIC</api:discountGroupCode>
+    <api:discountGroupCode>SEASONAL</api:discountGroupCode>
+</api:product>
+```
+
+**How it works:**
+1. Assign discount group codes to products (e.g., `BASIC`, `PREMIUM`, `SEASONAL`)
+2. Configure discount percentages on customers using `<discountGroup>` with matching codes
+3. When a customer orders a product, the system matches product codes to customer discount groups
+
 {% hint style="warning" %}
-**Discount Group Order:** The `discountGroupCodes` order is important! Discounts are evaluated in the order provided.
+**Order Matters:** Discount groups are evaluated in the order provided. If a product has multiple codes and a customer has discounts for multiple codes, the first matching discount is applied.
+{% endhint %}
+
+{% hint style="info" %}
+**Wildcard:** On the customer side, a discount group with code `*` applies to all products regardless of their discount group codes.
 {% endhint %}
 
 ### Custom Fields
@@ -109,7 +132,7 @@ Products are uniquely identified by `uniqueId` + `colorCode`. Each color variant
 | `extraFields` | `<extraField>` | List&lt;XExtraField&gt; | Custom display fields |
 | `deliveryWindows` | `<deliveryWindow>` | List&lt;XDeliveryWindow&gt; | Delivery windows/drops |
 | `minimumQuantities` | `<minimumQuantity>` | List&lt;XMinimumQuantity&gt; | Minimum order quantities per customer key |
-| `discountGroupCodes` | `<discountGroupCode>` | List&lt;String&gt; | Discount group codes (order matters!) |
+| `discountGroupCodes` | `<discountGroupCode>` | List&lt;String&gt; | Discount group codes. See [Discount Groups](#discount-groups). |
 | `sizeIndependentStockLevels` | `<sizeIndependentStockLevel>` | List&lt;XStockLevel&gt; | Overall product stock levels |
 | `translations` | `<translation>` | List&lt;XProductTranslation&gt; | Translations |
 
