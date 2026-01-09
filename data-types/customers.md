@@ -19,7 +19,7 @@ The main customer entity representing a B2B account.
 | `customerNo` | String | Unique customer identifier (from ERP) |
 | `name` | String | Company/customer name |
 | `email` | String | Primary email address |
-| `currencyCode` | String | Default currency (EUR, USD, GBP) |
+| `currencyCode` | String | Default currency. Must exactly match the currency codes used in collection settings and product/price data (e.g., EUR, USD, GBP). |
 
 ### Address Fields
 
@@ -77,21 +77,21 @@ The main customer entity representing a B2B account.
 
 | Field | Type | XML Element | Description |
 |-------|------|-------------|-------------|
-| `shippingLocations` | List&lt;XLocation&gt; | `<shippingLocation>` | Shipping addresses |
-| `contacts` | List&lt;XContact&gt; | `<contact>` | Customer contacts |
-| `agreements` | List&lt;XAgreement&gt; | `<agreement>` | Customer agreements |
-| `discountGroups` | List&lt;XDiscountGroup&gt; | `<discountGroup>` | Discount configurations |
-| `marginGroups` | List&lt;XMarginGroup&gt; | `<marginGroup>` | Margin configurations |
-| `approvalGroups` | List&lt;XCustomerApprovalGroup&gt; | `<approvalGroup>` | Approval workflows |
-| `budgetComponents` | List&lt;XBudgetComponent&gt; | `<budgetComponent>` | Budget tracking |
-| `extraFields` | List&lt;XExtraField&gt; | `<extraField>` | Custom display fields |
-| `tags` | List&lt;XTag&gt; | `<tag>` | Customer tags |
-| `customChoices` | List&lt;XCustomChoice&gt; | `<customChoice>` | Custom options |
+| `shippingLocations` | List&lt;[XLocation](#xlocation)&gt; | `<shippingLocation>` | Shipping addresses |
+| `contacts` | List&lt;[XContact](#xcontact)&gt; | `<contact>` | Customer contacts |
+| `agreements` | List&lt;[XAgreement](#xagreement)&gt; | `<agreement>` | Customer agreements |
+| `discountGroups` | List&lt;[XDiscountGroup](#xdiscountgroup)&gt; | `<discountGroup>` | Discount configurations |
+| `marginGroups` | List&lt;[XMarginGroup](#xmargingroup)&gt; | `<marginGroup>` | Margin configurations |
+| `approvalGroups` | List&lt;[XCustomerApprovalGroup](#xcustomerapprovalgroup)&gt; | `<approvalGroup>` | Approval workflows |
+| `budgetComponents` | List&lt;[XBudgetComponent](#xbudgetcomponent)&gt; | `<budgetComponent>` | Budget tracking |
+| `extraFields` | List&lt;[XExtraField](products.md#xextrafield)&gt; | `<extraField>` | Custom display fields |
+| `tags` | List&lt;[XTag](#xtag)&gt; | `<tag>` | Customer tags |
+| `customChoices` | List&lt;[XCustomChoice](#xcustomchoice)&gt; | `<customChoice>` | Custom options |
 | `sizeAccessCodes` | List&lt;String&gt; | `<sizeAccessCode>` | Size visibility codes |
 | `accessibleDeliveryWindowCodes` | List&lt;String&gt; | `<accessibleDeliveryWindowCode>` | Delivery window access |
 | `primaryUserEmailAddresses` | List&lt;String&gt; | `<primaryUserEmailAddress>` | Primary user emails |
-| `orderDiscountRules` | List&lt;XOrderAmountModificationRule&gt; | `<orderDiscountRule>` | Order-level discounts |
-| `orderDeliveryCostRules` | List&lt;XOrderAmountModificationRule&gt; | `<orderDeliveryCostRule>` | Shipping charges |
+| `orderDiscountRules` | List&lt;[XOrderAmountModificationRule](#xorderamountmodificationrule)&gt; | `<orderDiscountRule>` | Order-level discounts |
+| `orderDeliveryCostRules` | List&lt;[XOrderAmountModificationRule](#xorderamountmodificationrule)&gt; | `<orderDeliveryCostRule>` | Shipping charges |
 
 ---
 
@@ -171,8 +171,8 @@ Customer-specific agreement with terms and pricing.
 | `nextPriceGroupDate` | DateTime | No | Activation date |
 | `currencyCode` | String | No | Agreement currency |
 | `orderFooter` | String | No | Text for confirmations |
-| `marginGroups` | List&lt;XMarginGroup&gt; | No | Margin configurations |
-| `discountGroups` | List&lt;XDiscountGroup&gt; | No | Discount configurations |
+| `marginGroups` | List&lt;[XMarginGroup](#xmargingroup)&gt; | No | Margin configurations |
+| `discountGroups` | List&lt;[XDiscountGroup](#xdiscountgroup)&gt; | No | Discount configurations |
 
 ---
 
@@ -331,4 +331,4 @@ Agent's complete customer access configuration.
 | `agentEmail` | String | **Yes** | Agent email address |
 | `agentDefaultCurrency` | String | No | Default browsing currency |
 | `agentDefaultPriceGroup` | String | No | Default browsing price group |
-| `customerAccessRecords` | List&lt;XCustomerAccessRecord&gt; | No | Accessible customers |
+| `customerAccessRecords` | List&lt;[XCustomerAccessRecord](#xcustomeraccessrecord)&gt; | No | Accessible customers |

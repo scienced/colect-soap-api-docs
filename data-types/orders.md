@@ -36,11 +36,11 @@ Order placed through Colect app or B2B webstore.
 | `customerNo` | String | Customer identifier |
 | `customerPriceGroup` | String | Customer's price group |
 | `currency` | String | Order currency |
-| `shippingLocation` | XLocation | Selected shipping address |
-| `consumerLocation` | XLocation | Consumer address (instore mode) |
-| `storeLocation` | XLocation | Store address (instore mode) |
-| `contact` | XContact | Order contact person |
-| `agreement` | XAgreement | Selected agreement |
+| `shippingLocation` | [XLocation](customers.md#xlocation) | Selected shipping address |
+| `consumerLocation` | [XLocation](customers.md#xlocation) | Consumer address (instore mode) |
+| `storeLocation` | [XLocation](customers.md#xlocation) | Store address (instore mode) |
+| `contact` | [XContact](customers.md#xcontact) | Order contact person |
+| `agreement` | [XAgreement](customers.md#xagreement) | Selected agreement |
 
 ### Order Details
 
@@ -86,11 +86,11 @@ Order placed through Colect app or B2B webstore.
 
 | Field | Type | XML Element | Description |
 |-------|------|-------------|-------------|
-| `orderLines` | List&lt;XOrderLine&gt; | `<orderLine>` | Line items |
-| `customChoices` | List&lt;XCustomChoice&gt; | `<customChoice>` | Selected custom options |
-| `discountRules` | List&lt;XOrderAmountModificationRule&gt; | `<discountRule>` | Applied discount rules |
-| `deliveryCostRules` | List&lt;XOrderAmountModificationRule&gt; | `<deliveryCostRule>` | Applied shipping rules |
-| `orderConfirmation` | XOrderConfirmation | N/A | PDF confirmation (getUnprocessedOrders only) |
+| `orderLines` | List&lt;[XOrderLine](#xorderline)&gt; | `<orderLine>` | Line items |
+| `customChoices` | List&lt;[XCustomChoice](customers.md#xcustomchoice)&gt; | `<customChoice>` | Selected custom options |
+| `discountRules` | List&lt;[XOrderAmountModificationRule](customers.md#xorderamountmodificationrule)&gt; | `<discountRule>` | Applied discount rules |
+| `deliveryCostRules` | List&lt;[XOrderAmountModificationRule](customers.md#xorderamountmodificationrule)&gt; | `<deliveryCostRule>` | Applied shipping rules |
+| `orderConfirmation` | [XOrderConfirmation](#xorderconfirmation) | N/A | PDF confirmation (getUnprocessedOrders only) |
 
 ---
 
@@ -157,7 +157,7 @@ Line item in an order.
 | `index` | Integer | Line index (for duplicates) |
 | `customerSizeName` | String | Customer-specific size |
 | `customerSubSizeName` | String | Customer-specific sub-size |
-| `files` | List&lt;XRemoteFile&gt; | Attached files (XML: `<remoteFile>`) |
+| `files` | List&lt;[XRemoteFile](#xremotefile)&gt; | Attached files (XML: `<remoteFile>`) |
 
 ---
 
@@ -204,9 +204,9 @@ Past order for display in order history.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `shippingLocation` | XLocation | Shipping address |
-| `agreement` | XAgreement | Agreement used |
-| `orderLines` | List&lt;XHistoricalOrderLine&gt; | Order line items (XML: `<orderLine>`) |
+| `shippingLocation` | [XLocation](customers.md#xlocation) | Shipping address |
+| `agreement` | [XAgreement](customers.md#xagreement) | Agreement used |
+| `orderLines` | List&lt;[XHistoricalOrderLine](#xhistoricalorderline)&gt; | Order line items (XML: `<orderLine>`) |
 
 ---
 
@@ -283,8 +283,8 @@ Line item in historical order.
 
 | Field | Type | XML Element | Description |
 |-------|------|-------------|-------------|
-| `extraFields` | List&lt;XHistoricalOrderLineExtraField&gt; | `<extraField>` | Custom fields |
-| `files` | List&lt;XRemoteFile&gt; | `<remoteFile>` | Attached files |
+| `extraFields` | List&lt;[XHistoricalOrderLineExtraField](#xhistoricalorderlineextrafield)&gt; | `<extraField>` | Custom fields |
+| `files` | List&lt;[XRemoteFile](#xremotefile)&gt; | `<remoteFile>` | Attached files |
 
 ---
 
@@ -324,7 +324,26 @@ Attached file reference.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `url` | String | **Yes** | File URL |
-| `name` | String | No | File name |
+| `url` | String | **Yes** | Absolute URL to where the remote file is located |
+| `name` | String | No | Display name of the remote file |
 | `size` | Long | No | File size in bytes |
-| `type` | String | No | MIME type |
+| `type` | String | No | MIME type of the remote file |
+
+---
+
+## XHistoricalOrderLineExtraField
+
+Custom display field on historical order lines.
+
+### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `name` | String | No | Field identifier |
+| `description` | String | No | Display title/label (used as the title when displaying the field) |
+| `value` | String | No | Field value |
+| `translations` | List&lt;[XExtraFieldTranslation](products.md#xextrafieldtranslation)&gt; | No | Translations of this extra field (XML: `<translation>`) |
+
+{% hint style="info" %}
+This type is similar to [XExtraField](products.md#xextrafield) but simplified for historical order display. It does not include grouping or visibility options.
+{% endhint %}

@@ -125,16 +125,16 @@ Products can be assigned to one or more discount groups using the `<discountGrou
 
 | Java Field | XML Element | Type | Description |
 |------------|-------------|------|-------------|
-| `prices` | `<price>` | List&lt;XPrice&gt; | Product prices |
-| `sizes` | `<size>` | List&lt;XSize&gt; | Available sizes with stock |
-| `media` | `<medium>` | List&lt;XMedium&gt; | Product images/videos |
-| `labels` | `<label>` | List&lt;XLabel&gt; | Product labels/badges. Relates to `sale` and `saleBackgroundColor`. |
-| `extraFields` | `<extraField>` | List&lt;XExtraField&gt; | Custom display fields |
-| `deliveryWindows` | `<deliveryWindow>` | List&lt;XDeliveryWindow&gt; | Delivery windows/drops |
-| `minimumQuantities` | `<minimumQuantity>` | List&lt;XMinimumQuantity&gt; | Minimum order quantities per customer key |
+| `prices` | `<price>` | List&lt;[XPrice](#xprice)&gt; | Product prices |
+| `sizes` | `<size>` | List&lt;[XSize](#xsize)&gt; | Available sizes with stock |
+| `media` | `<medium>` | List&lt;[XMedium](#xmedium)&gt; | Product images/videos |
+| `labels` | `<label>` | List&lt;[XLabel](#xlabel)&gt; | Product labels/badges. Relates to `sale` and `saleBackgroundColor`. |
+| `extraFields` | `<extraField>` | List&lt;[XExtraField](#xextrafield)&gt; | Custom display fields |
+| `deliveryWindows` | `<deliveryWindow>` | List&lt;[XDeliveryWindow](#xdeliverywindow)&gt; | Delivery windows/drops |
+| `minimumQuantities` | `<minimumQuantity>` | List&lt;[XMinimumQuantity](#xminimumquantity)&gt; | Minimum order quantities per customer key |
 | `discountGroupCodes` | `<discountGroupCode>` | List&lt;String&gt; | Discount group codes. See [Discount Groups](#discount-groups). |
-| `sizeIndependentStockLevels` | `<sizeIndependentStockLevel>` | List&lt;XStockLevel&gt; | Overall product stock levels |
-| `translations` | `<translation>` | List&lt;XProductTranslation&gt; | Translations |
+| `sizeIndependentStockLevels` | `<sizeIndependentStockLevel>` | List&lt;[XStockLevel](#xstocklevel)&gt; | Overall product stock levels |
+| `translations` | `<translation>` | List&lt;[XProductTranslation](#xproducttranslation)&gt; | Translations |
 
 {% hint style="warning" %}
 **Size-Independent Stock:** If a size is out of stock, ordering is still possible until the size-independent stock level reaches 0.
@@ -176,10 +176,10 @@ Size information including stock and EAN codes.
 
 | Java Field | XML Element | Type | Description |
 |------------|-------------|------|-------------|
-| `stockLevels` | `<stockLevel>` | List&lt;XStockLevel&gt; | Stock quantities per date |
-| `extraFields` | `<extraField>` | List&lt;XExtraField&gt; | Custom display fields |
-| `prepackContentElements` | `<prepackContentElement>` | List&lt;XPrepackContentElement&gt; | Prepack contents definition |
-| `customerSizeNamings` | `<customerSizeNaming>` | List&lt;XCustomerSizeNaming&gt; | Customer-specific size names |
+| `stockLevels` | `<stockLevel>` | List&lt;[XStockLevel](#xstocklevel)&gt; | Stock quantities per date |
+| `extraFields` | `<extraField>` | List&lt;[XExtraField](#xextrafield)&gt; | Custom display fields |
+| `prepackContentElements` | `<prepackContentElement>` | List&lt;[XPrepackContentElement](#xprepackcontentelement)&gt; | Prepack contents definition |
+| `customerSizeNamings` | `<customerSizeNaming>` | List&lt;[XCustomerSizeNaming](#xcustomersizeNaming)&gt; | Customer-specific size names |
 
 {% hint style="info" %}
 **Size Access:** If `accessCode` is empty or matches one of the customer's `sizeAccessCodes`, the size is visible to that customer.
@@ -297,11 +297,15 @@ Product images and videos.
 |-------|------|----------|-------------|
 | `type` | XMediumType | **Yes** | Media type. See [Enumerations](enums.md#xmediumtype) |
 | `url` | String | **Yes** | High-resolution image/video URL |
-| `thumbUrl` | String | No | Thumbnail URL. Auto-generated if omitted, but this slows down image processing. |
+| `thumbUrl` | String | No | Thumbnail URL. Auto-generated if omitted, but this slows down image processing considerably. |
 | `sortCode` | Integer | No | Display order for sortable media types |
 
+{% hint style="warning" %}
+**IMAGE_PRIMARY Required:** Each product must have a medium of type `IMAGE_PRIMARY` to display images in the app. Without it, the product will show without any image.
+{% endhint %}
+
 {% hint style="info" %}
-**Thumbnail Generation:** While thumbnails are auto-generated if omitted, providing `thumbUrl` improves performance as auto-generation slows down image processing.
+**Thumbnail Generation:** While thumbnails are auto-generated if omitted, providing `thumbUrl` significantly improves app reload performance.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -359,6 +363,31 @@ Delivery drops or capsule collections.
 
 ---
 
+## XDeliveryWindowTranslation
+
+Translation of delivery window content for multilingual support.
+
+### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `language` | String | No | IETF language tag (e.g., "en", "nl", "de", "fr") |
+| `fields` | XTranslatedDeliveryWindowFields | No | Translated field content |
+
+---
+
+## XTranslatedDeliveryWindowFields
+
+Contains the translated values for a delivery window.
+
+### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `description` | String | No | Translated delivery window description |
+
+---
+
 ## XLabel
 
 Product badges/labels for visual highlighting.
@@ -381,14 +410,18 @@ Custom display fields for additional product information.
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `name` | String | No | Field identifier (unique within group) |
-| `description` | String | No | Display title/label |
+| `description` | String | No | Display title/label (used as the title when displaying the field) |
 | `value` | String | No | Field value |
-| `group` | String | No | Group name for collapsible organization |
+| `group` | String | No | Group name for collapsible organization (products only, not customers) |
 | `imageUrl` | String | No | Icon URL displayed next to group header |
 | `linkUrl` | String | No | Makes the field value a clickable link |
 | `important` | Boolean | **Yes** | When `true`, field is prominently displayed |
 | `visible` | Boolean | No | When `false`, field is hidden (default: true) |
-| `translations` | List&lt;XExtraFieldTranslation&gt; | No | Translations for description and value |
+| `translations` | List&lt;XExtraFieldTranslation&gt; | No | Translations for description and value (XML: `<translation>`) |
+
+{% hint style="warning" %}
+**Functional Requirement:** While `name` and `description` are technically optional in the schema, they are **functionally required** for the field to display properly. Always provide both for meaningful extra fields.
+{% endhint %}
 
 {% hint style="info" %}
 **Group Display:** Extra fields with the same `group` value are displayed together in a collapsible section. The `imageUrl` is shown as an icon next to the group header.
@@ -571,3 +604,72 @@ Used for bulk stock updates via the `updateStock` operation.
 {% hint style="info" %}
 **Usage:** This type is used specifically with the `updateStock` operation for efficient bulk stock updates without sending full product data.
 {% endhint %}
+
+---
+
+## XProductExtraFields
+
+Used for bulk extra field updates via the `updateExtraFields` operation.
+
+### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `uniqueId` | String | **Yes** | Product style identifier |
+| `colorCode` | String | **Yes** | Product color code |
+| `extraField` | List&lt;XExtraField&gt; | No | Extra fields to set on this product (XML: `<extraField>`) |
+
+{% hint style="info" %}
+**Usage:** This type is used specifically with the `updateExtraFields` operation for efficient bulk extra field updates without sending full product data.
+{% endhint %}
+
+---
+
+## XExtraFieldTranslation
+
+Translation of extra field content for multilingual support.
+
+### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `language` | String | No | IETF language tag (e.g., "en", "nl", "de", "fr") |
+| `fields` | XTranslatedExtraFieldFields | No | Translated field content |
+
+---
+
+## XTranslatedExtraFieldFields
+
+Contains the translated values for an extra field.
+
+### Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `description` | String | No | Translated display title/label |
+| `value` | String | No | Translated field value |
+
+### Example
+
+```xml
+<api:extraField>
+    <api:name>care_instructions</api:name>
+    <api:description>Care Instructions</api:description>
+    <api:value>Machine wash cold</api:value>
+    <api:important>true</api:important>
+    <api:translation>
+        <api:language>nl</api:language>
+        <api:fields>
+            <api:description>Wasinstructies</api:description>
+            <api:value>Machine wassen koud</api:value>
+        </api:fields>
+    </api:translation>
+    <api:translation>
+        <api:language>de</api:language>
+        <api:fields>
+            <api:description>Pflegehinweise</api:description>
+            <api:value>Kalt waschen</api:value>
+        </api:fields>
+    </api:translation>
+</api:extraField>
+```
