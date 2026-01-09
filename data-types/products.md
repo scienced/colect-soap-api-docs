@@ -217,14 +217,14 @@ Product pricing with currency and customer group support.
 
 ### Price Values
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `retailPrice` | Float | Suggested retail price per unit |
-| `wholesalePrice` | Float | Wholesale price per unit |
-| `originalWholesalePrice` | Float | Original wholesale price (shown when discounted) |
-| `originalRetailPrice` | Float | Original retail price (shown when discounted) |
-| `purchasePrice` | Float | Purchase/cost price per unit |
-| `net` | Boolean | Net price flag. When `true`, customer discounts and margins are NOT applied. |
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `retailPrice` | Float | No | Suggested retail price per unit |
+| `wholesalePrice` | Float | No | Wholesale price per unit |
+| `originalWholesalePrice` | Float | No | Original wholesale price (shown when discounted) |
+| `originalRetailPrice` | Float | No | Original retail price (shown when discounted) |
+| `purchasePrice` | Float | No | Purchase/cost price per unit |
+| `net` | Boolean | **Yes** | Net price flag. When `true`, customer discounts and margins are NOT applied. |
 
 ### Validity Period
 
@@ -351,7 +351,7 @@ Delivery drops or capsule collections.
 | `startDate` | DateTime | No | Window start date |
 | `endDate` | DateTime | No | Window end date |
 | `sortCode` | Integer | No | Display order |
-| `translations` | List | No | Translations |
+| `translation` | List&lt;XDeliveryWindowTranslation&gt; | No | Translations for description |
 
 {% hint style="warning" %}
 **Important:** A delivery window code must have the same `startDate` across all products. If product A has code "DROP1" starting 2025-02-01, product B cannot have "DROP1" with a different start date.
@@ -380,13 +380,13 @@ Custom display fields for additional product information.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `name` | String | **Yes** | Field identifier (unique within group) |
-| `description` | String | **Yes** | Display title/label |
+| `name` | String | No | Field identifier (unique within group) |
+| `description` | String | No | Display title/label |
 | `value` | String | No | Field value |
 | `group` | String | No | Group name for collapsible organization |
 | `imageUrl` | String | No | Icon URL displayed next to group header |
 | `linkUrl` | String | No | Makes the field value a clickable link |
-| `important` | Boolean | No | When `true`, field is prominently displayed (default: false) |
+| `important` | Boolean | **Yes** | When `true`, field is prominently displayed |
 | `visible` | Boolean | No | When `false`, field is hidden (default: true) |
 | `translations` | List&lt;XExtraFieldTranslation&gt; | No | Translations for description and value |
 
@@ -453,9 +453,12 @@ Defines the contents of a prepack/box containing multiple sizes.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `sizeName` | String | **Yes** | Size name included in prepack |
+| `count` | Integer | No | Quantity of this size in prepack |
+| `sizeName` | String | No | Size name included in prepack |
+| `sizeSortCode` | Integer | No | Size sort order |
 | `subSizeName` | String | No | Sub-size name (e.g., length) |
-| `quantity` | Integer | **Yes** | Quantity of this size in prepack |
+| `subSizeSortCode` | Integer | No | Sub-size sort order |
+| `customerSizeNaming` | List&lt;XCustomerSizeNaming&gt; | No | Customer-specific size names |
 
 ### Example
 
@@ -466,19 +469,19 @@ Defines the contents of a prepack/box containing multiple sizes.
     <api:prePackUnitCount>6</api:prePackUnitCount>
     <api:prepackContentElement>
         <api:sizeName>S</api:sizeName>
-        <api:quantity>1</api:quantity>
+        <api:count>1</api:count>
     </api:prepackContentElement>
     <api:prepackContentElement>
         <api:sizeName>M</api:sizeName>
-        <api:quantity>2</api:quantity>
+        <api:count>2</api:count>
     </api:prepackContentElement>
     <api:prepackContentElement>
         <api:sizeName>L</api:sizeName>
-        <api:quantity>2</api:quantity>
+        <api:count>2</api:count>
     </api:prepackContentElement>
     <api:prepackContentElement>
         <api:sizeName>XL</api:sizeName>
-        <api:quantity>1</api:quantity>
+        <api:count>1</api:count>
     </api:prepackContentElement>
 </api:size>
 ```
@@ -493,12 +496,12 @@ Customer-specific size name override.
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `sizeNamingCode` | String | **Yes** | Code matching customer's `sizeNamingCode` |
-| `name` | String | **Yes** | Customer-specific size name |
+| `code` | String | **Yes** | Code matching customer's `sizeNamingCode` |
+| `sizeName` | String | **Yes** | Customer-specific size name |
 | `subSizeName` | String | No | Customer-specific sub-size name |
 
 {% hint style="info" %}
-**Usage:** If a customer has a `sizeNamingCode` set, and a size has a `customerSizeNaming` with a matching `sizeNamingCode`, the customer sees the custom size name instead of the standard one.
+**Usage:** If a customer has a `sizeNamingCode` set, and a size has a `customerSizeNaming` with a matching `code`, the customer sees the custom size name instead of the standard one.
 {% endhint %}
 
 ### Example
@@ -507,12 +510,12 @@ Customer-specific size name override.
 <api:size>
     <api:name>M</api:name>
     <api:customerSizeNaming>
-        <api:sizeNamingCode>US</api:sizeNamingCode>
-        <api:name>Medium (US 8-10)</api:name>
+        <api:code>US</api:code>
+        <api:sizeName>Medium (US 8-10)</api:sizeName>
     </api:customerSizeNaming>
     <api:customerSizeNaming>
-        <api:sizeNamingCode>UK</api:sizeNamingCode>
-        <api:name>Medium (UK 12-14)</api:name>
+        <api:code>UK</api:code>
+        <api:sizeName>Medium (UK 12-14)</api:sizeName>
     </api:customerSizeNaming>
 </api:size>
 ```

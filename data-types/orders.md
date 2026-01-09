@@ -86,11 +86,11 @@ Order placed through Colect app or B2B webstore.
 
 | Field | Type | XML Element | Description |
 |-------|------|-------------|-------------|
-| `orderLines` | List | `<orderLine>` | Line items |
-| `customChoices` | List | `<customChoice>` | Selected custom options |
-| `discountRules` | List | `<discountRule>` | Applied discount rules |
-| `deliveryCostRules` | List | `<deliveryCostRule>` | Applied shipping rules |
-| `orderConfirmation` | Object | N/A | PDF confirmation (getUnprocessedOrders only) |
+| `orderLines` | List&lt;XOrderLine&gt; | `<orderLine>` | Line items |
+| `customChoices` | List&lt;XCustomChoice&gt; | `<customChoice>` | Selected custom options |
+| `discountRules` | List&lt;XOrderAmountModificationRule&gt; | `<discountRule>` | Applied discount rules |
+| `deliveryCostRules` | List&lt;XOrderAmountModificationRule&gt; | `<deliveryCostRule>` | Applied shipping rules |
+| `orderConfirmation` | XOrderConfirmation | N/A | PDF confirmation (getUnprocessedOrders only) |
 
 ---
 
@@ -157,7 +157,7 @@ Line item in an order.
 | `index` | Integer | Line index (for duplicates) |
 | `customerSizeName` | String | Customer-specific size |
 | `customerSubSizeName` | String | Customer-specific sub-size |
-| `files` | List | Attached files |
+| `files` | List&lt;XRemoteFile&gt; | Attached files (XML: `<remoteFile>`) |
 
 ---
 
@@ -206,7 +206,7 @@ Past order for display in order history.
 |-------|------|-------------|
 | `shippingLocation` | XLocation | Shipping address |
 | `agreement` | XAgreement | Agreement used |
-| `orderLines` | List | Order line items |
+| `orderLines` | List&lt;XHistoricalOrderLine&gt; | Order line items (XML: `<orderLine>`) |
 
 ---
 
@@ -283,8 +283,8 @@ Line item in historical order.
 
 | Field | Type | XML Element | Description |
 |-------|------|-------------|-------------|
-| `extraFields` | List | `<extraField>` | Custom fields |
-| `files` | List | `<remoteFile>` | Attached files |
+| `extraFields` | List&lt;XHistoricalOrderLineExtraField&gt; | `<extraField>` | Custom fields |
+| `files` | List&lt;XRemoteFile&gt; | `<remoteFile>` | Attached files |
 
 ---
 

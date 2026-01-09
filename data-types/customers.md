@@ -105,6 +105,7 @@ Shipping location/address for a customer.
 |-------|------|-------------|
 | `code` | String | Unique location identifier |
 | `name` | String | Location name |
+| `defaultLocation` | Boolean | Is default shipping location |
 
 ### Address Fields
 
@@ -132,7 +133,6 @@ Shipping location/address for a customer.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `defaultLocation` | Boolean | Is default shipping location |
 | `externalReference` | String | External system reference |
 
 ---
@@ -171,8 +171,8 @@ Customer-specific agreement with terms and pricing.
 | `nextPriceGroupDate` | DateTime | No | Activation date |
 | `currencyCode` | String | No | Agreement currency |
 | `orderFooter` | String | No | Text for confirmations |
-| `marginGroups` | List | No | Margin configurations |
-| `discountGroups` | List | No | Discount configurations |
+| `marginGroups` | List&lt;XMarginGroup&gt; | No | Margin configurations |
+| `discountGroups` | List&lt;XDiscountGroup&gt; | No | Discount configurations |
 
 ---
 
@@ -277,7 +277,7 @@ Custom option/dropdown for customer.
 | `group` | String | **Yes** | Choice group |
 | `sortCode` | Integer | No | Display order |
 | `defaultChoice` | Boolean | **Yes** | Is default selection |
-| `userTypes` | List | No | Applicable user types |
+| `userTypes` | List&lt;XUserType&gt; | No | Applicable user types |
 
 ---
 
@@ -331,4 +331,4 @@ Agent's complete customer access configuration.
 | `agentEmail` | String | **Yes** | Agent email address |
 | `agentDefaultCurrency` | String | No | Default browsing currency |
 | `agentDefaultPriceGroup` | String | No | Default browsing price group |
-| `customerAccessRecords` | List | No | Accessible customers |
+| `customerAccessRecords` | List&lt;XCustomerAccessRecord&gt; | No | Accessible customers |
