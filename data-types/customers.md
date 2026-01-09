@@ -77,21 +77,21 @@ The main customer entity representing a B2B account.
 
 | Field | Type | XML Element | Description |
 |-------|------|-------------|-------------|
-| `shippingLocations` | List | `<shippingLocation>` | Shipping addresses |
-| `contacts` | List | `<contact>` | Customer contacts |
-| `agreements` | List | `<agreement>` | Customer agreements |
-| `discountGroups` | List | `<discountGroup>` | Discount configurations |
-| `marginGroups` | List | `<marginGroup>` | Margin configurations |
-| `approvalGroups` | List | `<approvalGroup>` | Approval workflows |
-| `budgetComponents` | List | `<budgetComponent>` | Budget tracking |
-| `extraFields` | List | `<extraField>` | Custom display fields |
-| `tags` | List | `<tag>` | Customer tags |
-| `customChoices` | List | `<customChoice>` | Custom options |
-| `sizeAccessCodes` | List | `<sizeAccessCode>` | Size visibility codes |
-| `accessibleDeliveryWindowCodes` | List | `<accessibleDeliveryWindowCode>` | Delivery window access |
-| `primaryUserEmailAddresses` | List | `<primaryUserEmailAddress>` | Primary user emails |
-| `orderDiscountRules` | List | `<orderDiscountRule>` | Order-level discounts |
-| `orderDeliveryCostRules` | List | `<orderDeliveryCostRule>` | Shipping charges |
+| `shippingLocations` | List&lt;XLocation&gt; | `<shippingLocation>` | Shipping addresses |
+| `contacts` | List&lt;XContact&gt; | `<contact>` | Customer contacts |
+| `agreements` | List&lt;XAgreement&gt; | `<agreement>` | Customer agreements |
+| `discountGroups` | List&lt;XDiscountGroup&gt; | `<discountGroup>` | Discount configurations |
+| `marginGroups` | List&lt;XMarginGroup&gt; | `<marginGroup>` | Margin configurations |
+| `approvalGroups` | List&lt;XCustomerApprovalGroup&gt; | `<approvalGroup>` | Approval workflows |
+| `budgetComponents` | List&lt;XBudgetComponent&gt; | `<budgetComponent>` | Budget tracking |
+| `extraFields` | List&lt;XExtraField&gt; | `<extraField>` | Custom display fields |
+| `tags` | List&lt;XTag&gt; | `<tag>` | Customer tags |
+| `customChoices` | List&lt;XCustomChoice&gt; | `<customChoice>` | Custom options |
+| `sizeAccessCodes` | List&lt;String&gt; | `<sizeAccessCode>` | Size visibility codes |
+| `accessibleDeliveryWindowCodes` | List&lt;String&gt; | `<accessibleDeliveryWindowCode>` | Delivery window access |
+| `primaryUserEmailAddresses` | List&lt;String&gt; | `<primaryUserEmailAddress>` | Primary user emails |
+| `orderDiscountRules` | List&lt;XOrderAmountModificationRule&gt; | `<orderDiscountRule>` | Order-level discounts |
+| `orderDeliveryCostRules` | List&lt;XOrderAmountModificationRule&gt; | `<orderDeliveryCostRule>` | Shipping charges |
 
 ---
 
