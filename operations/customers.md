@@ -324,7 +324,7 @@ Add multiple contacts per customer for order notifications and B2B webshop acces
 | `email` | String | No | Email address |
 | `phone` | String | No | Phone number |
 | `role` | String | No | Role/title |
-| `accessType` | XAccessType | No | B2B webshop access level |
+| `accessType` | [XAccessType](../data-types/enums.md#xaccesstype) | No | B2B webshop access level |
 
 ### Access Types
 

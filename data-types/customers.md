@@ -57,9 +57,9 @@ The main customer entity representing a B2B account.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `status` | XCustomerStatus | Customer status |
+| `status` | [XCustomerStatus](enums.md#xcustomerstatus) | Customer status |
 | `statusMessage` | String | Message shown for WARNING status |
-| `paymentStatus` | XPaymentStatus | Payment requirement |
+| `paymentStatus` | [XPaymentStatus](enums.md#xpaymentstatus) | Payment requirement |
 | `taxPercentage` | Float | Tax rate for prepayment |
 
 ### Order Settings
@@ -151,7 +151,7 @@ Contact person for a customer.
 | `role` | String | No | Role/title |
 | `phone` | String | No | Phone number |
 | `email` | String | No | Email address |
-| `accessType` | XAccessType | No | B2B webshop access (FULL/NONE) |
+| `accessType` | [XAccessType](enums.md#xaccesstype) | No | B2B webshop access (FULL/NONE) |
 
 ---
 
@@ -224,7 +224,7 @@ Rules for order-level discounts or shipping charges.
 | `minimumOrderAmount` | Float | No | Minimum order value |
 | `startDate` | DateTime | No | Rule start date |
 | `endDate` | DateTime | No | Rule end date |
-| `evaluationMethod` | XRuleEvaluationMethod | **Yes** | When to evaluate |
+| `evaluationMethod` | [XRuleEvaluationMethod](enums.md#xruleevaluationmethod) | **Yes** | When to evaluate |
 | `amount` | Float | No | Fixed amount |
 | `discountPercentage` | Float | No | Percentage discount |
 
@@ -277,7 +277,7 @@ Custom option/dropdown for customer.
 | `group` | String | **Yes** | Choice group |
 | `sortCode` | Integer | No | Display order |
 | `defaultChoice` | Boolean | **Yes** | Is default selection |
-| `userTypes` | List&lt;XUserType&gt; | No | Applicable user types |
+| `userTypes` | List&lt;[XUserType](enums.md#xusertype)&gt; | No | Applicable user types |
 
 ---
 
@@ -302,9 +302,9 @@ Controls which products a customer can see.
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `customerNo` | String | **Yes** | Customer identifier |
-| `type` | XProductAccessRuleType | No | ADD or REMOVE (default: ADD) |
-| `operation` | XProductAccessRuleMatchOperation | No | EQUALS or CONTAINS |
-| `environment` | XEnvironment | No | APP, B2B, or both |
+| `type` | [XProductAccessRuleType](enums.md#xproductaccessruletype) | No | ADD or REMOVE (default: ADD) |
+| `operation` | [XProductAccessRuleMatchOperation](enums.md#xproductaccessrulematchoperation) | No | EQUALS or CONTAINS |
+| `environment` | [XEnvironment](enums.md#xenvironment) | No | APP, B2B, or both |
 | `uniqueId` | String | No | Product filter |
 | `colorCode` | String | No | Color filter |
 | `categoryCode` | String | No | Category filter |

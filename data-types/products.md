@@ -355,7 +355,7 @@ Delivery drops or capsule collections.
 | `startDate` | DateTime | No | Window start date |
 | `endDate` | DateTime | No | Window end date |
 | `sortCode` | Integer | No | Display order |
-| `translation` | List&lt;XDeliveryWindowTranslation&gt; | No | Translations for description |
+| `translation` | List&lt;[XDeliveryWindowTranslation](#xdeliverywindowtranslation)&gt; | No | Translations for description |
 
 {% hint style="warning" %}
 **Important:** A delivery window code must have the same `startDate` across all products. If product A has code "DROP1" starting 2025-02-01, product B cannot have "DROP1" with a different start date.
@@ -372,7 +372,7 @@ Translation of delivery window content for multilingual support.
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `language` | String | No | IETF language tag (e.g., "en", "nl", "de", "fr") |
-| `fields` | XTranslatedDeliveryWindowFields | No | Translated field content |
+| `fields` | [XTranslatedDeliveryWindowFields](#xtranslateddeliverywindowfields) | No | Translated field content |
 
 ---
 
@@ -417,7 +417,7 @@ Custom display fields for additional product information.
 | `linkUrl` | String | No | Makes the field value a clickable link |
 | `important` | Boolean | **Yes** | When `true`, field is prominently displayed |
 | `visible` | Boolean | No | When `false`, field is hidden (default: true) |
-| `translations` | List&lt;XExtraFieldTranslation&gt; | No | Translations for description and value (XML: `<translation>`) |
+| `translations` | List&lt;[XExtraFieldTranslation](#xextrafieldtranslation)&gt; | No | Translations for description and value (XML: `<translation>`) |
 
 {% hint style="warning" %}
 **Functional Requirement:** While `name` and `description` are technically optional in the schema, they are **functionally required** for the field to display properly. Always provide both for meaningful extra fields.
@@ -454,7 +454,7 @@ Relationship between products.
 | `sourceProductColorCode` | String | Source color |
 | `targetProductUniqueId` | String | Target product style |
 | `targetProductColorCode` | String | Target color |
-| `type` | ProductRelationType | `MATCHING_SET` or `SUCCESSOR` |
+| `type` | [ProductRelationType](enums.md#productrelationtype) | `MATCHING_SET` or `SUCCESSOR` |
 
 ---
 
@@ -465,7 +465,7 @@ Relationship between products.
 | Field | Type | Description |
 |-------|------|-------------|
 | `language` | String | Language code (en, nl, de, fr) |
-| `fields` | XTranslatedProductFields | Translated field values |
+| `fields` | [XTranslatedProductFields](#xtranslatedproductfields) | Translated field values |
 
 ### XTranslatedProductFields
 
@@ -491,7 +491,7 @@ Defines the contents of a prepack/box containing multiple sizes.
 | `sizeSortCode` | Integer | No | Size sort order |
 | `subSizeName` | String | No | Sub-size name (e.g., length) |
 | `subSizeSortCode` | Integer | No | Sub-size sort order |
-| `customerSizeNaming` | List&lt;XCustomerSizeNaming&gt; | No | Customer-specific size names |
+| `customerSizeNaming` | List&lt;[XCustomerSizeNaming](#xcustomersizeNaming)&gt; | No | Customer-specific size names |
 
 ### Example
 
@@ -571,7 +571,7 @@ Used for bulk price updates via the `updatePrices` operation.
 | `eanCode` | String | No | EAN code for SKU-specific pricing |
 | `customerNo` | String | No | Customer number for customer-specific pricing |
 | `priceGroup` | String | No | Price group for tier pricing |
-| `priceType` | XPriceType | No | Type of price to update (RETAIL, WHOLESALE, etc.) |
+| `priceType` | [XPriceType](enums.md#xpricetype) | No | Type of price to update (RETAIL, WHOLESALE, etc.) |
 | `price` | Float | No | Price value |
 | `startDate` | DateTime | No | Price validity start date |
 | `endDate` | DateTime | No | Price validity end date |
@@ -595,7 +595,7 @@ Used for bulk stock updates via the `updateStock` operation.
 | `eanCode` | String | No* | EAN code for SKU identification |
 | `sizeName` | String | No | Size name |
 | `subSizeName` | String | No | Sub-size name |
-| `stockLevels` | List&lt;XStockLevel&gt; | No | Stock quantities per date |
+| `stockLevels` | List&lt;[XStockLevel](#xstocklevel)&gt; | No | Stock quantities per date |
 
 {% hint style="warning" %}
 **Identification:** Provide either `productUniqueId` + `productColorCode` + `sizeName`, or `eanCode` to identify the size to update.
@@ -617,7 +617,7 @@ Used for bulk extra field updates via the `updateExtraFields` operation.
 |-------|------|----------|-------------|
 | `uniqueId` | String | **Yes** | Product style identifier |
 | `colorCode` | String | **Yes** | Product color code |
-| `extraField` | List&lt;XExtraField&gt; | No | Extra fields to set on this product (XML: `<extraField>`) |
+| `extraField` | List&lt;[XExtraField](#xextrafield)&gt; | No | Extra fields to set on this product (XML: `<extraField>`) |
 
 {% hint style="info" %}
 **Usage:** This type is used specifically with the `updateExtraFields` operation for efficient bulk extra field updates without sending full product data.
@@ -634,7 +634,7 @@ Translation of extra field content for multilingual support.
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
 | `language` | String | No | IETF language tag (e.g., "en", "nl", "de", "fr") |
-| `fields` | XTranslatedExtraFieldFields | No | Translated field content |
+| `fields` | [XTranslatedExtraFieldFields](#xtranslatedextrafieldfields) | No | Translated field content |
 
 ---
 

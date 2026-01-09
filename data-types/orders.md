@@ -70,8 +70,8 @@ Order placed through Colect app or B2B webstore.
 |-------|------|-------------|
 | `totalCount` | Integer | Total quantity |
 | `totalAmount` | Float | Total value |
-| `status` | XOrderStatus | Order status |
-| `internalOrderType` | XInternalOrderType | ORDER or RETURN |
+| `status` | [XOrderStatus](enums.md#xorderstatus) | Order status |
+| `internalOrderType` | [XInternalOrderType](enums.md#xinternalordertype) | ORDER or RETURN |
 | `orderTypeCode` | String | Order type dropdown value |
 | `approvalInfo` | String | Approval information |
 
@@ -116,7 +116,7 @@ Line item in an order.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `type` | XOrderLineType | STOCK_ORDER, PRE_ORDER, RETURN_ORDER |
+| `type` | [XOrderLineType](enums.md#xorderlinetype) | STOCK_ORDER, PRE_ORDER, RETURN_ORDER |
 | `numberOfPieces` | Integer | Quantity ordered |
 | `prePackUnitCount` | Integer | Units per prepack |
 | `retailPrice` | Float | Retail price |
@@ -197,7 +197,7 @@ Past order for display in order history.
 | `channel` | String | Order channel |
 | `comment` | String | Order comment |
 | `externalUrl` | String | Link to external order |
-| `internalOrderType` | XInternalOrderType | ORDER or RETURN |
+| `internalOrderType` | [XInternalOrderType](enums.md#xinternalordertype) | ORDER or RETURN |
 | `orderTypeCode` | String | External order type |
 
 ### Related Objects
