@@ -121,10 +121,10 @@ Products can be assigned to one or more discount groups using the `<discountGrou
 ### Nested Collections (XML Element Names)
 
 {% hint style="info" %}
-**WS: Naming Convention:** The Java field names differ from XML element names. Use the XML Element name in your SOAP requests.
+**WS: Naming Convention:** The field names in this documentation differ from XML element names. Use the XML Element name in your SOAP requests.
 {% endhint %}
 
-| Java Field                   | XML Element                   | Type                                                         | Description                                                               |
+| Field Name                   | XML Element                   | Type                                                         | Description                                                               |
 | ---------------------------- | ----------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------- |
 | `prices`                     | `<price>`                     | List<[XPrice](products.md#xprice)>                           | Product prices                                                            |
 | `sizes`                      | `<size>`                      | List<[XSize](products.md#xsize)>                             | Available sizes with stock                                                |
@@ -175,7 +175,7 @@ Size information including stock and EAN codes.
 
 ### Nested Collections
 
-| Java Field               | XML Element               | Type                                                               | Description                  |
+| Field Name               | XML Element               | Type                                                               | Description                  |
 | ------------------------ | ------------------------- | ------------------------------------------------------------------ | ---------------------------- |
 | `stockLevels`            | `<stockLevel>`            | List<[XStockLevel](products.md#xstocklevel)>                       | Stock quantities per date    |
 | `extraFields`            | `<extraField>`            | List<[XExtraField](products.md#xextrafield)>                       | Custom display fields        |

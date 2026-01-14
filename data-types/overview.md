@@ -41,14 +41,14 @@ This reference documents all data types used in the Colect SOAP API v3.0.
 
 The API uses specific naming conventions for XML elements:
 
-| Java Type | XML Element Pattern | Example |
+| Data Type | XML Element Pattern | Example |
 |-----------|---------------------|---------|
 | Single object | camelCase | `<product>`, `<customer>` |
 | List element | Singular name | `<size>`, `<price>`, `<medium>` |
 | Collection | Multiple elements | Multiple `<size>` elements |
 
 {% hint style="info" %}
-**WS: Prefix Note:** In the original Java documentation, fields prefixed with "WS:" indicate a different XML name. For example, `prices (WS:price)` means the Java field is `prices` but the XML element is `<price>`.
+**WS: Prefix Note:** Fields prefixed with "WS:" indicate a different XML element name. For example, `prices (WS:price)` means the field is named `prices` but the XML element is `<price>`.
 {% endhint %}
 
 ### Type Suffixes
