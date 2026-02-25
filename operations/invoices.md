@@ -1,4 +1,4 @@
-# Invoice Operations
+# Invoices
 
 Push invoice data to Colect so your customers can view their outstanding invoices and payment status in the app and B2B webstore.
 
@@ -6,18 +6,13 @@ Push invoice data to Colect so your customers can view their outstanding invoice
 **Full Example:** [Download complete storeFullInvoiceSetForCustomer.xml](https://assets.apptitude.nl/KnowledgeBase/Webservice_3_0/External/storeFullInvoiceSetForCustomer.xml) - A comprehensive example showing all available invoice fields.
 {% endhint %}
 
----
+***
 
 ## Operations Overview
 
-| Operation | Type | Description |
-|-----------|------|-------------|
-| [`storeInvoices`](#storeinvoices) | Partial Sync | Add or update invoices |
-| [`storeFullInvoiceSetForCustomer`](#storefullinvoicesetforcustomer) | Full Sync | Replace all invoices for a customer |
-| [`deleteInvoices`](#deleteinvoices) | Delete | Remove specific invoices |
-| [`deleteAllInvoices`](#deleteallinvoices) | Delete | Clear all invoices |
+<table><thead><tr><th width="282.21484375">Operation</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><a href="invoices.md#storeinvoices"><code>storeInvoices</code></a></td><td>Partial Sync</td><td>Add or update invoices</td></tr><tr><td><a href="invoices.md#storefullinvoicesetforcustomer"><code>storeFullInvoiceSetForCustomer</code></a></td><td>Full Sync</td><td>Replace all invoices for a customer</td></tr><tr><td><a href="invoices.md#deleteinvoices"><code>deleteInvoices</code></a></td><td>Delete</td><td>Remove specific invoices</td></tr><tr><td><a href="invoices.md#deleteallinvoices"><code>deleteAllInvoices</code></a></td><td>Delete</td><td>Clear all invoices</td></tr></tbody></table>
 
----
+***
 
 ## storeInvoices
 
@@ -77,7 +72,7 @@ Invoices are uniquely identified by `customerNo` + `invoiceNumber`. Sending an i
 </soapenv:Envelope>
 ```
 
----
+***
 
 ## storeFullInvoiceSetForCustomer
 
@@ -118,7 +113,7 @@ Only affects invoices for the specified customer. Other customers' invoices rema
 
 [Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwZw9ghgDgpgdgNwFwFFEwDZlgAgB4C2GcIS408CAvAEQAWALg1EgPSsgDGdMBEIAOkIZyUAWABOAcw6QorSpmwxWNAFA5N+IiSTQAlrUbM2rAwM6cBICBhg2oY6FAb6GAVwAmMAXAyqAPg0tUDlKJAAJGAhvCVYgrRxQikQkACEwTwBPBMSQgzIGSRgAMXcMDABJRDB9ThgAZRgGEskAYXcQIoIYCVy8vOACgwBpGByssHcJAFoDGYBrceAzKH09NbGc4IHEobWkTk7u3oA5MAC2gFUGgBUZgAYHgEYVgqOusB6Jc-7dzX2630NTqMD+-z272OXzOF2ud0eLzeBw+Jx+Fx2EMhB2BCFq9VO7gIACNegFKqcAGozABMDxpAFZEQ8ACw05FAkEEomkvqYrEAgqeCAMMF0xmPZ4zZ4M25PJDyp4cpDC0XggWAlXuGAAERFYvpTPp0pZcoeCvNStW6082r1av5GqhEgk8E4ORQVwASsqji63dsBYMClMGF0IHBPMCpABBAhTOAMAIy540gQMh7K0PhyPRuMJpOOrHAACEMxmOAEVZw5fVA2VuPxYKLwZxXObQex61RMPRlxu9yer2th2h31+Lf+msboMJJLJFOp4qNTxZAGYG+257y6xDS+XK9Xa5OQiOZ-Vd8rPq6yhVqnjQU0Wu0x2TMStROEMtkgh+wqk0AQJRYACIA)
 
----
+***
 
 ## deleteInvoices
 
@@ -147,7 +142,7 @@ Remove specific invoices.
 
 [Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwZw9ghgDgpgdgNwFwFFEwDZlgAgB4C2GcIS408CAvAEQAWALg1EgPSsgDGdMBEIAOkIZyUAWABOAcw6QorSpmwxWNAFA5N+IiSTQAlrUbM2rAwM6cBICBhg2oY6FAb6GAVwAmMAXAyqAPg0tUDlKJAAJGAhvCVYgrRxQikQkACEwTwBPBMSQgyRvOwYYAElEMH1Oe1y8vOACgwBpGByssHcJAFoDLoBrVuAzKH09EZac4LrEhpGkfQqqmFrputnRzncQBjACGAkAOTAAgGEAVQBlABUugAZbgEYhgs3t3f2jldWZgoWESuqB3cBAARvsAqUDgA1LoAJlusIArHd7gAWWHPOZ-AEwIGg8FTb4-OaeCAlALwpF3B5dB6Iq73JCM+6Y0ak8mEomadZITYSCTwTg5FBnABKrN5nQFcCFXy5PI6DG2EDgngWUgAggQOnAGAFbhLFcrVeqtTq9ZzphLsUs5dzhmzMDASuV-ksQCshqJwhlskEvWFUmgEEpYAEgA)
 
----
+***
 
 ## deleteAllInvoices
 
@@ -173,53 +168,53 @@ Remove all invoices from your collection.
 
 [Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwZw9ghgDgpgdgNwFwFFEwDZlgAgB4C2GcIS408CAvAEQAWALg1EgPSsgDGdMBEIAOkIZyUAWABOAcw6QorSpmwxWNAFA5N+IiSTQAlrUbM2rAwM6cBICBhg2oY6FAb6GAVwAmMAXAyqAPg0tUDlKJAAJGAhvCVYgrRxQikQkACEwTwBPBMSQgyRvOwYYAEEMDABJRDB9TntcvLzgAoMAaRgcrLB3CQBaAz6Aa07gMyh9PQmOnOCmsYKimBLyqpq6hrmk2RTkDOygsdFwtAQlWACgA)
 
----
+***
 
 ## Invoice Data Structure
 
 ### Mandatory Fields
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `customerNo` | String | Customer identifier |
-| `invoiceNumber` | String | Unique invoice number |
-| `date` | DateTime | Invoice date |
-| `currency` | String | Currency code |
-| `outstandingAmount` | Float | Amount still owed |
+| Field               | Type     | Description           |
+| ------------------- | -------- | --------------------- |
+| `customerNo`        | String   | Customer identifier   |
+| `invoiceNumber`     | String   | Unique invoice number |
+| `date`              | DateTime | Invoice date          |
+| `currency`          | String   | Currency code         |
+| `outstandingAmount` | Float    | Amount still owed     |
 
 ### Optional Fields
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `dueDate` | DateTime | Payment due date |
-| `amountExcludingTax` | Float | Net amount before tax |
-| `taxAmount` | Float | Tax amount |
-| `status` | String | Status code (e.g., OPEN, PAID, OVERDUE) |
-| `externalUrl` | String | Link to invoice PDF or detail page |
-| `customField1` | String | Custom field for additional data |
-| `customField2` | String | Custom field for additional data |
-| `customField3` | String | Custom field for additional data |
-| `customField4` | String | Custom field for additional data |
+| Field                | Type     | Description                             |
+| -------------------- | -------- | --------------------------------------- |
+| `dueDate`            | DateTime | Payment due date                        |
+| `amountExcludingTax` | Float    | Net amount before tax                   |
+| `taxAmount`          | Float    | Tax amount                              |
+| `status`             | String   | Status code (e.g., OPEN, PAID, OVERDUE) |
+| `externalUrl`        | String   | Link to invoice PDF or detail page      |
+| `customField1`       | String   | Custom field for additional data        |
+| `customField2`       | String   | Custom field for additional data        |
+| `customField3`       | String   | Custom field for additional data        |
+| `customField4`       | String   | Custom field for additional data        |
 
----
+***
 
 ## Invoice Status
 
 The `status` field is a free-text field. Common values:
 
-| Status | Description |
-|--------|-------------|
-| `OPEN` | Invoice awaiting payment |
-| `PAID` | Invoice fully paid |
-| `OVERDUE` | Payment past due date |
-| `PARTIAL` | Partially paid |
-| `CREDIT` | Credit note |
+| Status    | Description              |
+| --------- | ------------------------ |
+| `OPEN`    | Invoice awaiting payment |
+| `PAID`    | Invoice fully paid       |
+| `OVERDUE` | Payment past due date    |
+| `PARTIAL` | Partially paid           |
+| `CREDIT`  | Credit note              |
 
 {% hint style="info" %}
 Use consistent status values across your invoices for proper display in the app.
 {% endhint %}
 
----
+***
 
 ## External URL
 
@@ -234,7 +229,7 @@ Provide a link to the full invoice document:
 
 Customers can click this link to view or download the complete invoice.
 
----
+***
 
 ## Custom Fields
 
@@ -250,7 +245,7 @@ Use custom fields for additional information:
 </api:invoice>
 ```
 
----
+***
 
 ## Best Practices
 
@@ -271,9 +266,10 @@ Use storeFullInvoiceSetForCustomer when:
 
 {% tab title="Outstanding Amount" %}
 Always update `outstandingAmount` when:
-- Payment is received (partial or full)
-- Invoice is credited
-- Payment is reversed
+
+* Payment is received (partial or full)
+* Invoice is credited
+* Payment is reversed
 
 ```xml
 <!-- Fully paid invoice -->
@@ -297,9 +293,9 @@ Always update `outstandingAmount` when:
 {% endtab %}
 
 {% tab title="Data Quality" %}
-- Include `dueDate` to help customers prioritize payments
-- Use meaningful `status` values
-- Provide `externalUrl` for full invoice access
-- Keep invoice data synchronized with your ERP
+* Include `dueDate` to help customers prioritize payments
+* Use meaningful `status` values
+* Provide `externalUrl` for full invoice access
+* Keep invoice data synchronized with your ERP
 {% endtab %}
 {% endtabs %}

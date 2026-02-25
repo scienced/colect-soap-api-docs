@@ -1,24 +1,24 @@
-# Colect SOAP API Documentation
+# Overview
 
 ## Version 3.0
 
 Welcome to the Colect SOAP API documentation. This API enables fashion brands to synchronize their ERP systems with the Colect platform for seamless B2B e-commerce operations.
 
----
+***
 
 ## Overview
 
 The Colect API provides a comprehensive SOAP-based interface for:
 
-| Domain | Description |
-|--------|-------------|
-| **Products** | Sync your product catalog including sizes, colors, prices, and stock levels |
-| **Customers** | Manage B2B customer accounts with pricing groups and access controls |
-| **Orders** | Retrieve orders placed through Colect apps and webstores |
-| **Invoices** | Push invoice data for customer visibility |
-| **Access Rules** | Control which products are visible to which customers |
+| Domain           | Description                                                                                                                                                           |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Products**     | Sync your complete product catalog(sizes, colors, prices, product information ,and stock levels)                                                                      |
+| **Customers**    | Manage B2B customer accounts with pricing groups and access controls                                                                                                  |
+| **Orders**       | <p>Process orders placed through the Colect Product Suites (App/B2B/DS).<br></p><p>View historical orders from Colect or the B2B channel within the ERP platform.</p> |
+| **Invoices**     | Push invoice data for customer visibility                                                                                                                             |
+| **Access Rules** | <p>Control which products are visible to which customers.</p><p></p><p>Control which agents have access to customers.</p>                                             |
 
----
+***
 
 ## Quick Start
 
@@ -31,16 +31,16 @@ https://connector.colect.services:443/services/api/3.0
 
 {% tab title="WSDL" %}
 ```
-https://connector.colect.services:443/services/api/3.0?wsdl
+https://connector.colect.services/services/api/3.0?wsdl
 ```
 {% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
-All API operations require an `apiKey` parameter. Contact Colect support to obtain your collection-specific API key.
+All API operations require a `apiKey` parameter. The api-key can be found on the collection for this see the following [link](https://docs.colect.io/admin/backend-console/collections/advanced/generate-api-key).
 {% endhint %}
 
----
+***
 
 ## Data Flow Architecture
 
@@ -57,14 +57,15 @@ All API operations require an `apiKey` parameter. Contact Colect support to obta
                                     │
             ┌───────────────────────┼───────────────────────┐
             │                       │                       │
-            ▼                       │                       ▼
+            │                       │                       ▼
     ┌───────────────┐               │               ┌───────────────┐
     │   PUSH DATA   │               │               │   PULL DATA   │
     │───────────────│               │               │───────────────│
     │ • Products    │               │               │ • Orders      │
     │ • Customers   │               │               │               │
     │ • Stock       │               │               │               │
-    │ • Prices      │               │               │               │
+    │ • Prices      │               |               |               |
+    │ • ERP.Order   |               |               |               |             
     │ • Invoices    │               │               │               │
     │ • Access Rules│               │               │               │
     └───────────────┘               │               └───────────────┘
@@ -77,47 +78,51 @@ All API operations require an `apiKey` parameter. Contact Colect support to obta
                     └───────────────────────────────┘
 ```
 
-| Direction | Data | Description |
-|-----------|------|-------------|
-| **ERP → Colect** | Products, Customers, Stock, Prices, Invoices, Access Rules | You push master data to Colect |
-| **Colect → ERP** | Orders | You pull orders placed by customers and sales reps |
+| Direction        | Data                                                                              | Description                                        |
+| ---------------- | --------------------------------------------------------------------------------- | -------------------------------------------------- |
+| **ERP → Colect** | Products, Customers, Stock, Prices, Invoices, Access Rules and Historical Orders. | You push master data to Colect                     |
+| **Colect → ERP** | Orders                                                                            | You pull orders placed by customers and sales reps |
 
----
+***
 
 ## API Operations at a Glance
 
 ### Product Management
-| Operation | Description |
-|-----------|-------------|
-| `storeProducts` | Add or update products (partial sync) |
+
+| Operation             | Description                                |
+| --------------------- | ------------------------------------------ |
+| `storeProducts`       | Add or update products (partial sync)      |
 | `storeFullProductSet` | Replace entire product catalog (full sync) |
-| `deleteProducts` | Remove specific products |
-| `deleteAllProducts` | Clear all products |
-| `getAllProducts` | Retrieve all products |
+| `deleteProducts`      | Remove specific products                   |
+| `deleteAllProducts`   | Clear all products                         |
+| `getAllProducts`      | Retrieve all products                      |
 
 ### Customer Management
-| Operation | Description |
-|-----------|-------------|
-| `storeCustomers` | Add or update customers (partial sync) |
+
+| Operation              | Description                              |
+| ---------------------- | ---------------------------------------- |
+| `storeCustomers`       | Add or update customers (partial sync)   |
 | `storeFullCustomerSet` | Replace entire customer base (full sync) |
-| `deleteCustomers` | Remove specific customers |
-| `deleteAllCustomers` | Clear all customers |
+| `deleteCustomers`      | Remove specific customers                |
+| `deleteAllCustomers`   | Clear all customers                      |
 
 ### Order Management
-| Operation | Description |
-|-----------|-------------|
-| `getUnprocessedOrders` | Get orders ready for ERP processing |
-| `getOrders` | Get orders by order number |
-| `markOrdersAsProcessed` | Mark orders as processed in ERP |
+
+| Operation               | Description                         |
+| ----------------------- | ----------------------------------- |
+| `getUnprocessedOrders`  | Get orders ready for ERP processing |
+| `getOrders`             | Get orders by order number          |
+| `markOrdersAsProcessed` | Mark orders as processed in ERP     |
 
 ### Real-time Updates
-| Operation | Description |
-|-----------|-------------|
-| `updateStock` | Update stock levels without full product sync |
-| `updatePrices` | Update prices without full product sync |
+
+| Operation           | Description                                   |
+| ------------------- | --------------------------------------------- |
+| `updateStock`       | Update stock levels without full product sync |
+| `updatePrices`      | Update prices without full product sync       |
 | `updateExtraFields` | Update extra fields without full product sync |
 
----
+***
 
 ## Understanding Sync Patterns
 
@@ -151,38 +156,8 @@ After: [A, B, C, D, E]  ← A is updated, E is added
 {% endtab %}
 {% endtabs %}
 
----
+***
 
 ## Next Steps
 
-<table data-view="cards">
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th data-hidden data-card-target data-type="content-ref"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Getting Started</strong></td>
-<td>Authentication and first API call</td>
-<td><a href="getting-started/authentication.md">authentication.md</a></td>
-</tr>
-<tr>
-<td><strong>Product Operations</strong></td>
-<td>Sync your product catalog</td>
-<td><a href="operations/products.md">products.md</a></td>
-</tr>
-<tr>
-<td><strong>Order Operations</strong></td>
-<td>Retrieve and process orders</td>
-<td><a href="operations/orders.md">orders.md</a></td>
-</tr>
-<tr>
-<td><strong>Data Types Reference</strong></td>
-<td>Complete type documentation</td>
-<td><a href="data-types/overview.md">overview.md</a></td>
-</tr>
-</tbody>
-</table>
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Getting Started</strong></td><td>Authentication and first API call</td><td><a href="getting-started/authentication.md">authentication.md</a></td></tr><tr><td><strong>Product Operations</strong></td><td>Sync your product catalog</td><td><a href="operations/products.md">products.md</a></td></tr><tr><td><strong>Order Operations</strong></td><td>Retrieve and process orders</td><td><a href="operations/orders.md">orders.md</a></td></tr><tr><td><strong>Data Types Reference</strong></td><td>Complete type documentation</td><td><a href="data-types/overview.md">overview.md</a></td></tr></tbody></table>

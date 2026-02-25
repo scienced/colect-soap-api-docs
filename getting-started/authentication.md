@@ -8,13 +8,13 @@ All Colect API operations require authentication via an API key. This key identi
 Your API key is collection-specific and should be kept confidential. Never expose it in client-side code or public repositories.
 {% endhint %}
 
----
+***
 
 ## Obtaining Your API Key
 
 Contact your Colect account manager or support to receive your API key. Each collection (brand/tenant) has a unique key.
 
----
+***
 
 ## Using the API Key
 
@@ -53,19 +53,19 @@ The `apiKey` parameter is the first parameter in every API operation:
 {% endtab %}
 {% endtabs %}
 
----
+***
 
 ## Connection Details
 
-| Property | Value |
-|----------|-------|
-| **Endpoint URL** | `https://connector.colect.services:443/services/api/3.0` |
-| **WSDL URL** | `https://connector.colect.services:443/services/api/3.0?wsdl` |
-| **Protocol** | SOAP 1.1 / SOAP 1.2 |
-| **Transport** | HTTPS (TLS required) |
-| **Port** | 443 |
+| Property         | Value                                                     |
+| ---------------- | --------------------------------------------------------- |
+| **Endpoint URL** | `https://connector.colect.services:443/services/api/3.0`  |
+| **WSDL URL**     | `https://connector.colect.services/services/api/3.0?wsdl` |
+| **Protocol**     | SOAP 1.1 / SOAP 1.2                                       |
+| **Transport**    | HTTPS (TLS required)                                      |
+| **Port**         | 443                                                       |
 
----
+***
 
 ## Namespace Reference
 
@@ -132,13 +132,13 @@ All three examples above are **functionally identical**. The server only cares a
 
 ### Namespaces Used in This API
 
-| Prefix (convention) | Namespace URI | Used For |
-|---------------------|---------------|----------|
-| `soapenv:` or `soap:` | `http://schemas.xmlsoap.org/soap/envelope/` | SOAP envelope structure |
-| `api:` or `ns2:` | `http://api.cc.salesapp.apptitude.nl/` | All API operations and data types |
-| `ws:` | `http://ws.cc.salesapp.apptitude.nl/` | Product relations only |
+| Prefix (convention)   | Namespace URI                               | Used For                          |
+| --------------------- | ------------------------------------------- | --------------------------------- |
+| `soapenv:` or `soap:` | `http://schemas.xmlsoap.org/soap/envelope/` | SOAP envelope structure           |
+| `api:` or `ns2:`      | `http://api.cc.salesapp.apptitude.nl/`      | All API operations and data types |
+| `ws:`                 | `http://ws.cc.salesapp.apptitude.nl/`       | Product relations only            |
 
----
+***
 
 ## Verifying Your Connection
 

@@ -2,24 +2,24 @@
 
 This guide walks you through making your first API call to the Colect SOAP API.
 
----
+***
 
 ## Prerequisites
 
-- Your API key (contact Colect support)
-- A SOAP client (SoapUI, Postman, or your programming language's SOAP library)
+* Your API key (contact Colect support)
+* A SOAP client (SoapUI, Postman, or your programming language's SOAP library)
 
----
+***
 
 ## Step 1: Download the WSDL
 
 Most SOAP clients can auto-generate request templates from the WSDL:
 
 ```
-https://connector.colect.services:443/services/api/3.0?wsdl
+https://connector.colect.services/services/api/3.0?wsdl
 ```
 
----
+***
 
 ## Step 2: Test Connection with getInfo
 
@@ -65,7 +65,7 @@ curl -X POST \
 {% endtab %}
 {% endtabs %}
 
----
+***
 
 ## Step 3: Store Your First Product
 
@@ -141,7 +141,7 @@ An empty response body indicates success.
 {% endtab %}
 {% endtabs %}
 
----
+***
 
 ## Step 4: Store Your First Customer
 
@@ -185,7 +185,7 @@ An empty response body indicates success.
 {% endtab %}
 {% endtabs %}
 
----
+***
 
 ## Step 5: Check for Orders
 
@@ -234,7 +234,7 @@ Returns all orders that have not yet been marked as processed.
 {% endtab %}
 {% endtabs %}
 
----
+***
 
 ## Common Integration Pattern
 
@@ -255,10 +255,10 @@ Returns all orders that have not yet been marked as processed.
 **Best Practice:** Use `storeFullProductSet` and `storeFullCustomerSet` for nightly full syncs, and the partial update operations (`updateStock`, `updatePrices`) for real-time changes during the day.
 {% endhint %}
 
----
+***
 
 ## Next Steps
 
-- [Product Operations](../operations/products.md) - Complete product sync guide
-- [Customer Operations](../operations/customers.md) - Customer management
-- [Order Operations](../operations/orders.md) - Order retrieval and processing
+* [Product Operations](../operations/products.md) - Complete product sync guide
+* [Customer Operations](../operations/customers.md) - Customer management
+* [Order Operations](../operations/orders.md) - Order retrieval and processing

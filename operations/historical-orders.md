@@ -1,4 +1,4 @@
-# Historical Order Operations
+# Historical Orders
 
 Push historical order data to Colect so your customers and sales reps can view past orders, track shipments, and reorder from order history.
 
@@ -6,18 +6,13 @@ Push historical order data to Colect so your customers and sales reps can view p
 **Full Example:** [Download complete storeFullHistoricalOrderSetForCustomer.xml](https://assets.apptitude.nl/KnowledgeBase/Webservice_3_0/External/storeFullHistoricalOrderSetForCustomer.xml) - A comprehensive example showing all available historical order fields.
 {% endhint %}
 
----
+***
 
 ## Operations Overview
 
-| Operation | Type | Description |
-|-----------|------|-------------|
-| [`storeHistoricalOrders`](#storehistoricalorders) | Partial Sync | Add or update historical orders |
-| [`storeFullHistoricalOrderSetForCustomer`](#storefullhistoricalordersetforcustomer) | Full Sync | Replace all historical orders for a customer |
-| [`deleteHistoricalOrders`](#deletehistoricalorders) | Delete | Remove specific historical orders |
-| [`deleteAllHistoricalOrders`](#deleteallhistoricalorders) | Delete | Clear all historical orders |
+<table><thead><tr><th width="355.21484375">Operation</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><a href="historical-orders.md#storehistoricalorders"><code>storeHistoricalOrders</code></a></td><td>Partial Sync</td><td>Add or update historical orders</td></tr><tr><td><a href="historical-orders.md#storefullhistoricalordersetforcustomer"><code>storeFullHistoricalOrderSetForCustomer</code></a></td><td>Full Sync</td><td>Replace all historical orders for a customer</td></tr><tr><td><a href="historical-orders.md#deletehistoricalorders"><code>deleteHistoricalOrders</code></a></td><td>Delete</td><td>Remove specific historical orders</td></tr><tr><td><a href="historical-orders.md#deleteallhistoricalorders"><code>deleteAllHistoricalOrders</code></a></td><td>Delete</td><td>Clear all historical orders</td></tr></tbody></table>
 
----
+***
 
 ## storeHistoricalOrders
 
@@ -115,7 +110,7 @@ Historical orders are primarily for display purposes - they show customers their
 </soapenv:Envelope>
 ```
 
----
+***
 
 ## storeFullHistoricalOrderSetForCustomer
 
@@ -152,7 +147,7 @@ Only affects orders for the specified customer. Other customers' historical orde
 
 [Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwZw9ghgDgpgdgNwFwFFEwDZlgAgB4C2GcIS408CAvAEQAWALg1EgPSsgDGdMBEIAOkIZyUAWABOAcw6QorSpmwxWNAFA5N+IiSTQAlrUbM2rAwM6cBICBhg2oY6FAb6GAVwAmMAXAyqAPg0tUDlKJAAJGAhvCVYgrRxQikQkACEwTwBPBMSQgzIGSRgAMXcMDAj9ECKJfU5bAHkJWIBlGAYSyQBhdxqwAhgJXLy84AKDAGkYHKywdwkAWgNFgGsZ4DMofT1t6Zzg0cTx7aROPqLBiQA5MADugFVWgBVFgAY3gEZNgvP+q9uIyOmhOOzo1Vq9SaLSGQOBx1+FwGQ0Bjxe7y+P1Of0uKLuh3hCNOkli13cBAARrCUAAlAAKiwATG9GQAWDEAVlZjKxOxJKPJVOGBMJIIAhItFjgBDKcAAzcoYHD8iQ4TwQBgQaWyyVwo68pDg-p1BoYZqxPWjUGGiGSKFmmHC0VjRH-PH3J6vD7fLY7HHIm7451EvmOsmU6n0pks9kfVkADgAnAaVeGhZb4cAJVKZQJ5YrlY61RqtbmcLqRfrfTbjfbzbDKyDq8bSoqqrXTfWJO1Oj0kVcgZtROEMtkgkOwqk0AglLAAkA)
 
----
+***
 
 ## deleteHistoricalOrders
 
@@ -179,7 +174,7 @@ Remove specific historical orders.
 
 [Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwZw9ghgDgpgdgNwFwFFEwDZlgAgB4C2GcIS408CAvAEQAWALg1EgPSsgDGdMBEIAOkIZyUAWABOAcw6QorSpmwxWNAFA5N+IiSTQAlrUbM2rAwM6cBICBhg2oY6FAb6GAVwAmMAXAyqAPg0tUDlKJAAJGAhvCVYgrRxQikQkACEwTwBPBMSQgyRvOwYYCP0QBkl9TlsAeQlYkFy8vOACgwBpGByssHcJAFoDAYBrbuAzKH09Ka6c4JbEtqmkOnLKiWq6hpgJZsWW5enOdwqwAl2AOTAAgGEAVQBlABUBgAY3gEYJgpOzi4k132ByWBUksUu7gIACNdgEUAAlAAKAwATG9UQAWd5vACsmNRPxW4KuUNhewWIKJ0zWZ02NQw9ViwJCk2mRRgJTKdK2jJ2EialImonCGWyQWFYVSaAQSlgASAA)
 
----
+***
 
 ## deleteAllHistoricalOrders
 
@@ -205,89 +200,89 @@ Remove all historical orders from your collection.
 
 [Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwZw9ghgDgpgdgNwFwFFEwDZlgAgB4C2GcIS408CAvAEQAWALg1EgPSsgDGdMBEIAOkIZyUAWABOAcw6QorSpmwxWNAFA5N+IiSTQAlrUbM2rAwM6cBICBhg2oY6FAb6GAVwAmMAXAyqAPg0tUDlKJAAJGAhvCVYgrRxQikQkACEwTwBPBMSQgyRvOwYYAEEMDAj9EAZJfU5bAHkJWJBcvLzgAoMAaRgcrLB3CQBaAxGAa37gMyh9PTm+nOCOmYKimBLyyuraiXqmlpgJNpWk2RTkDOygmdFwtAQlWACgA)
 
----
+***
 
 ## Historical Order Data Structure
 
 ### Order Fields
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `customerNo` | String | Yes | Customer identifier |
-| `orderNumber` | String | No | Original Colect order number (12-char) |
-| `erpOrderReference` | String | No | Your ERP order reference |
-| `customerOrderReference` | String | No | Customer's PO number |
-| `timestamp` | DateTime | No | Order creation date/time |
-| `salesPerson` | String | No | Salesperson email |
-| `customerPriceGroup` | String | No | Customer's price group |
-| `collection` | String | No | Collection name |
-| `channel` | String | No | Order channel |
-| `comment` | String | No | Order comment |
-| `externalUrl` | String | No | Link to order in external system |
-| `internalOrderType` | Enum | No | `ORDER` or `RETURN` |
-| `orderTypeCode` | String | No | External order type code |
-| `accountManager` | String | No | Account manager name |
-| `shippingLocation` | Object | No | Shipping address |
-| `agreement` | Object | No | Customer agreement used |
+| Field                    | Type     | Required | Description                            |
+| ------------------------ | -------- | -------- | -------------------------------------- |
+| `customerNo`             | String   | Yes      | Customer identifier                    |
+| `orderNumber`            | String   | No       | Original Colect order number (12-char) |
+| `erpOrderReference`      | String   | No       | Your ERP order reference               |
+| `customerOrderReference` | String   | No       | Customer's PO number                   |
+| `timestamp`              | DateTime | No       | Order creation date/time               |
+| `salesPerson`            | String   | No       | Salesperson email                      |
+| `customerPriceGroup`     | String   | No       | Customer's price group                 |
+| `collection`             | String   | No       | Collection name                        |
+| `channel`                | String   | No       | Order channel                          |
+| `comment`                | String   | No       | Order comment                          |
+| `externalUrl`            | String   | No       | Link to order in external system       |
+| `internalOrderType`      | Enum     | No       | `ORDER` or `RETURN`                    |
+| `orderTypeCode`          | String   | No       | External order type code               |
+| `accountManager`         | String   | No       | Account manager name                   |
+| `shippingLocation`       | Object   | No       | Shipping address                       |
+| `agreement`              | Object   | No       | Customer agreement used                |
 
 ### Order Line Fields
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `status` | String | No | Line status (ORDERED, DELIVERED, etc.) |
-| `type` | String | No | ST=stock, PS=pre-order, RE=return |
-| `productUniqueId` | String | No | Product identifier |
-| `productColorCode` | String | No | Color code |
-| `productDescription` | String | No | Product name/description |
-| `productCategory` | String | No | Category name |
-| `productGroup` | String | No | Product group |
-| `productGender` | String | No | Gender (Men, Women, etc.) |
-| `productSeason` | String | No | Season code |
-| `productSize` | String | No | Size name |
-| `productSizeSortCode` | Long | No | Size sort order |
-| `productSubSize` | String | No | Sub-size (width, length) |
-| `eanCode` | String | No | EAN/barcode |
-| `quantity` | Integer | Yes | Quantity ordered |
-| `quantityDelivered` | Integer | Yes | Quantity shipped |
-| `currency` | String | No | Line currency |
-| `netWholesalePrice` | Float | No | Net price per unit |
-| `grossWholesalePrice` | Float | No | Gross price per unit |
-| `netLineAmount` | Float | No | Total line value |
-| `grossLineAmount` | Float | No | Gross line value |
-| `netLineAmountDelivered` | Float | No | Delivered value |
-| `shipmentDate` | DateTime | No | Shipment date |
-| `packingSlipNumber` | String | No | Packing slip reference |
-| `invoiceNumber` | String | No | Invoice reference |
-| `trackTraceUrl` | String | No | Tracking URL |
-| `returnAllowed` | Boolean | Yes | Can this line be returned? |
-| `remark` | String | No | Line comment |
-| `productImageUrl` | String | No | Product image URL |
+| Field                    | Type     | Required | Description                            |
+| ------------------------ | -------- | -------- | -------------------------------------- |
+| `status`                 | String   | No       | Line status (ORDERED, DELIVERED, etc.) |
+| `type`                   | String   | No       | ST=stock, PS=pre-order, RE=return      |
+| `productUniqueId`        | String   | No       | Product identifier                     |
+| `productColorCode`       | String   | No       | Color code                             |
+| `productDescription`     | String   | No       | Product name/description               |
+| `productCategory`        | String   | No       | Category name                          |
+| `productGroup`           | String   | No       | Product group                          |
+| `productGender`          | String   | No       | Gender (Men, Women, etc.)              |
+| `productSeason`          | String   | No       | Season code                            |
+| `productSize`            | String   | No       | Size name                              |
+| `productSizeSortCode`    | Long     | No       | Size sort order                        |
+| `productSubSize`         | String   | No       | Sub-size (width, length)               |
+| `eanCode`                | String   | No       | EAN/barcode                            |
+| `quantity`               | Integer  | Yes      | Quantity ordered                       |
+| `quantityDelivered`      | Integer  | Yes      | Quantity shipped                       |
+| `currency`               | String   | No       | Line currency                          |
+| `netWholesalePrice`      | Float    | No       | Net price per unit                     |
+| `grossWholesalePrice`    | Float    | No       | Gross price per unit                   |
+| `netLineAmount`          | Float    | No       | Total line value                       |
+| `grossLineAmount`        | Float    | No       | Gross line value                       |
+| `netLineAmountDelivered` | Float    | No       | Delivered value                        |
+| `shipmentDate`           | DateTime | No       | Shipment date                          |
+| `packingSlipNumber`      | String   | No       | Packing slip reference                 |
+| `invoiceNumber`          | String   | No       | Invoice reference                      |
+| `trackTraceUrl`          | String   | No       | Tracking URL                           |
+| `returnAllowed`          | Boolean  | Yes      | Can this line be returned?             |
+| `remark`                 | String   | No       | Line comment                           |
+| `productImageUrl`        | String   | No       | Product image URL                      |
 
----
+***
 
 ## Line Status Values
 
-| Status | Description |
-|--------|-------------|
-| `ORDERED` | Order placed, not yet shipped |
-| `CONFIRMED` | Order confirmed by warehouse |
-| `SHIPPED` | Shipped, in transit |
-| `DELIVERED` | Delivered to customer |
-| `BACKORDERED` | On backorder |
-| `CANCELED` | Line canceled |
-| `RETURNED` | Returned by customer |
+| Status        | Description                   |
+| ------------- | ----------------------------- |
+| `ORDERED`     | Order placed, not yet shipped |
+| `CONFIRMED`   | Order confirmed by warehouse  |
+| `SHIPPED`     | Shipped, in transit           |
+| `DELIVERED`   | Delivered to customer         |
+| `BACKORDERED` | On backorder                  |
+| `CANCELED`    | Line canceled                 |
+| `RETURNED`    | Returned by customer          |
 
----
+***
 
 ## Line Type Values
 
 | Type | Description |
-|------|-------------|
+| ---- | ----------- |
 | `ST` | Stock order |
-| `PS` | Pre-order |
-| `RE` | Return |
+| `PS` | Pre-order   |
+| `RE` | Return      |
 
----
+***
 
 ## Track & Trace
 
@@ -316,7 +311,7 @@ Provide tracking URLs for shipped orders:
 
 Customers can click to track their shipment directly.
 
----
+***
 
 ## Enabling Reorders
 
@@ -350,7 +345,7 @@ Allow customers to reorder items from their order history:
 </soapenv:Envelope>
 ```
 
----
+***
 
 ## Extra Fields
 
@@ -384,7 +379,7 @@ Add custom information to order lines:
 </soapenv:Envelope>
 ```
 
----
+***
 
 ## Best Practices
 
@@ -408,20 +403,22 @@ Full Sync:
 
 {% tab title="Data Quality" %}
 **Essential fields:**
-- `productUniqueId` + `productColorCode` for reordering
-- `productImageUrl` for visual reference
-- `trackTraceUrl` for shipment tracking
-- `returnAllowed` for return functionality
+
+* `productUniqueId` + `productColorCode` for reordering
+* `productImageUrl` for visual reference
+* `trackTraceUrl` for shipment tracking
+* `returnAllowed` for return functionality
 
 **Status accuracy:**
-- Keep `quantityDelivered` current
-- Update `status` promptly on shipment
-- Add `shipmentDate` when shipped
+
+* Keep `quantityDelivered` current
+* Update `status` promptly on shipment
+* Add `shipmentDate` when shipped
 {% endtab %}
 
 {% tab title="Performance" %}
-- Use `storeFullHistoricalOrderSetForCustomer` for customer-level sync
-- Limit history to 12-24 months to reduce data volume
-- Batch multiple orders in single API calls
+* Use `storeFullHistoricalOrderSetForCustomer` for customer-level sync
+* Limit history to 12-24 months to reduce data volume
+* Batch multiple orders in single API calls
 {% endtab %}
 {% endtabs %}
