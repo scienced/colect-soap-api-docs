@@ -223,16 +223,11 @@ All string fields have maximum length limits. Exceeding these limits will result
 | `gender` | 256 | Gender |
 | `searchText` | 1024 | Search keywords |
 | `crossReference` | 128 | Cross reference |
-| `styleCode` | 64 | Style code |
 | `styleAttributes` | 256 | Style attributes |
-| `lookBookCode` | 64 | Lookbook code |
 | `status` | 128 | Product status |
 | `sortCode` | 128 | Sort code |
 | `userDefinedField1` | 512 | Custom field 1 |
 | `userDefinedField2` | 512 | Custom field 2 |
-| `imageURL` | 256 | Primary image URL |
-| `thumbImageURL` | 256 | Thumbnail URL |
-| `swatchImageURL` | 256 | Swatch image URL |
 
 ### Customer Fields
 
@@ -245,6 +240,7 @@ All string fields have maximum length limits. Exceeding these limits will result
 | `street` | 128 | Street name |
 | `houseNumber` | 32 | House number |
 | `houseNumberSuffix` | 32 | House number suffix |
+| `state` | 128 | State/province |
 | `address` | 128 | Full address (single field) |
 | `postalCode` | 32 | Postal/ZIP code |
 | `city` | 128 | City |
@@ -258,6 +254,7 @@ All string fields have maximum length limits. Exceeding these limits will result
 | `externalReference` | 128 | External reference |
 | `userDefinedField` | 2048 | Custom field |
 | `paymentStatus` | 64 | Payment status |
+| `gln` | 64 | Global Location Number |
 
 ### Order Fields (Output)
 

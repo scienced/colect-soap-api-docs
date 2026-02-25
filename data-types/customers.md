@@ -29,10 +29,12 @@ The main customer entity representing a B2B account.
 | `street` | String | Street name |
 | `houseNumber` | String | House/building number |
 | `houseNumberSuffix` | String | Apartment, suite, etc. |
+| `state` | String | State/province |
 | `postalCode` | String | Postal/ZIP code |
 | `city` | String | City |
 | `country` | String | Country |
 | `phone` | String | Phone number |
+| `gln` | String | Global Location Number (GLN) |
 
 ### Pricing Fields
 
@@ -115,6 +117,7 @@ Shipping location/address for a customer.
 | `street` | String | Street |
 | `houseNumber` | String | Number |
 | `houseNumberSuffix` | String | Suffix |
+| `state` | String | State/province |
 | `postalCode` | String | Postal code |
 | `city` | String | City |
 | `country` | String | Country |
@@ -128,6 +131,7 @@ Shipping location/address for a customer.
 | `contactFirstName` | String | Contact first name |
 | `contactLastName` | String | Contact last name |
 | `contactTelephone` | String | Contact phone |
+| `gln` | String | Global Location Number (GLN) |
 
 ### Other Fields
 

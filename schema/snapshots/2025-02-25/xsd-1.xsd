@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.3.2 git-revision#3d0bba4. --><xs:schema xmlns:ns1="http://api.cc.salesapp.apptitude.nl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.cc.salesapp.apptitude.nl/">
+
+<xs:import namespace="http://api.cc.salesapp.apptitude.nl/" schemaLocation="https://connector.colect.services:443/services/api/3.0?xsd=2"/>
+
+<xs:element name="productRelation" type="ns1:xProductRelation30"/>
+
+<xs:simpleType name="productRelationType">
+<xs:restriction base="xs:string">
+<xs:enumeration value="MATCHING_SET"/>
+<xs:enumeration value="SUCCESSOR"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>

@@ -161,3 +161,20 @@ After: [A, B, C, D, E]  ← A is updated, E is added
 ## Next Steps
 
 <table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><strong>Getting Started</strong></td><td>Authentication and first API call</td><td><a href="getting-started/authentication.md">authentication.md</a></td></tr><tr><td><strong>Product Operations</strong></td><td>Sync your product catalog</td><td><a href="operations/products.md">products.md</a></td></tr><tr><td><strong>Order Operations</strong></td><td>Retrieve and process orders</td><td><a href="operations/orders.md">orders.md</a></td></tr><tr><td><strong>Data Types Reference</strong></td><td>Complete type documentation</td><td><a href="data-types/overview.md">overview.md</a></td></tr></tbody></table>
+
+***
+
+## Changelog
+
+### February 2025
+
+**New fields:**
+
+* `gln` (String, optional) added to [XCustomer](data-types/customers.md#xcustomer) — Global Location Number for the customer
+* `gln` (String, optional) added to [XLocation](data-types/customers.md#xlocation) — Global Location Number for the shipping location
+* `state` (String, optional) added to [XCustomer](data-types/customers.md#xcustomer) — State/province, positioned between `houseNumberSuffix` and `postalCode`
+* `state` (String, optional) added to [XLocation](data-types/customers.md#xlocation) — State/province for the shipping location
+
+**New enum values:**
+
+* [XColor](data-types/enums.md#xcolor) — Added `MULTICOLOR`, `BEIGE`, `GOLD`, `SILVER`

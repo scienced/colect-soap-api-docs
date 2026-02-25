@@ -41,7 +41,6 @@ The simplest operation to verify your setup:
 </soapenv:Envelope>
 ```
 
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwfgHgtgNgBAbgUwE4GcCWB7AdgXgEQCMAdAAx4wJYDGGAJmlgOb4CqAKgGIC0AHHiAD4AUMBQYAhgAdKcAFwBRLIigZpQmBpiQoWFLLFSZ+ABYAXU5NkB6KyirGEEcSiLaDkohiSNbEyVZkEFWkrPHVNbV1ZKTQTc0sbGKIqKiIUcSgEdMkPKUlTNFMAV1oEIiwoUOFNGFE-GVkACQRxUqQras06wyVZACE6AE9Omo1gGNlGBFMASSwAMwwR0ZrxyTRo9YBpBGHBjCKkLhiuAGtd4CsJmJ3h8JXLianZhaX72t8euQHaO8v3BqKZSqBACIA)
 {% endtab %}
 
 {% tab title="cURL" %}
@@ -124,7 +123,6 @@ curl -X POST \
 </soapenv:Envelope>
 ```
 
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwfgHgtgNgBAbgUwE4GcCWB7AdgXgEQCMAdAAx4wJYDGGAJmlgOb4CqAKgGIC0AHHiAD4AUMBQYAhgAdKcAFwBRLIigZpQmBpiQoWFLLFSZ+ABYAXU5NkB6KyirGEEcSiLaDkohiSNbEyVZkEFWkrPHVNbV1ZKTQTc0sbGKIqKiIUcSgEdMkPKUlTNFMAV1oEIiwoUOFNGFE-GVkACQRxUqQras06wyVZACE6AE9Omo1gGP1TLwQABSQ6IqpTFBHRmvHJNGjNgGkEYcGMIqQuGK4Aa33gKwmYveHwtfWJyXnaRdNVp9GNraKsNAARyKCAAkrQBABlNgATQAMvIuCQSARrhN-kCQeCvt8uhMsOIIAgBABhKDOdBUGBsLiQ4xoJCmNGbWQEok43G1CalOxIND5TBYARzRxoIoQGA0czYGCmLgoemM5lbHlUPkC7Ac3G-WQAIyQ4iwtAAcoTiTCjkgYH0DUblXrbSazVrvjqaCokCS6MS+nCdvb3V4vaUXU83RgPQARLJUAR9clUc4BiNeaN2UNrHWvNBUYmPTlhiZUY5IShUQbB4nyFgAJQDJbLFe9Ge1E1LpnEaCgcxzxIALABOIgDgCs9vbne7fNzLddEwA7sYI1kMrNp8SAEwj0gke2L5fpTI9mf5gs-fEIT4AMwyKAQ9qwl9nXRuLOzJ7PzxZ6AAXnnP4WLJssSkIPs6p4AVy35eKYlYCKir5bGIjJwRBAE6igUyJnCCDKM+nI6sChoFKYwwEMi9pEVgJEPJBPyIZMGDYbhQT4bUDG-v+kEYWgf5sV+WzAQIACyYHsmhn4YTBcEbvayGwc2ElnhhWHnDheFKdxExUTR8EjruDE6YUtF0S+EyYUxaksVAbFybxXHoeZ9n8XiQHOnCYkOaZUkoc2ADMcnSYppmuUhqnqaxmmOSyRmkfBG4GdpRTEcZLljBx4XWbZHHOVF54skS9DimlUFbKR0gCKCwkAIIAOLyAA+jMNZVdVNYwva5VeXROrHDZZgWHoNhULQWBEAgYCEpImTJBgEBWK8CxLCgtikZkSIolwupQOcRAAFaSIw9p9dlEyFWKEAtvai3vEsWpyVMpZzEtyyrNc7gNAMtAPO99S9IoyiqHmQA)
 {% endtab %}
 
 {% tab title="Response" %}
@@ -168,7 +166,6 @@ An empty response body indicates success.
 </soapenv:Envelope>
 ```
 
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwfgHgtgNgBAbgUwE4GcCWB7AdgXgEQCMAdAAx4wJYDGGAJmlgOb4CqAKgGIC0AHHiAD4AUMBQYAhgAdKcAFwBRLIigZpQmBpiQoWFLLFSZ+ABYAXU5NkB6KyirGEEcSiLaDkohiSNbEyVZkEFWkrPHVNbV1ZKTQTc0sbGKIqKiIUcSgEdMkPKUlTNFMAV1oEIiwoUOFNGFE-GVkACQRxUqQras06wyVZACE6AE9Omo1gGP1TLwQAYSKUKYhkFBHRmvHJNGjNgGkEYcGMIqQuGK4Aa33gKwmYveHwtfWJqnnF5FWn0Y2t14WMJZIAByGAEMxYAGU2FwSCQCNcXm8AcgQZ8vl0JlhxEsBBxnMZMFgYAMigUAI5FBAwACCEAWyFo2IRm1kWJxj3RzxZjnEaCgAi8bRQAAEAGb4wkAIyO5Mp5SgzK2PL5aM5P1kryQSEoVEGMzoCAE8hYACVFRrjtrqHqDar0ertaZeVA5lqdTbSkbTebHc7XVbdfrPRyvua-u8kHbzf9tXN-oCVhzru4GgNaA9k-VeoplKpDUA)
 {% endtab %}
 
 {% tab title="Response" %}
@@ -207,7 +204,6 @@ After your customers place orders in the Colect app or B2B webstore:
 </soapenv:Envelope>
 ```
 
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwfgHgtgNgBAbgUwE4GcCWB7AdgXgEQCMAdAAx4wJYDGGAJmlgOb4CqAKgGIC0AHHiAD4AUMBQYAhgAdKcAFwBRLIigZpQmBpiQoWFLLFSZ+ABYAXU5NkB6KyirGEEcSiLaDkohiSNbEyVZkEFWkrPHVNbV1ZKTQTc0sbGKIqKiIUcSgEdMkPKUlTNFMAV1oEIiwoUOFNGFE-GVkACQRxUqQras06wyVZACE6AE9Omo1gGNlGBFMWLEkkDCoslARaAHkkNpQR0ZrxyTRog4BpBGHBjCKkLhiuAGsz4CsJmNPh8N2niamZuYWllArdabZDbD61Xw9OQDWjvJ7uBqKZSqBACIA)
 {% endtab %}
 
 {% tab title="Response" %}

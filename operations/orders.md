@@ -57,8 +57,6 @@ Retrieve all orders that haven't been marked as processed yet. This is your prim
 </soapenv:Envelope>
 ```
 
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwZw9ghgDgpgdgNwFwFFEwDZlgAgB4C2GcIS408CAvAEQAWALg1EgPSsgDGdMBEIAOkIZyUAWABOAcw6QorSpmwxWNfERJJoAS1qNmbVjoGdOAkBAwwLUMdCgNtDAK4ATGALgZVAPgBQOIE4oHKUSAASMBDuEqz+QcGiYQBCYK4AnvEJQcA6SFIwDACqcFASYJzWIDCuAPISMSBZ2dm5UNpa7QDSMJnpYM4SALQ6QwDWvcBG7Z3aPZkBLcHTHQXFpeWVINV1DTASTYuBU0mISKkZ-iehZ2gISrA+QA)
-
 ### Response
 
 ```xml
@@ -151,8 +149,6 @@ Retrieve specific orders by their order number. Useful for re-fetching orders or
 </soapenv:Envelope>
 ```
 
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwZw9ghgDgpgdgNwFwFFEwDZlgAgB4C2GcIS408CAvAEQAWALg1EgPSsgDGdMBEIAOkIZyUAWABOAcw6QorSpmwxWNfERJJoAS1qNmbVjoGdOAkBAwwLUMdCgNtDAK4ATGALgZVAPgBQOIE4oHKUSAASMBDuEqz+QcGiYQBCYK4AnvEJQcA6SFIwDADyEjEgWdnZuVDaWjUA0jCZ6WDOEgC0Ou0A1k3ARjV12o2ZAZVVeZIxAHLOBABGMBI+AILJAMIAjABMAMwAIigAYgAsAKwAbP2TpUuzC0sV44HVtVN3c4vLABoAmgBaAHYABwATgA4uEAJIABh210G7wk9y+TwSCNqBWKtwk5TGL1kFEQSFSGX8-SSxLQCCUsB8QA)
-
 ### Response
 
 ```xml
@@ -196,8 +192,6 @@ Only mark orders as processed **after** they have been successfully imported int
     </soapenv:Body>
 </soapenv:Envelope>
 ```
-
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwZw9ghgDgpgdgNwFwFFEwDZlgAgB4C2GcIS408CAvAEQAWALg1EgPSsgDGdMBEIAOkIZyUAWABOAcw6QorSpmwxWNfERJJoAS1qNmbVjoGdOAkBAwwLUMdCgNtDAK4ATGALgZVAPgBQOIE4oHKUSAASMBDuEqz+QcGiYQBCYK4AnvEJQcA6SHwSANYA8hIxIACCIAAKEmCc1iAwrlnZ2blQ2lqdANIwmelgzhIAtDojhf3ARp3d2n2ZAW3teZIxAHLOBABGMBI+FckAwgCMAEwAzAAiKABiACwArABs06tle5s7e63LgR1dNafLa7fYADQAmgAtADsAA4AJwAcXCAEkAAznN6zIESL6g34JbFdAolD4SSo1OoNEBNFpLf6yCiIJCpDL+aZJFloBBKWA+IA)
 
 ### Response
 

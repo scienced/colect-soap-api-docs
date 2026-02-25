@@ -102,9 +102,6 @@ Products are uniquely identified by the combination of `uniqueId` + `colorCode`.
 </soapenv:Envelope>
 ```
 
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#url=https%3A%2F%2Fraw.githubusercontent.com%2Fscienced%2Fcolect-soap-api-docs%2Frefs%2Fheads%2Fmain%2Fexamples%2FstoreProducts.xml)
-
-
 ### Response
 
 ```xml
@@ -147,8 +144,6 @@ Replace your entire product catalog. Products not included in this request will 
 </soapenv:Envelope>
 ```
 
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwZw9ghgDgpgdgNwFwFFEwDZlgAgB4C2GcIS408CAvAEQAWALg1EgPSsgDGdMBEIAOkIZyUAWABOAcw6QorSpmwxWNAFA5N+IiSTQAlrUbM2rAwM6cBICBhg2oY6FAb6GAVwAmMAXAyqAPg0tUDlKJAAJGAhvCVYgrRxQikQkACEwTwBPBMSQgzIGSRgAMXcMDAAFCUz3TgYAZRgGXLy84AKDAGkYHKywdwkAWgMhgGte4DMofT0ZnpzgtsSOmaQoGs86lqXltuAAQiGhnABJOE4MLxgcAEEAGXucDdr6kBx+9xwAdwg4BhwRRwExgUBwx1ae3aBXccH0AEd3DBTp4Ag0ACoATXuKCGAAY8QBGKYwuGI5Go3ZQ-JrThgLASADCmRgATS9y6JNp9MkzO8kOpmkOxxwAjFOAAZuUMM9NtscJ4IAwIKLxRCqcsubMXlt6gLNQUddt9dTVrNYQikSi0Vicfi8QAmLVIC3k60a00FOkMvmsgByADVMc7vbyWSaocKTmKBJLpbLXgDFcrVbH1YKktNtXK9R72kdo+LbDKwAweBIE7qGO8Y+ChhHnSAihJStLqommjsVrIUsgMtkglNROE0AglLAAkA)
-
 ### Use Cases
 
 * Initial data load when setting up your Colect integration
@@ -183,8 +178,6 @@ Remove specific products from the catalog.
 </soapenv:Envelope>
 ```
 
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwZw9ghgDgpgdgNwFwFFEwDZlgAgB4C2GcIS408CAvAEQAWALg1EgPSsgDGdMBEIAOkIZyUAWABOAcw6QorSpmwxWNAFA5N+IiSTQAlrUbM2rAwM6cBICBhg2oY6FAb6GAVwAmMAXAyqAPg0tUDlKJAAJGAhvCVYgrRxQikQkACEwTwBPBMSQgyRvOwYYAAUJTPdOBhBcvLzgAoMAaRgcrLB3CQBaA26AazbgMyh9PVHWnOD6xMbRpCgKzyqGOpn6ubH3OH0AR3cYAElPAIBlABUATQAZFG6ABnuARmGC7b2D47X12YLOMCwEgAwpkYAE0tdmq95v9ASDvN8ZtCxotKtVERsCqjlujpj9fvN3vsjicLjc7o8AEzIpBEz4nPH4zSbJCwyTwsEAOQAapcaWzgaCMQ0RiilithTSijASuU0TU1sNROEMtkgkqwqk0AglLAAkA)
-
 ***
 
 ## deleteAllProducts
@@ -209,8 +202,6 @@ Remove all products from the catalog.
 </soapenv:Envelope>
 ```
 
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwZw9ghgDgpgdgNwFwFFEwDZlgAgB4C2GcIS408CAvAEQAWALg1EgPSsgDGdMBEIAOkIZyUAWABOAcw6QorSpmwxWNAFA5N+IiSTQAlrUbM2rAwM6cBICBhg2oY6FAb6GAVwAmMAXAyqAPg0tUDlKJAAJGAhvCVYgrRxQikQkACEwTwBPBMSQgyRvOwYYAEEMDAAFCUz3TgYQXLy84AKDAGkYHKywdwkAWgN+gGsu4DMofT1Jzpzg5vGCopgS8qqazzqGpqTZFOQM7KDx0XC0BCVYAKA)
-
 ***
 
 ## getAllProducts
@@ -230,8 +221,6 @@ Retrieve all products currently in your collection.
     </soapenv:Body>
 </soapenv:Envelope>
 ```
-
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwZw9ghgDgpgdgNwFwFFEwDZlgAgB4C2GcIS408CAvAEQAWALg1EgPSsgDGdMBEIAOkIZyUAWABOAcw6QorSpmwxWNAFA5N+IiSTQAlrUbM2rAwM6cBICBhg2oY6FAb6GAVwAmMAXAyqAPg0tUDlKJAAJGAhvCVYgrRxQikQkACEwTwBPBMSQgyQpGAYAQQwMAAUJTPdOBhBcvLzgAoMAaRgcrLB3CQBaAz6Aa07gMyh9PQmOnOCmsYKi0vKqmrqGuaTZFOQM7KCx0XC0BCVYAKA)
 
 ### Response
 
@@ -291,8 +280,6 @@ Update stock levels without sending full product data. Ideal for real-time inven
     </soapenv:Body>
 </soapenv:Envelope>
 ```
-
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwZw9ghgDgpgdgNwFwFFEwDZlgAgB4C2GcIS408CAvAEQAWALg1EgPSsgDGdMBEIAOkIZyUAWABOAcw6QorSpmwxWNAFA5N+IiSTQAlrUbM2rAwM6cBICBhg2oY6FAb6GAVwAmMAXAyqAPg0tUDlKJAAJGAhvCVYgrRxQikQkACEwTwBPBMSQgyR3KE8IBhgAZQYwTgBrXLy84AKDAGkYHKywdwkAWgMemvbgMyh9PVG2nOCGxKbRpAAzCH0MAHk4AFU4GrgwAHc4AAUJTPdOBhAAhgl3GGGCpZX1rZ39o5PPM4v6mc05sZAVVqAEk4AswCg7AR4Awfr9ZgUoB8vlt9ABHW7AzwBcoAFQAmgAZFA9AAMpIAjPd5kjTudURiYFi4fC-ojkecAMJgLASbneAJpQktaljWmfLk8yT8mAs1n-Mj6ABeMAAchBoQEALKixUq9Wa6as-LzQHVGqEmAITBy41s+YYiBwVwMHIAdgArLrHc63FM7bMRgCgRarTajb9dWaQWCIVCYbaEaaQ6DwZDeAmI8aFeKUXB0ZjsXiiSTyVSg0hc-T84zmVn5ey6QxubyZYLhbqq82pXzMrL6-CFSBlWqNbLCVGRwb+wGTcHzZbrRhE9mCj6XTkPaTve4nRuVw0oyHF+G7Ufzam4xnnbbdUUSmVKuafsNROEMtkgq+wqk0EvlEEQA)
 
 ### Alternative: Using EAN Code
 
@@ -361,8 +348,6 @@ Update prices without sending full product data.
 </soapenv:Envelope>
 ```
 
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwZw9ghgDgpgdgNwFwFFEwDZlgAgB4C2GcIS408CAvAEQAWALg1EgPSsgDGdMBEIAOkIZyUAWABOAcw6QorSpmwxWNAFA5N+IiSTQAlrUbM2rAwM6cBICBhg2oY6FAb6GAVwAmMAXAyqAPg0tUDlKJAAJGAhvCVYgrRxQikQkACEwTwBPBMSQgyR3KE8IBhgABQl9TntcvLzgAoMAaRgcrLB3CQBaA26AazbgMyh9PVHWnOD6xMbRpAAzCH0MAHk4AFU4frgwAHc4Ssz3TgYQAIYJdxhhgqWV9a2d-cOJY9Pz6ZnNObGoKpqAEk4AswCg7AR4Aw6t8GgV-u8GFt9ABHa6AzwBADKABUAJoAGRQ3QADCSAIy3eYIzwnJFwVHozFfWH5alvWmnADCYCwEh53gCaQJzSpfw5dJ5fIFMBhrJ+BU4XQk8E4WRlARQGwASmKkEqJCq4GqNSz5b8kP9qjAcVlYAEAOoRVZErEAQSJeqtNVt9rNrIt3tlACYAOwCACsJK9ANl-oaI3F1uBoPBvChcpmgdjKbBEIz8e+2cRyLRMAx2PxRNJFJjJYZZYrhaz8Il3N5kg1wtFictbYYUs7mTj8rh8wNRpNw81Or1E9V6unzfq2etvtl2pQOLdgIJMbXdpHo7ZSZqAQjABYBABOCP7s-LpK9oO5tOQuDQ+N6oolMqVa2fLMsgpMgGTZEEwyiOEaAIEofpAA)
-
 ### Price Types
 
 | Type                 | Description                      |
@@ -423,8 +408,6 @@ Update custom extra fields without full product sync.
     </soapenv:Body>
 </soapenv:Envelope>
 ```
-
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwZw9ghgDgpgdgNwFwFFEwDZlgAgB4C2GcIS408CAvAEQAWALg1EgPSsgDGdMBEIAOkIZyUAWABOAcw6QorSpmwxWNAFA5N+IiSTQAlrUbM2rAwM6cBICBhg2oY6FAb6GAVwAmMAXAyqAPg0tUDlKJAAJGAhvCVYgrRxQikQkACEwTwBPBMSQgyR3KE8IBhgUPAYJCAAxfUxPEFy8vOACgwBpGByssHcJAFoDAYBrbuAzKH09Ka6c4JbEtqmkADMIfQwAeTgAVTgRuDAAdzgABQlM904GJqr3GAmC9c2d-cOT88vPa9vmxc0y2mMEq1TqDSaCwBrQK7jg+gAjg8AJKeAIAZQAKgBNAAyKAGAAZCQBGJ4rOGIlFoqHQ-IrThgLASADCmRgATSuI65OmjOZbO8-zpgIKIKqtXqGBpIuhQKQcAgBA5nAgEhgAH19CR7jd9GASLyFUqObTZfTpt4uBJ9C59XAAiy1TAcMidRJfvaQEarZwbXaDcLzaKVghbA8AgBZCDcbUu478Og4fmeAA0OA8BAARnYcJ4JFkcFhjkawxgI2bg-KEPoQPocxz7o9JtMa3WG0G6UbxWCpTLg0kxaDJQ1O+b5YrlQFGXCqlkNWBVgubVJtUbJ6aBzCVr7-a5A2zZwWcIucFsV2uW0hd7b9w7K+OCmWI2dJB4pLZS+HN1uLUg2-WdgBE2pa1oBP5VlePYjtKY5LFBw7gtKkIAkaRQlGUFQSkhjT-BMojhBk2RBPhYSpGgCBKLAQRAA)
 
 ***
 

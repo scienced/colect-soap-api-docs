@@ -101,8 +101,6 @@ Customers are uniquely identified by `customerNo`. Sending a customer with an ex
 </soapenv:Envelope>
 ```
 
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#url=https%3A%2F%2Fraw.githubusercontent.com%2Fscienced%2Fcolect-soap-api-docs%2Frefs%2Fheads%2Fmain%2Fexamples%2FstoreCustomers.xml)
-
 ### Response
 
 ```xml
@@ -148,9 +146,6 @@ Replace your entire customer base. Customers not included in this request will b
 </soapenv:Envelope>
 ```
 
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwZw9ghgDgpgdgNwFwFFEwDZlgAgB4C2GcIS408CAvAEQAWALg1EgPSsgDGdMBEIAOkIZyUAWABOAcw6QorSpmwxWNAFA5N+IiSTQAlrUbM2rAwM6cBICBhg2oY6FAb6GAVwAmMAXAyqAPg0tUDlKJAAJGAhvCVYgrRxQikQkACEwTwBPBMSQgzIGSRgAMXcMDABhdxAighgJAGUYBly8vOACgwBpGByssHcJAFoDYYBrPuAzKH09Wd6c4PbEztmkThq6hraV9rW5zdqweokAOTAAyoBVRoAVYYAGR4BGaYKj7fPL5b2OgrgEHqARK-Do+jAcBwGXcrgAju4YDgAIIEWoNTxA97rQHA35-fLrXgQfQYAKSWIgAACADMwRC4AAjQbwxG+DDYubE0m7AmaA4bIYSeCcLKVTIwAIoa4AJU5gokwrgovF3l5fOAAEJhsMcAJ9TgaeUMDhPicGjhMQwIHqDTr1fsZoctuaJA7-uszad3XsBV6GhcrrcHs8AEzy-3fH0rAW4yWNBhZOw4cUSOAWtINDD6ODyuPR-YFblknM0sBU2pJmCcSTpiQCbzy4sFj3OxUisUSqWyiNCjuqyX4jXa3X6gSG42ml2nS0Qa228f2oeOj7TnbLjojhc4WwmsAMHgSKfHU4gbdL31OwrFMoVaonhrNVq-aaicIZbJBV9hVJoBBKWAAiAA)
-
-
 ---
 
 ## deleteCustomers
@@ -177,8 +172,6 @@ Remove specific customers from your collection.
 </soapenv:Envelope>
 ```
 
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwZw9ghgDgpgdgNwFwFFEwDZlgAgB4C2GcIS408CAvAEQAWALg1EgPSsgDGdMBEIAOkIZyUAWABOAcw6QorSpmwxWNAFA5N+IiSTQAlrUbM2rAwM6cBICBhg2oY6FAb6GAVwAmMAXAyqAPg0tUDlKJAAJGAhvCVYgrRxQikQkACEwTwBPBMSQgyRvOwYYAGF3EAYwAhgJEFy8vOACgwBpGByssHcJAFoDXoBrDuAzKH09cfac4MbE5vGkTgqqmokGucaFieXK6tqAOTAA0oBVAGUAFV6ABhuARlGC3dXD49nNpoK4CBqAgDF+HR9GA4DgMu5XABHdwwHAAQQIlVqnl+T0WPz+H0++UWvAg+gwAUksRAAAEAGZAkFwABG3WhsN8GHRE3xhI2OM02yWPQk8E4WVKmRgARQpwASqzeRJ+XBBcLvJy5tKXvt1tiQmMJkUYCVyns1vUPqNROEMtkgqawqk0AglLAAkA)
-
 ---
 
 ## deleteAllCustomers
@@ -203,8 +196,6 @@ Remove all customers from your collection.
 </soapenv:Envelope>
 ```
 
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwZw9ghgDgpgdgNwFwFFEwDZlgAgB4C2GcIS408CAvAEQAWALg1EgPSsgDGdMBEIAOkIZyUAWABOAcw6QorSpmwxWNAFA5N+IiSTQAlrUbM2rAwM6cBICBhg2oY6FAb6GAVwAmMAXAyqAPg0tUDlKJAAJGAhvCVYgrRxQikQkACEwTwBPBMSQgyRvOwYYAEEMDABhdxAGMAIYCRBcvLzgAoMAaRgcrLB3CQBaA0GAax7gMyh9PWnunODWyYKimBLyqpq6hqaWpNkU5AzsoMnRcLQEJVgAoA)
-
 ---
 
 ## Customer Data Structure
@@ -226,10 +217,12 @@ Remove all customers from your collection.
 | `street` | String | Street name |
 | `houseNumber` | String | House/building number |
 | `houseNumberSuffix` | String | Suffix (apartment, suite, etc.) |
+| `state` | String | State/province |
 | `postalCode` | String | Postal/ZIP code |
 | `city` | String | City name |
 | `country` | String | Country name |
 | `phone` | String | Phone number |
+| `gln` | String | Global Location Number (GLN) |
 
 ### Pricing Configuration
 
@@ -275,6 +268,7 @@ Customers can have multiple shipping addresses.
 | `street` | String | No | Street name |
 | `houseNumber` | String | No | House/building number |
 | `houseNumberSuffix` | String | No | Suffix (apartment, suite, etc.) |
+| `state` | String | No | State/province |
 | `postalCode` | String | No | Postal/ZIP code |
 | `city` | String | No | City |
 | `country` | String | No | Country |
@@ -283,6 +277,7 @@ Customers can have multiple shipping addresses.
 | `contactFirstName` | String | No | Contact first name |
 | `contactLastName` | String | No | Contact last name |
 | `contactTelephone` | String | No | Contact direct phone |
+| `gln` | String | No | Global Location Number (GLN) |
 | `externalReference` | String | No | External system reference |
 
 ### Example

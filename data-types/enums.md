@@ -38,10 +38,10 @@ Basic color categories for filtering.
 | `PURPLE`     |
 | `BROWN`      |
 | `PINK`       |
-| `BEIGE`      |
-| `SILVER`     |
-| `GOLD`       |
 | `MULTICOLOR` |
+| `BEIGE`      |
+| `GOLD`       |
+| `SILVER`     |
 | `UNKNOWN`    |
 
 ### XMediumType

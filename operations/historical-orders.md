@@ -98,8 +98,6 @@ Historical orders are primarily for display purposes - they show customers their
 </soapenv:Envelope>
 ```
 
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#url=https%3A%2F%2Fraw.githubusercontent.com%2Fscienced%2Fcolect-soap-api-docs%2Frefs%2Fheads%2Fmain%2Fexamples%2FstoreHistoricalOrders.xml)
-
 ### Response
 
 ```xml
@@ -145,8 +143,6 @@ Only affects orders for the specified customer. Other customers' historical orde
 </soapenv:Envelope>
 ```
 
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwZw9ghgDgpgdgNwFwFFEwDZlgAgB4C2GcIS408CAvAEQAWALg1EgPSsgDGdMBEIAOkIZyUAWABOAcw6QorSpmwxWNAFA5N+IiSTQAlrUbM2rAwM6cBICBhg2oY6FAb6GAVwAmMAXAyqAPg0tUDlKJAAJGAhvCVYgrRxQikQkACEwTwBPBMSQgzIGSRgAMXcMDAj9ECKJfU5bAHkJWIBlGAYSyQBhdxqwAhgJXLy84AKDAGkYHKywdwkAWgNFgGsZ4DMofT1t6Zzg0cTx7aROPqLBiQA5MADugFVWgBVFgAY3gEZNgvP+q9uIyOmhOOzo1Vq9SaLSGQOBx1+FwGQ0Bjxe7y+P1Of0uKLuh3hCNOkli13cBAARrCUAAlAAKiwATG9GQAWDEAVlZjKxOxJKPJVOGBMJIIAhItFjgBDKcAAzcoYHD8iQ4TwQBgQaWyyVwo68pDg-p1BoYZqxPWjUGGiGSKFmmHC0VjRH-PH3J6vD7fLY7HHIm7451EvmOsmU6n0pks9kfVkADgAnAaVeGhZb4cAJVKZQJ5YrlY61RqtbmcLqRfrfTbjfbzbDKyDq8bSoqqrXTfWJO1Oj0kVcgZtROEMtkgkOwqk0AglLAAkA)
-
 ***
 
 ## deleteHistoricalOrders
@@ -172,8 +168,6 @@ Remove specific historical orders.
 </soapenv:Envelope>
 ```
 
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwZw9ghgDgpgdgNwFwFFEwDZlgAgB4C2GcIS408CAvAEQAWALg1EgPSsgDGdMBEIAOkIZyUAWABOAcw6QorSpmwxWNAFA5N+IiSTQAlrUbM2rAwM6cBICBhg2oY6FAb6GAVwAmMAXAyqAPg0tUDlKJAAJGAhvCVYgrRxQikQkACEwTwBPBMSQgyRvOwYYCP0QBkl9TlsAeQlYkFy8vOACgwBpGByssHcJAFoDAYBrbuAzKH09Ka6c4JbEtqmkOnLKiWq6hpgJZsWW5enOdwqwAl2AOTAAgGEAVQBlABUBgAY3gEYJgpOzi4k132ByWBUksUu7gIACNdgEUAAlAAKAwATG9UQAWd5vACsmNRPxW4KuUNhewWIKJ0zWZ02NQw9ViwJCk2mRRgJTKdK2jJ2EialImonCGWyQWFYVSaAQSlgASAA)
-
 ***
 
 ## deleteAllHistoricalOrders
@@ -197,8 +191,6 @@ Remove all historical orders from your collection.
     </soapenv:Body>
 </soapenv:Envelope>
 ```
-
-[Try in Colect Forge](https://colect-xml-generator-app-xr8n8.ondigitalocean.app/workbench#lz=DwZw9ghgDgpgdgNwFwFFEwDZlgAgB4C2GcIS408CAvAEQAWALg1EgPSsgDGdMBEIAOkIZyUAWABOAcw6QorSpmwxWNAFA5N+IiSTQAlrUbM2rAwM6cBICBhg2oY6FAb6GAVwAmMAXAyqAPg0tUDlKJAAJGAhvCVYgrRxQikQkACEwTwBPBMSQgyRvOwYYAEEMDAj9EAZJfU5bAHkJWJBcvLzgAoMAaRgcrLB3CQBaAxGAa37gMyh9PTm+nOCOmYKimBLyyuraiXqmlpgJNpWk2RTkDOygmdFwtAQlWACgA)
 
 ***
 
