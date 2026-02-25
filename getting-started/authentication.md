@@ -12,7 +12,7 @@ Your API key is collection-specific and should be kept confidential. Never expos
 
 ## Obtaining Your API Key
 
-Contact your Colect account manager or support to receive your API key. Each collection (brand/tenant) has a unique key.
+If you cannot find your API key, please check the **Backend** section under the **Collections** tab, where your collections (brand/tenant) are configured. For more information, [**click here**](https://docs.colect.io/admin/backend-console/collections).
 
 ***
 
@@ -57,13 +57,7 @@ The `apiKey` parameter is the first parameter in every API operation:
 
 ## Connection Details
 
-| Property         | Value                                                     |
-| ---------------- | --------------------------------------------------------- |
-| **Endpoint URL** | `https://connector.colect.services:443/services/api/3.0`  |
-| **WSDL URL**     | `https://connector.colect.services/services/api/3.0?wsdl` |
-| **Protocol**     | SOAP 1.1 / SOAP 1.2                                       |
-| **Transport**    | HTTPS (TLS required)                                      |
-| **Port**         | 443                                                       |
+<table><thead><tr><th width="254.05078125">Property</th><th>Value</th></tr></thead><tbody><tr><td><strong>Endpoint URL</strong></td><td><code>https://connector.colect.services:443/services/api/3.0</code></td></tr><tr><td><strong>WSDL URL</strong></td><td><code>https://connector.colect.services/services/api/3.0?wsdl</code></td></tr><tr><td><strong>Protocol</strong></td><td>SOAP 1.1 / SOAP 1.2</td></tr><tr><td><strong>Transport</strong></td><td>HTTPS (TLS required)</td></tr><tr><td><strong>Port</strong></td><td>443</td></tr></tbody></table>
 
 ***
 
@@ -132,11 +126,7 @@ All three examples above are **functionally identical**. The server only cares a
 
 ### Namespaces Used in This API
 
-| Prefix (convention)   | Namespace URI                               | Used For                          |
-| --------------------- | ------------------------------------------- | --------------------------------- |
-| `soapenv:` or `soap:` | `http://schemas.xmlsoap.org/soap/envelope/` | SOAP envelope structure           |
-| `api:` or `ns2:`      | `http://api.cc.salesapp.apptitude.nl/`      | All API operations and data types |
-| `ws:`                 | `http://ws.cc.salesapp.apptitude.nl/`       | Product relations only            |
+<table><thead><tr><th width="182.33203125">Prefix (convention)</th><th>Namespace URI</th><th>Used For</th></tr></thead><tbody><tr><td><code>soapenv:</code> or <code>soap:</code></td><td><code>http://schemas.xmlsoap.org/soap/envelope/</code></td><td>SOAP envelope structure</td></tr><tr><td><code>api:</code> or <code>ns2:</code></td><td><code>http://api.cc.salesapp.apptitude.nl/</code></td><td>All API operations and data types</td></tr><tr><td><code>ws:</code></td><td><code>http://ws.cc.salesapp.apptitude.nl/</code></td><td>Product relations only</td></tr></tbody></table>
 
 ***
 

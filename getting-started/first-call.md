@@ -6,7 +6,7 @@ This guide walks you through making your first API call to the Colect SOAP API.
 
 ## Prerequisites
 
-* Your API key (contact Colect support)
+* Please check the **Backend** section under the **Collections** tab, where your collections (brand/tenant) are configured. For more information, [**click here**.](https://docs.colect.io/admin/backend-console/collections)
 * A SOAP client (SoapUI, Postman, or your programming language's SOAP library)
 
 ***
@@ -242,12 +242,12 @@ Returns all orders that have not yet been marked as processed.
 ┌──────────────────────────────────────────────────────────────┐
 │                    Daily Sync Schedule                        │
 ├──────────────────────────────────────────────────────────────┤
-│  06:00  storeFullProductSet     Full product catalog sync     │
-│  06:30  storeFullCustomerSet    Full customer sync            │
+│  07:00  storeFullProductSet     Full product catalog sync     │
+│  07:30  storeFullCustomerSet    Full customer sync            │
 │  Every  updateStock             Real-time stock updates       │
 │  hour   updatePrices            Price changes                 │
 │  Every  getUnprocessedOrders    Poll for new orders           │
-│  5 min  markOrdersAsProcessed   Confirm order processing      │
+│  15 min  markOrdersAsProcessed   Confirm order processing      │
 └──────────────────────────────────────────────────────────────┘
 ```
 
