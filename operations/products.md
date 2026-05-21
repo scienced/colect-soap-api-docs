@@ -281,17 +281,6 @@ Update stock levels without sending full product data. Ideal for real-time inven
 </soapenv:Envelope>
 ```
 
-### Alternative: Using EAN Code
-
-```xml
-<api:stockInfoElement>
-    <api:eanCode>8712345678902</api:eanCode>
-    <api:stockLevel>
-        <api:quantity>75</api:quantity>
-    </api:stockLevel>
-</api:stockInfoElement>
-```
-
 ### Date-Based Stock Levels
 
 For future deliveries, specify multiple stock levels with dates:
