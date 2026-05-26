@@ -1,28 +1,28 @@
-# Product Relation Operations
+# Product Relations
 
 Define relationships between products to enable cross-selling features like "matching items" and product succession chains for carry-over styles.
 
----
+***
 
 ## Operations Overview
 
-| Operation | Type | Description |
-|-----------|------|-------------|
-| [`storeFullProductRelations`](#storefullproductrelations) | Full Sync | Replace all product relations |
-| [`storeProductRelations`](#storeproductrelations) | Partial Sync | Add or update specific relations |
-| [`deleteProductRelations`](#deleteproductrelations) | Delete | Remove specific relations |
-| [`deleteAllProductRelations`](#deleteallproductrelations) | Delete | Clear all relations |
+| Operation                                                                     | Type         | Description                      |
+| ----------------------------------------------------------------------------- | ------------ | -------------------------------- |
+| [`storeFullProductRelations`](product-relations.md#storefullproductrelations) | Full Sync    | Replace all product relations    |
+| [`storeProductRelations`](product-relations.md#storeproductrelations)         | Partial Sync | Add or update specific relations |
+| [`deleteProductRelations`](product-relations.md#deleteproductrelations)       | Delete       | Remove specific relations        |
+| [`deleteAllProductRelations`](product-relations.md#deleteallproductrelations) | Delete       | Clear all relations              |
 
----
+***
 
 ## Relation Types
 
-| Type | Description | Use Case |
-|------|-------------|----------|
-| `MATCHING_SET` | Products that go well together | Show matching items (shirt + pants) |
-| `SUCCESSOR` | New version of an old product | Show replacement for discontinued items |
+| Type           | Description                    | Use Case                                |
+| -------------- | ------------------------------ | --------------------------------------- |
+| `MATCHING_SET` | Products that go well together | Show matching items (shirt + pants)     |
+| `SUCCESSOR`    | New version of an old product  | Show replacement for discontinued items |
 
----
+***
 
 ## storeFullProductRelations
 
@@ -41,31 +41,36 @@ Replace all product relations. Existing relations not in the request will be **d
 
             <!-- Matching set: Shirt + Pants + Belt -->
             <ws:productRelation>
-                <ws:sourceProductUniqueId>SHIRT-001</ws:sourceProductUniqueId>
-                <ws:sourceProductColorCode>BLU</ws:sourceProductColorCode>
-                <ws:targetProductUniqueId>PANTS-001</ws:targetProductUniqueId>
-                <ws:targetProductColorCode>NVY</ws:targetProductColorCode>
-                <ws:type>MATCHING_SET</ws:type>
+                <api:sourceProductUniqueId>SHIRT-001</api:sourceProductUniqueId>
+                <api:sourceProductColorCode>BLU</api:sourceProductColorCode>
+                <api:targetProductUniqueId>PANTS-001</api:targetProductUniqueId>
+                <api:targetProductColorCode>NVY</api:targetProductColorCode>
+                <api:type>MATCHING_SET</api:type>
+                <api:groupCode>BLUE-1</api:groupCode>
+                <api:groupDescription>Blue Set</api:groupDescription>
             </ws:productRelation>
             <ws:productRelation>
-                <ws:sourceProductUniqueId>SHIRT-001</ws:sourceProductUniqueId>
-                <ws:sourceProductColorCode>BLU</ws:sourceProductColorCode>
-                <ws:targetProductUniqueId>BELT-001</ws:targetProductUniqueId>
-                <ws:targetProductColorCode>BRN</ws:targetProductColorCode>
-                <ws:type>MATCHING_SET</ws:type>
+                <api:sourceProductUniqueId>SHIRT-001</api:sourceProductUniqueId>
+                <api:sourceProductColorCode>BLU</api:sourceProductColorCode>
+                <api:targetProductUniqueId>BELT-001</api:targetProductUniqueId>
+                <api:targetProductColorCode>BRN</api:targetProductColorCode>
+                <api:type>MATCHING_SET</api:type>
+                <api:groupCode>BLUE-1</api:groupCode>
+                <api:groupDescription>Blue Set</api:groupDescription>
             </ws:productRelation>
 
             <!-- Successor: Old style → New style -->
             <ws:productRelation>
-                <ws:sourceProductUniqueId>TSHIRT-V1</ws:sourceProductUniqueId>
-                <ws:sourceProductColorCode>BLK</ws:sourceProductColorCode>
-                <ws:targetProductUniqueId>TSHIRT-V2</ws:targetProductUniqueId>
-                <ws:targetProductColorCode>BLK</ws:targetProductColorCode>
-                <ws:type>SUCCESSOR</ws:type>
+                <api:sourceProductUniqueId>TSHIRT-V1</api:sourceProductUniqueId>
+                <api:sourceProductColorCode>BLK</api:sourceProductColorCode>
+                <api:targetProductUniqueId>TSHIRT-V2</api:targetProductUniqueId>
+                <api:targetProductColorCode>BLK</api:targetProductColorCode>
+                <api:type>SUCCESSOR</api:type>
+                <api:groupCode>NEW26</api:groupCode>
+                <api:groupDescription>New for 2026</api:groupDescription>
             </ws:productRelation>
         </api:storeFullProductRelations>
     </soapenv:Body>
-</soapenv:Envelope>
 ```
 
 ### Response
@@ -78,7 +83,7 @@ Replace all product relations. Existing relations not in the request will be **d
 Note the different namespace for `productRelation`: `xmlns:ws="http://ws.cc.salesapp.apptitude.nl/"`
 {% endhint %}
 
----
+***
 
 ## storeProductRelations
 
@@ -96,18 +101,20 @@ Add or update specific product relations without affecting others.
             <api:failOnUnknownProducts>true</api:failOnUnknownProducts>
 
             <ws:productRelation>
-                <ws:sourceProductUniqueId>JACKET-001</ws:sourceProductUniqueId>
-                <ws:sourceProductColorCode>BLK</ws:sourceProductColorCode>
-                <ws:targetProductUniqueId>PANTS-002</ws:targetProductUniqueId>
-                <ws:targetProductColorCode>BLK</ws:targetProductColorCode>
-                <ws:type>MATCHING_SET</ws:type>
+                <api:sourceProductUniqueId>JACKET-001</api:sourceProductUniqueId>
+                <api:sourceProductColorCode>BLK</api:sourceProductColorCode>
+                <api:targetProductUniqueId>PANTS-002</api:targetProductUniqueId>
+                <api:targetProductColorCode>BLK</api:targetProductColorCode>
+                <api:type>MATCHING_SET</api:type>
+                <api:groupCode>BLACL-1</api:groupCode>
+                <api:groupDescription>Black Set</api:groupDescription>
             </ws:productRelation>
         </api:storeProductRelations>
     </soapenv:Body>
 </soapenv:Envelope>
 ```
 
----
+***
 
 ## deleteProductRelations
 
@@ -124,18 +131,18 @@ Remove specific product relations.
             <api:apiKey>your-api-key</api:apiKey>
 
             <ws:productRelation>
-                <ws:sourceProductUniqueId>JACKET-001</ws:sourceProductUniqueId>
-                <ws:sourceProductColorCode>BLK</ws:sourceProductColorCode>
-                <ws:targetProductUniqueId>PANTS-002</ws:targetProductUniqueId>
-                <ws:targetProductColorCode>BLK</ws:targetProductColorCode>
-                <ws:type>MATCHING_SET</ws:type>
+                <api:sourceProductUniqueId>JACKET-001</api:sourceProductUniqueId>
+                <api:sourceProductColorCode>BLK</api:sourceProductColorCode>
+                <api:targetProductUniqueId>PANTS-002</api:targetProductUniqueId>
+                <api:targetProductColorCode>BLK</api:targetProductColorCode>
+                <api:type>MATCHING_SET</api:type>
             </ws:productRelation>
         </api:deleteProductRelations>
     </soapenv:Body>
 </soapenv:Envelope>
 ```
 
----
+***
 
 ## deleteAllProductRelations
 
@@ -154,19 +161,15 @@ Remove all product relations.
 </soapenv:Envelope>
 ```
 
----
+***
 
 ## Product Relation Fields
 
-| Field | Type | Required | Description |
-|-------|------|----------|-------------|
-| `sourceProductUniqueId` | String | No | Source product style ID |
-| `sourceProductColorCode` | String | No | Source product color |
-| `targetProductUniqueId` | String | No | Related product style ID |
-| `targetProductColorCode` | String | No | Related product color |
-| `type` | Enum | No | `MATCHING_SET` or `SUCCESSOR` |
+<table><thead><tr><th width="237.13671875">Field</th><th>Type</th><th>Required</th><th>Description</th></tr></thead><tbody><tr><td><code>sourceProductUniqueId</code></td><td>String</td><td>Yes</td><td>Source product style ID</td></tr><tr><td><code>sourceProductColorCode</code></td><td>String</td><td>No</td><td>Source product color</td></tr><tr><td><code>targetProductUniqueId</code></td><td>String</td><td>No</td><td>Related product style ID</td></tr><tr><td><code>targetProductColorCode</code></td><td>String</td><td>No</td><td>Related product color</td></tr><tr><td><code>type</code></td><td>Enum</td><td>No</td><td><code>MATCHING_SET</code> or <code>SUCCESSOR</code></td></tr><tr><td><code>groupCode</code></td><td>String</td><td>Yes</td><td>Code of the group this relation belongs to</td></tr><tr><td><code>groupDescription</code></td><td>String</td><td>No</td><td>Description of the group this relation belongs to</td></tr></tbody></table>
 
----
+
+
+***
 
 ## Matching Set Relations
 
@@ -191,27 +194,33 @@ Source Product → Target Products
 
             <!-- Base: Blue Dress Shirt -->
             <ws:productRelation>
-                <ws:sourceProductUniqueId>DRESS-SHIRT</ws:sourceProductUniqueId>
-                <ws:sourceProductColorCode>BLU</ws:sourceProductColorCode>
-                <ws:targetProductUniqueId>CHINOS</ws:targetProductUniqueId>
-                <ws:targetProductColorCode>KHK</ws:targetProductColorCode>
-                <ws:type>MATCHING_SET</ws:type>
+                <api:sourceProductUniqueId>DRESS-SHIRT</api:sourceProductUniqueId>
+                <api:sourceProductColorCode>BLU</api:sourceProductColorCode>
+                <api:targetProductUniqueId>CHINOS</api:targetProductUniqueId>
+                <api:targetProductColorCode>KHK</api:targetProductColorCode>
+                <api:type>MATCHING_SET</api:type>
+                <api:groupCode>BLUE-1</api:groupCode>
+                <api:groupDescription>Blue Set</api:groupDescription>
             </ws:productRelation>
 
             <ws:productRelation>
-                <ws:sourceProductUniqueId>DRESS-SHIRT</ws:sourceProductUniqueId>
-                <ws:sourceProductColorCode>BLU</ws:sourceProductColorCode>
-                <ws:targetProductUniqueId>BLAZER</ws:targetProductUniqueId>
-                <ws:targetProductColorCode>NVY</ws:targetProductColorCode>
-                <ws:type>MATCHING_SET</ws:type>
+                <api:sourceProductUniqueId>DRESS-SHIRT</api:sourceProductUniqueId>
+                <api:sourceProductColorCode>BLU</api:sourceProductColorCode>
+                <api:targetProductUniqueId>BLAZER</api:targetProductUniqueId>
+                <api:targetProductColorCode>NVY</api:targetProductColorCode>
+                <api:type>MATCHING_SET</api:type>
+                <api:groupCode>BLUE-1</api:groupCode>
+                <api:groupDescription>Blue Set</api:groupDescription>
             </ws:productRelation>
 
             <ws:productRelation>
-                <ws:sourceProductUniqueId>DRESS-SHIRT</ws:sourceProductUniqueId>
-                <ws:sourceProductColorCode>BLU</ws:sourceProductColorCode>
-                <ws:targetProductUniqueId>LEATHER-BELT</ws:targetProductUniqueId>
-                <ws:targetProductColorCode>TAN</ws:targetProductColorCode>
-                <ws:type>MATCHING_SET</ws:type>
+                <api:sourceProductUniqueId>DRESS-SHIRT</api:sourceProductUniqueId>
+                <api:sourceProductColorCode>BLU</api:sourceProductColorCode>
+                <api:targetProductUniqueId>LEATHER-BELT</api:targetProductUniqueId>
+                <api:targetProductColorCode>TAN</api:targetProductColorCode>
+                <api:type>MATCHING_SET</api:type>
+                <api:groupCode>BLUE-1</api:groupCode>
+                <api:groupDescription>Blue Set</api:groupDescription>
             </ws:productRelation>
         </api:storeProductRelations>
     </soapenv:Body>
@@ -219,10 +228,11 @@ Source Product → Target Products
 ```
 
 In the app, when viewing the blue dress shirt, customers see:
-- "Complete the look" or "Matching items" section
-- Khaki chinos, navy blazer, tan belt suggestions
 
----
+* "Complete the look" or "Matching items" section
+* Khaki chinos, navy blazer, tan belt suggestions
+
+***
 
 ## Successor Relations
 
@@ -245,19 +255,23 @@ Old Product → New Product (successor)
 
             <!-- Classic Polo discontinued, replaced by Premium Polo -->
             <ws:productRelation>
-                <ws:sourceProductUniqueId>CLASSIC-POLO</ws:sourceProductUniqueId>
-                <ws:sourceProductColorCode>WHT</ws:sourceProductColorCode>
-                <ws:targetProductUniqueId>PREMIUM-POLO</ws:targetProductUniqueId>
-                <ws:targetProductColorCode>WHT</ws:targetProductColorCode>
-                <ws:type>SUCCESSOR</ws:type>
+                <api:sourceProductUniqueId>CLASSIC-POLO</api:sourceProductUniqueId>
+                <api:sourceProductColorCode>WHT</api:sourceProductColorCode>
+                <api:targetProductUniqueId>PREMIUM-POLO</api:targetProductUniqueId>
+                <api:targetProductColorCode>WHT</api:targetProductColorCode>
+                <api:type>SUCCESSOR</api:type>
+                <api:groupCode>NEW26</api:groupCode>
+                <api:groupDescription>New for 2026</api:groupDescription>
             </ws:productRelation>
 
             <ws:productRelation>
-                <ws:sourceProductUniqueId>CLASSIC-POLO</ws:sourceProductUniqueId>
-                <ws:sourceProductColorCode>NVY</ws:sourceProductColorCode>
-                <ws:targetProductUniqueId>PREMIUM-POLO</ws:targetProductUniqueId>
-                <ws:targetProductColorCode>NVY</ws:targetProductColorCode>
-                <ws:type>SUCCESSOR</ws:type>
+                <api:sourceProductUniqueId>CLASSIC-POLO</api:sourceProductUniqueId>
+                <api:sourceProductColorCode>NVY</api:sourceProductColorCode>
+                <api:targetProductUniqueId>PREMIUM-POLO</api:targetProductUniqueId>
+                <api:targetProductColorCode>NVY</api:targetProductColorCode>
+                <api:type>SUCCESSOR</api:type>
+                <api:groupCode>NEW26</api:groupCode>
+                <api:groupDescription>New for 2026</api:groupDescription>
             </ws:productRelation>
         </api:storeProductRelations>
     </soapenv:Body>
@@ -265,20 +279,21 @@ Old Product → New Product (successor)
 ```
 
 Use cases:
-- Reordering discontinued items → show successor
-- Historical orders → link to current equivalent
-- Season carry-over with style updates
 
----
+* Reordering discontinued items → show successor
+* Historical orders → link to current equivalent
+* Season carry-over with style updates
+
+***
 
 ## Handling Unknown Products
 
 The `failOnUnknownProducts` parameter controls behavior when referenced products don't exist:
 
-| Value | Behavior |
-|-------|----------|
-| `true` | Operation fails if any product is unknown |
-| `false` | Unknown products are silently ignored |
+| Value   | Behavior                                  |
+| ------- | ----------------------------------------- |
+| `true`  | Operation fails if any product is unknown |
+| `false` | Unknown products are silently ignored     |
 
 ```xml
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
@@ -298,7 +313,7 @@ The `failOnUnknownProducts` parameter controls behavior when referenced products
 Use `failOnUnknownProducts=true` during development to catch data issues. Use `false` in production if your product sync might be incomplete.
 {% endhint %}
 
----
+***
 
 ## Bidirectional Relations
 
@@ -316,43 +331,47 @@ Use `failOnUnknownProducts=true` during development to catch data issues. Use `f
 
             <!-- Shirt shows Pants as matching -->
             <ws:productRelation>
-                <ws:sourceProductUniqueId>SHIRT-001</ws:sourceProductUniqueId>
-                <ws:sourceProductColorCode>BLU</ws:sourceProductColorCode>
-                <ws:targetProductUniqueId>PANTS-001</ws:targetProductUniqueId>
-                <ws:targetProductColorCode>NVY</ws:targetProductColorCode>
-                <ws:type>MATCHING_SET</ws:type>
+                <api:sourceProductUniqueId>SHIRT-001</api:sourceProductUniqueId>
+                <api:sourceProductColorCode>BLU</api:sourceProductColorCode>
+                <api:targetProductUniqueId>PANTS-001</api:targetProductUniqueId>
+                <api:targetProductColorCode>NVY</api:targetProductColorCode>
+                <api:type>MATCHING_SET</api:type>
+                <api:groupCode>BLUE-1</api:groupCode>
+                <api:groupDescription>Blue Set</api:groupDescription>
             </ws:productRelation>
 
             <!-- Pants shows Shirt as matching -->
             <ws:productRelation>
-                <ws:sourceProductUniqueId>PANTS-001</ws:sourceProductUniqueId>
-                <ws:sourceProductColorCode>NVY</ws:sourceProductColorCode>
-                <ws:targetProductUniqueId>SHIRT-001</ws:targetProductUniqueId>
-                <ws:targetProductColorCode>BLU</ws:targetProductColorCode>
-                <ws:type>MATCHING_SET</ws:type>
+                <api:sourceProductUniqueId>PANTS-001</api:sourceProductUniqueId>
+                <api:sourceProductColorCode>NVY</api:sourceProductColorCode>
+                <api:targetProductUniqueId>SHIRT-001</api:targetProductUniqueId>
+                <api:targetProductColorCode>BLU</api:targetProductColorCode>
+                <api:type>MATCHING_SET</api:type>
+                <api:groupCode>BLUE-1</api:groupCode>
+                <api:groupDescription>Blue Set</api:groupDescription>
             </ws:productRelation>
         </api:storeProductRelations>
     </soapenv:Body>
 </soapenv:Envelope>
 ```
 
----
+***
 
 ## Best Practices
 
 {% tabs %}
 {% tab title="Matching Sets" %}
-- Create bidirectional relations for mutual matching
-- Limit to 3-6 matching items per product
-- Match by style theme and color coordination
-- Update when new collections launch
+* Create bidirectional relations for mutual matching
+* Limit to 3-6 matching items per product
+* Match by style theme and color coordination
+* Update when new collections launch
 {% endtab %}
 
 {% tab title="Successors" %}
-- Only create when old product is discontinued
-- Point to exact color equivalent when possible
-- Maintain chain: V1 → V2 → V3 (each points to next)
-- Use for carry-over styles between seasons
+* Only create when old product is discontinued
+* Point to exact color equivalent when possible
+* Maintain chain: V1 → V2 → V3 (each points to next)
+* Use for carry-over styles between seasons
 {% endtab %}
 
 {% tab title="Sync Strategy" %}
