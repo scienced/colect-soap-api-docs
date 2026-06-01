@@ -2,7 +2,7 @@
 
 The Colect SOAP API uses standard SOAP fault responses for error handling. This guide explains common errors and how to handle them.
 
----
+***
 
 ## SOAP Fault Structure
 
@@ -22,33 +22,33 @@ When an error occurs, the API returns a SOAP Fault:
 </soap:Envelope>
 ```
 
----
+***
 
 ## Common Error Scenarios
 
 ### Authentication Errors
 
-| Error | Cause | Solution |
-|-------|-------|----------|
-| Invalid API key | API key not recognized | Verify your API key with Colect support |
-| API key missing | No `apiKey` element in request | Add the required `apiKey` parameter |
+| Error           | Cause                          | Solution                               |
+| --------------- | ------------------------------ | -------------------------------------- |
+| Invalid API key | API key not recognized         | Verify your API key within the backend |
+| API key missing | No `apiKey` element in request | Add the required `apiKey` parameter    |
 
 ### Validation Errors
 
-| Error | Cause | Solution |
-|-------|-------|----------|
-| Missing mandatory field | Required field not provided | Check data type documentation for mandatory fields |
-| Invalid field format | Field value doesn't match expected format | Verify date formats (ISO 8601), currency codes, etc. |
-| Duplicate identifier | `uniqueId` + `colorCode` already exists | Use unique combinations or use update operations |
+| Error                   | Cause                                     | Solution                                             |
+| ----------------------- | ----------------------------------------- | ---------------------------------------------------- |
+| Missing mandatory field | Required field not provided               | Check data type documentation for mandatory fields   |
+| Invalid field format    | Field value doesn't match expected format | Verify date formats (ISO 8601), currency codes, etc. |
+| Duplicate identifier    | `uniqueId` + `colorCode` already exists   | Use unique combinations or use update operations     |
 
 ### Data Integrity Errors
 
-| Error | Cause | Solution |
-|-------|-------|----------|
-| Unknown product reference | Referenced product doesn't exist | Ensure products are synced before referencing them |
-| Unknown customer reference | Referenced customer doesn't exist | Sync customers before creating access rules |
+| Error                      | Cause                             | Solution                                           |
+| -------------------------- | --------------------------------- | -------------------------------------------------- |
+| Unknown product reference  | Referenced product doesn't exist  | Ensure products are synced before referencing them |
+| Unknown customer reference | Referenced customer doesn't exist | Sync customers before creating access rules        |
 
----
+***
 
 ## Handling Unknown Products
 
@@ -105,13 +105,14 @@ Unknown products are silently ignored. Useful when syncing from systems with par
 {% endtabs %}
 
 **Operations supporting this parameter:**
-- `updateStock`
-- `updatePrices`
-- `updateExtraFields`
-- `storeFullProductRelations`
-- `storeProductRelations`
 
----
+* `updateStock`
+* `updatePrices`
+* `updateExtraFields`
+* `storeFullProductRelations`
+* `storeProductRelations`
+
+***
 
 ## Success Responses
 
@@ -129,7 +130,7 @@ Successful operations return an empty response body:
 An empty response body (no SOAP Fault) indicates the operation completed successfully.
 {% endhint %}
 
----
+***
 
 ## Best Practices
 
@@ -146,10 +147,11 @@ Retry Strategy:
 ### 2. Log All Requests and Responses
 
 Keep detailed logs for troubleshooting:
-- Full request XML
-- Full response XML
-- Timestamp
-- Operation name
+
+* Full request XML
+* Full response XML
+* Timestamp
+* Operation name
 
 ### 3. Validate Before Sending
 
@@ -159,7 +161,7 @@ Check mandatory fields before making API calls to reduce error responses.
 
 Most Colect operations are idempotent - sending the same product data twice results in the same state. This makes retries safe.
 
----
+***
 
 ## Rate Limiting
 
@@ -167,7 +169,7 @@ Most Colect operations are idempotent - sending the same product data twice resu
 The API has rate limiting in place. If you receive rate limit errors, reduce your request frequency. For high-volume synchronization, batch your data in larger payloads rather than sending many small requests.
 {% endhint %}
 
----
+***
 
 ## Getting Help
 
@@ -176,8 +178,3 @@ If you encounter persistent errors:
 1. Check the error message for specific details
 2. Verify your request against the WSDL schema
 3. Review the data type documentation for field requirements
-4. Contact Colect support with:
-   - Your API key (first 8 characters only for security)
-   - The operation being called
-   - The full error response
-   - Timestamp of the error
