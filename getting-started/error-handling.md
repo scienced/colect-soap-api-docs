@@ -254,7 +254,7 @@ Most Colect operations are idempotent: sending the same product data twice resul
 
 Colect sends a monitoring email for every error a call returns for a collection. This includes rate-limit and simultaneous-call rejections and errors such as `Order not found`. Emails go to the addresses in the company's monitoring settings. An integration that keeps retrying too early causes one email per retry.
 
-For who receives these emails and how to change the recipients, see [Connector monitoring emails](https://docs.colect.io/admin/integrations/connector-monitoring-emails).
+For who receives these emails and how to change the recipients, see [Connector monitoring emails](https://docs.colect.io/admin/getting-started/connector-monitoring-emails).
 
 ***
 
@@ -267,13 +267,13 @@ If you encounter persistent errors:
 * Review the data type documentation for field requirements
 * Check your integration's logs for overlapping or closely spaced calls
 
-If the problem remains, create a ticket in the [Colect support portal](https://apptitude.freshdesk.com) with the operation name, the full error message, and the request and response times from your logs.
+If the problem remains, create a ticket in the [Colect support portal](https://support.apptitude.nl/) with the operation name, the full error message, and the request and response times from your logs.
 
 ***
 
 ### See Also
 
-* Making Your First Call — Authentication and a first request
-* [Connector monitoring emails](https://docs.colect.io/admin/integrations/connector-monitoring-emails) — Who receives API error emails
+* [Making Your First Call](first-call.md) — Authentication and a first request
+* [Connector monitoring emails](https://docs.colect.io/admin/getting-started/connector-monitoring-emails) — Who receives API error emails
 * [Connector Status](https://docs.colect.io/admin/getting-started/connector-status) — Last run state per collection
 * [ERP Integration using SOAP API](https://docs.colect.io/admin/erp-integration-using-soap-api) — Order fetch and processing flow
