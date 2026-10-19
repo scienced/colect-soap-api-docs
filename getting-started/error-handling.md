@@ -80,7 +80,7 @@ Colect allows one call per five seconds for each combination of API key and oper
 
 #### How the limit is measured
 
-* **Per API key and operation.** Each operation has its own limit. `getUnprocessedOrders` and `markOrdersAsProcessed` are counted separately, so calling one doesn't block the other.
+* **Per API key and operation.** Each operation has its own limit. `getUnprocessedOrders` and `markOrdersAsProcessed` are counted separately, so calling one doesn’t use up the other’s limit. They do share a simultaneous-call lock: see [Simultaneous calls](error-handling.md#simultaneous-calls).
 * **From the start of one call to the start of the next.** Colect records the time a call arrives, before it processes the call. How long the previous call took doesn't matter.
 * **Rejected calls count too.** A call that is rejected for exceeding the rate limit still resets the five-second window. The wait always counts from the last attempt, successful or not. If your integration retries too early, every retry is rejected and pushes the window out again.
 
