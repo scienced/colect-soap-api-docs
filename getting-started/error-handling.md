@@ -65,10 +65,10 @@ Most error messages include your API key in plain text. Mask the key before you 
 
 #### Throttling errors
 
-| Error                                                                                                         | Cause                                                                                               | Solution                                                                 |
-| ------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| `Rate limit exceeded (apiKey=...); it's only allowed to make one call per 5 seconds for each apiKey+function` | A call for the same API key and operation arrived less than five seconds after the previous attempt | Wait at least six seconds, then retry. See Rate limits.                  |
-| `Another '<group>' call is already in progress; simultaneous calls are not allowed`                           | A call in the same operation group is still running for this API key                                | Wait for the running call to return, then retry. See Simultaneous calls. |
+| Error                                                                                                         | Cause                                                                                               | Solution                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `Rate limit exceeded (apiKey=...); it's only allowed to make one call per 5 seconds for each apiKey+function` | A call for the same API key and operation arrived less than five seconds after the previous attempt | Wait at least six seconds, then retry. [See Rate limits](error-handling.md#rate-limits).                         |
+| `Another '<group>' call is already in progress; simultaneous calls are not allowed`                           | A call in the same operation group is still running for this API key                                | Wait for the running call to return, then retry. [See Simultaneous calls](error-handling.md#simultaneous-calls). |
 
 Both throttling errors are safe to retry. Neither error means your data was rejected: the call was not processed at all.
 
