@@ -137,12 +137,14 @@ An empty response body (no SOAP Fault) indicates the operation completed success
 ### 1. Implement Retry Logic
 
 ```
-Retry Strategy:
+Retry strategy for transient errors, excluding rate-limit responses:
 ├── Attempt 1: Immediate
 ├── Attempt 2: Wait 5 seconds
 ├── Attempt 3: Wait 30 seconds
 └── Attempt 4: Wait 2 minutes
 ```
+
+Do not use the immediate attempt after a rate-limit response. Follow the rate-limit policy below instead.
 
 ### 2. Log All Requests and Responses
 
@@ -163,11 +165,20 @@ Most Colect operations are idempotent - sending the same product data twice resu
 
 ***
 
-## Rate Limiting
+## Rate-limit retry policy
 
 {% hint style="warning" %}
-The API has rate limiting in place. If you receive rate limit errors, reduce your request frequency. For high-volume synchronization, batch your data in larger payloads rather than sending many small requests.
+The limit is one API call every five seconds for each API-key/function pair.
 {% endhint %}
+
+Treat a rate-limit response differently from other transient failures. Do not retry it immediately.
+
+* Serialize calls that use the same API-key/function pair. Do not run them concurrently.
+* Before the next call for that pair, wait for the prior call to complete. Then ensure five seconds have elapsed after its completion.
+* After a rate-limit response, wait at least five seconds before retrying. Send that retry through the same serialized path.
+* A retry after only fractions of a second, such as 0.1–0.4 seconds, continues to be rejected.
+
+Reduce request frequency where possible. For high-volume synchronization, batch data into larger payloads instead of sending many small requests.
 
 ***
 
