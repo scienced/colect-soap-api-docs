@@ -77,7 +77,7 @@ The main customer entity representing a B2B account.
 | `maxOrderValue`        | Float   | Maximum order value                                                                                 |
 | `shippingTime`         | Integer | Days to add to delivery date                                                                        |
 | `minimumQuantitiesKey` | String  | Key for product minimum quantities                                                                  |
-| `sizeNamingCode`       | String  | Code for customer-specific size naming. See [XCustomerSizeNaming](products.md#xcustomersizeNaming). |
+| `sizeNamingCode`       | String  | Code for customer-specific size naming. See [XCustomerSizeNaming](products.md#xcustomersizenaming). |
 | `externalReference`    | String  | External system reference                                                                           |
 
 ### Nested Collections

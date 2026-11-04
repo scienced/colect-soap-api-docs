@@ -75,6 +75,7 @@ Products are uniquely identified by `uniqueId` + `colorCode`. Each color variant
 
 Products can be assigned to one or more discount groups using the `<discountGroupCode>` element. These codes link products to customer-level discount configurations.
 
+{% code collapsedlinecount="10" %}
 ```xml
 <api:product>
     <api:uniqueId>STYLE-001</api:uniqueId>
@@ -84,6 +85,7 @@ Products can be assigned to one or more discount groups using the `<discountGrou
     <api:discountGroupCode>SEASONAL</api:discountGroupCode>
 </api:product>
 ```
+{% endcode %}
 
 **How it works:**
 
@@ -180,7 +182,7 @@ Size information including stock and EAN codes.
 | `stockLevels`            | `<stockLevel>`            | List<[XStockLevel](products.md#xstocklevel)>                       | Stock quantities per date    |
 | `extraFields`            | `<extraField>`            | List<[XExtraField](products.md#xextrafield)>                       | Custom display fields        |
 | `prepackContentElements` | `<prepackContentElement>` | List<[XPrepackContentElement](products.md#xprepackcontentelement)> | Prepack contents definition  |
-| `customerSizeNamings`    | `<customerSizeNaming>`    | List<[XCustomerSizeNaming](products.md#xcustomersizeNaming)>       | Customer-specific size names |
+| `customerSizeNamings`    | `<customerSizeNaming>`    | List<[XCustomerSizeNaming](products.md#xcustomersizenaming)>       | Customer-specific size names |
 
 {% hint style="info" %}
 **Size Access:** If `accessCode` is empty or matches one of the customer's `sizeAccessCodes`, the size is visible to that customer.
@@ -268,6 +270,7 @@ Stock quantity with optional date-based availability.
 
 ### Example: Future Deliveries
 
+{% code collapsedlinecount="10" %}
 ```xml
 <!-- Current stock (no date = immediate availability) -->
 <api:stockLevel>
@@ -286,6 +289,7 @@ Stock quantity with optional date-based availability.
     <api:quantity>350</api:quantity>
 </api:stockLevel>
 ```
+{% endcode %}
 
 ***
 
@@ -494,10 +498,11 @@ Defines the contents of a prepack/box containing multiple sizes.
 | `sizeSortCode`       | Integer                                                      | No       | Size sort order                  |
 | `subSizeName`        | String                                                       | No       | Sub-size name (e.g., length)     |
 | `subSizeSortCode`    | Integer                                                      | No       | Sub-size sort order              |
-| `customerSizeNaming` | List<[XCustomerSizeNaming](products.md#xcustomersizeNaming)> | No       | Customer-specific size names     |
+| `customerSizeNaming` | List<[XCustomerSizeNaming](products.md#xcustomersizenaming)> | No       | Customer-specific size names     |
 
 ### Example
 
+{% code collapsedlinecount="10" %}
 ```xml
 <!-- Prepack containing 1 S, 2 M, 2 L, 1 XL -->
 <api:size>
@@ -521,6 +526,7 @@ Defines the contents of a prepack/box containing multiple sizes.
     </api:prepackContentElement>
 </api:size>
 ```
+{% endcode %}
 
 ***
 
@@ -542,6 +548,7 @@ Customer-specific size name override.
 
 ### Example
 
+{% code collapsedlinecount="10" %}
 ```xml
 <api:size>
     <api:name>M</api:name>
@@ -555,6 +562,7 @@ Customer-specific size name override.
     </api:customerSizeNaming>
 </api:size>
 ```
+{% endcode %}
 
 ***
 
@@ -654,6 +662,7 @@ Contains the translated values for an extra field.
 
 ### Example
 
+{% code collapsedlinecount="10" %}
 ```xml
 <api:extraField>
     <api:name>care_instructions</api:name>
@@ -676,3 +685,4 @@ Contains the translated values for an extra field.
     </api:translation>
 </api:extraField>
 ```
+{% endcode %}
