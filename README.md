@@ -4,6 +4,10 @@
 
 Welcome to the Colect SOAP API documentation. This API enables fashion brands to synchronize their ERP systems with the Colect platform for seamless B2B e-commerce operations.
 
+{% hint style="info" %}
+**Javadoc reference:** The [Colect Webservice API 3.0 Javadoc](https://assets.apptitude.nl/Documentation/api/3.0/nl/apptitude/salesapp/cc/api/v_3_0/ColectApiService_3_0.html) lists the methods of the SOAP service in the standard Javadoc format. Use it if you prefer to read the API that way.
+{% endhint %}
+
 ***
 
 ## Overview
@@ -16,7 +20,7 @@ The Colect API provides a comprehensive SOAP-based interface for:
 | **Customers**    | Manage B2B customer accounts with pricing groups and access controls                                                                                                  |
 | **Orders**       | <p>Process orders placed through the Colect Product Suites (App/B2B/DS).<br></p><p>View historical orders from Colect or the B2B channel within the ERP platform.</p> |
 | **Invoices**     | Push invoice data for customer visibility                                                                                                                             |
-| **Access Rules** | <p>Control which products are visible to which customers.</p><p></p><p>Control which agents have access to customers.</p>                                             |
+| **Access Rules** | <p>Control which products are visible to which customers.</p><p>Control which agents have access to customers.</p>                                                    |
 
 ***
 
@@ -24,15 +28,19 @@ The Colect API provides a comprehensive SOAP-based interface for:
 
 {% tabs %}
 {% tab title="Endpoint" %}
+{% code collapsedlinecount="10" %}
 ```
 https://connector.colect.services:443/services/api/3.0
 ```
+{% endcode %}
 {% endtab %}
 
 {% tab title="WSDL" %}
+{% code collapsedlinecount="10" %}
 ```
 https://connector.colect.services/services/api/3.0?wsdl
 ```
+{% endcode %}
 {% endtab %}
 {% endtabs %}
 
@@ -44,6 +52,7 @@ All API operations require a `apiKey` parameter. The api-key can be found on the
 
 ## Data Flow Architecture
 
+{% code collapsedlinecount="10" %}
 ```
                     ┌─────────────────────────────────┐
                     │         Colect Platform         │
@@ -77,6 +86,7 @@ All API operations require a `apiKey` parameter. The api-key can be found on the
                     │        Your ERP System        │
                     └───────────────────────────────┘
 ```
+{% endcode %}
 
 | Direction        | Data                                                                              | Description                                        |
 | ---------------- | --------------------------------------------------------------------------------- | -------------------------------------------------- |
@@ -132,11 +142,13 @@ All API operations require a `apiKey` parameter. The api-key can be found on the
 
 Replaces all existing data with the provided set. Items not included in the request will be deleted.
 
+{% code collapsedlinecount="10" %}
 ```
 Before: [A, B, C, D]
 Request: [A, B, E]
 After: [A, B, E]  ← C and D are removed
 ```
+{% endcode %}
 
 **Use case:** Initial data load, daily full synchronization
 {% endtab %}
@@ -146,11 +158,13 @@ After: [A, B, E]  ← C and D are removed
 
 Adds new items or updates existing ones. Items not included in the request remain unchanged.
 
+{% code collapsedlinecount="10" %}
 ```
 Before: [A, B, C, D]
 Request: [A, E]
 After: [A, B, C, D, E]  ← A is updated, E is added
 ```
+{% endcode %}
 
 **Use case:** Real-time updates, incremental changes
 {% endtab %}
