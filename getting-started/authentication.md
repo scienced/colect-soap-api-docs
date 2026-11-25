@@ -35,19 +35,19 @@ The `apiKey` parameter is the first parameter in every API operation:
     </soapenv:Body>
 </soapenv:Envelope>
 ```
-
 {% endtab %}
 
 {% tab title="Response" %}
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-    <soap:Body>
-        <ns2:getInfoResponse xmlns:ns2="http://api.cc.salesapp.apptitude.nl/">
-            <return>Collection: Your Brand Name</return>
-        </ns2:getInfoResponse>
-    </soap:Body>
-</soap:Envelope>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <ns2:getInfoResponse xmlns:ns2="http://api.cc.salesapp.apptitude.nl/" xmlns:ns3="http://ws.cc.salesapp.apptitude.nl/">
+         <return>API key: "your API key"
+Collection ID: "your collection ID"
+Collection Name: "your collection name"</return>
+      </ns2:getInfoResponse>
+   </S:Body>
+</S:Envelope>
 ```
 {% endtab %}
 {% endtabs %}
