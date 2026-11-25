@@ -50,11 +50,11 @@ Most error messages include your API key in plain text. Mask the key before you 
 
 #### Validation errors
 
-| Error                   | Cause                                         | Solution                                                           |
-| ----------------------- | --------------------------------------------- | ------------------------------------------------------------------ |
-| Missing mandatory field | Required field not provided                   | Check the data type documentation for mandatory fields             |
-| Invalid field format    | Field value doesn't match the expected format | Verify date formats (ISO 8601), currency codes, and similar values |
-| Duplicate identifier    | `uniqueId` + `colorCode` already exists       | Use unique combinations or use update operations                   |
+| Error                   | Cause                                         | Solution                                                                                                                           |
+| ----------------------- | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Missing mandatory field | Required field not provided                   | Check the data type documentation for mandatory fields                                                                             |
+| Invalid field format    | Field value doesn't match the expected format | Verify currency codes and similar values. Date fields never return this error: see [Date formats](error-handling.md#date-formats). |
+| Duplicate identifier    | `uniqueId` + `colorCode` already exists       | Use unique combinations or use update operations                                                                                   |
 
 #### Data integrity errors
 
@@ -86,6 +86,31 @@ These two messages are the same failure at different moments. If Colect cannot r
 Either of these two faults means Colect did not process the call at all, so you can resend it unchanged. This does not apply to validation or data integrity faults: see [Retry with the right strategy](error-handling.md#retry-with-the-right-strategy).
 
 If you receive this error for several minutes in a row outside the deployment window, or on every call, contact support. See [Getting help](error-handling.md#getting-help).
+
+***
+
+### Date formats
+
+Send every date as `yyyy-MM-dd`, for example `2026-04-01`. Colect stores the value without separators, so this date appears as `20260401` in the Backend Console.
+
+Colect does not validate dates. A date in any other format does not return a SOAP Fault. The call succeeds with HTTP status 200 and the usual empty response, and Colect either clears the stored date or stores an incorrect one.
+
+| What you send for a date field | Result                                        |
+| ------------------------------ | --------------------------------------------- |
+| `2026-04-01`                   | Stored correctly as `20260401`                |
+| `15-03-2026`                   | Not recognized. The stored date is cleared.   |
+| `20260315`                     | Not recognized. An incorrect value is stored. |
+| No element                     | The stored date is cleared.                   |
+
+{% hint style="warning" %}
+Because no error is returned, an invalid or missing date replaces the date already stored for the product. Your integration receives a success response either way.
+{% endhint %}
+
+To avoid this:
+
+* Validate and format dates in your integration before you send them.
+* Include every date element you want to keep in each `storeProducts` call.
+* After the first run of a new integration, open a sample product in the Backend Console and compare its dates with what you sent.
 
 ***
 
