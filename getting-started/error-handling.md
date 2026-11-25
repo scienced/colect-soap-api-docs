@@ -15,6 +15,7 @@ Your integration receives every error described here in the response to its own 
 
 When an error occurs, the API returns HTTP status 500 with a SOAP Fault. For example, a rate-limit rejection:
 
+{% code collapsedlinecount="10" %}
 ```xml
 <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
     <S:Body>
@@ -25,6 +26,7 @@ When an error occurs, the API returns HTTP status 500 with a SOAP Fault. For exa
     </S:Body>
 </S:Envelope>
 ```
+{% endcode %}
 
 * The `faultstring` holds the full error. There is no `detail` element.
 * The `faultstring` starts with a timestamp in the format `yyyy-MM-dd HH:mm:ss.SSS`, followed by the error text.
@@ -71,6 +73,19 @@ Most error messages include your API key in plain text. Mask the key before you 
 | `Another '<group>' call is already in progress; simultaneous calls are not allowed`                           | A call in the same operation group is still running for this API key                                | Wait for the running call to return, then retry. [See Simultaneous calls](error-handling.md#simultaneous-calls). |
 
 Both throttling errors are safe to retry. Neither error means your data was rejected: the call was not processed at all.
+
+#### Service availability errors
+
+| Error                                                                                | Cause                                                                                                                                                                       | Solution                                                                                                                                               |
+| ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `Cannot invoke "nl.apptitude.salesapp.ws.Brand.getApiKey()" because "brand" is null` | Colect could not reach one of its internal services while it handled your call, most often during a deployment. The message is misleading: your API key is not the problem. | Wait at least 30 seconds, then resend the same call. [See Deployments and brief interruptions](error-handling.md#deployments-and-brief-interruptions). |
+| `Failed to access the WSDL` or `Connection refused`                                  | The same cause: a service was being replaced when your call arrived.                                                                                                        | Wait at least 30 seconds, then resend the same call.                                                                                                   |
+
+These two messages are the same failure at different moments. If Colect cannot reach the internal service before it has resolved your API key, it cannot name the collection in the error and reports the `Brand.getApiKey()` message instead of the real cause. If the failure happens later in the call, the underlying message is passed through. Handle both the same way.
+
+Either of these two faults means Colect did not process the call at all, so you can resend it unchanged. This does not apply to validation or data integrity faults: see [Retry with the right strategy](error-handling.md#retry-with-the-right-strategy).
+
+If you receive this error for several minutes in a row outside the deployment window, or on every call, contact support. See [Getting help](error-handling.md#getting-help).
 
 ***
 
@@ -129,12 +144,52 @@ Colect's own scheduled connector runs use the same products and customers groups
 
 ***
 
+### Deployments and brief interruptions
+
+Colect updates its services regularly. The SOAP API stays available during an update, but a call can fail while the service that handles it is replaced. A resend normally succeeds. If a running call was cut off, the resend can be rejected for a while, as described below.
+
+#### When deployments happen
+
+* **Every morning** between 06:00 and 07:00 UTC. That is 07:00 to 08:00 in Amsterdam during winter time (CET) and 08:00 to 09:00 during summer time (CEST).
+* **Occasionally during the day**, for example when Colect releases a change. These deployments carry the same risk as the morning deployment.
+
+Most morning deployments take about two minutes. Colect does not announce the daily deployment in advance.
+
+#### What happens to your call
+
+| Situation                                               | What you see                                                                                                                                           | What to do                                            |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------- |
+| Your call arrives while a service is being replaced     | An immediate SOAP Fault, see [Service availability errors](error-handling.md#service-availability-errors), or a plain HTTP error or dropped connection | Resend the call. Colect did not process it.           |
+| Your call is already running when the deployment starts | The call is given a short period to finish. A short call normally completes; a large message can be cut off.                                           | If the call ends without a response, wait and resend. |
+
+Not every deployment failure arrives as a SOAP Fault. Your client can also see a plain HTTP 502 or 503, or a dropped connection, with no SOAP envelope. Most SOAP clients report this as a transport or parse error. Treat these the same way and resend the call.
+
+If the call ends without a response, wait and resend. The resend can be rejected with `Another '<group>' call is already in progress` while Colect is still holding the lock from the interrupted call. Keep retrying with the backoff in [Retry with the right strategy](error-handling.md#retry-with-the-right-strategy) until the call is accepted.
+
+Large messages carry the most risk, because they run the longest. This applies to full product sets, large product access sets and large invoice batches.
+
+{% hint style="warning" %}
+When a call ends without any response, you cannot tell whether Colect processed it. Most Colect operations are idempotent, so sending the same data twice results in the same state. Resend the call, and see [Use idempotent operations](error-handling.md#use-idempotent-operations).
+{% endhint %}
+
+#### How to design for it
+
+* Resend failed calls automatically, using the backoff in [Retry with the right strategy](error-handling.md#retry-with-the-right-strategy).
+* Treat a failed call as not completed until you receive a response without a SOAP Fault.
+* Log every failed call with the time it was sent, so you can see whether a failure falls in the deployment window.
+* Where you can choose, start large synchronization jobs outside 06:00 to 07:00 UTC. This lowers the risk but does not remove it, because deployments also happen during the day.
+
+Colect is changing how it deploys to reduce these interruptions.
+
+***
+
 ### Handling unknown products
 
 Some operations include a `failOnUnknownProducts` parameter:
 
 {% tabs %}
 {% tab title="Fail on unknown (safe)" %}
+{% code collapsedlinecount="10" %}
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <soapenv:Envelope
@@ -154,11 +209,13 @@ Some operations include a `failOnUnknownProducts` parameter:
     </soapenv:Body>
 </soapenv:Envelope>
 ```
+{% endcode %}
 
 The operation fails if any product doesn't exist, which protects against typos.
 {% endtab %}
 
 {% tab title="Ignore unknown (tolerant)" %}
+{% code collapsedlinecount="10" %}
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <soapenv:Envelope
@@ -178,6 +235,7 @@ The operation fails if any product doesn't exist, which protects against typos.
     </soapenv:Body>
 </soapenv:Envelope>
 ```
+{% endcode %}
 
 Unknown products are skipped without an error. Use this when you sync from a system that holds more products than the collection.
 {% endtab %}
@@ -197,6 +255,7 @@ Operations that support this parameter:
 
 Successful operations return an empty response body:
 
+{% code collapsedlinecount="10" %}
 ```xml
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
     <soap:Body>
@@ -204,6 +263,7 @@ Successful operations return an empty response body:
     </soap:Body>
 </soap:Envelope>
 ```
+{% endcode %}
 
 An empty response body with no SOAP Fault means the operation completed successfully.
 
@@ -225,8 +285,9 @@ With these logs, you can match each error to the call that caused it and see whe
 
 #### Retry with the right strategy
 
-Retry throttling errors and transient errors, such as a dropped connection or a timeout. Use a backoff, and never retry immediately after a throttling error.
+Retry throttling errors and transient errors, such as a dropped connection, a timeout, or a failure during a [deployment](error-handling.md#deployments-and-brief-interruptions). Use a backoff, and never retry immediately after a throttling error.
 
+{% code collapsedlinecount="10" %}
 ```
 Rate-limit or simultaneous-call error:
 ├── Wait at least 6 seconds (and for any running call in the same group to return)
@@ -237,6 +298,7 @@ Other transient errors:
 ├── Attempt 3: wait 30 seconds
 └── Attempt 4: wait 2 minutes
 ```
+{% endcode %}
 
 Don't retry validation or data integrity errors unchanged. Fix the data first.
 
